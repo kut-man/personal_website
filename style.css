@@ -1,0 +1,9 @@
+body>div>div {
+    height: 30px;
+    width: 30px;
+}
+
+.div3>svg {
+    height: 20px;
+    width: 35px;
+}
