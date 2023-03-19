@@ -1,8 +1,8 @@
 function ParallaxEffect(e) {
     let moveX = e.clientX / 10;
     let moveY = e.clientY / 10;
-    const leftElements = document.querySelectorAll("body>.leftDiv");
-    const rightElements = document.querySelectorAll("body>.rightDiv");
+    const leftElements = document.querySelectorAll(".leftDiv");
+    const rightElements = document.querySelectorAll(".rightDiv");
 
     function Move() {
         leftElements.forEach(node => {

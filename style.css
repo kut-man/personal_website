@@ -1,4 +1,11 @@
-body>div>div {
+body>div {
+    margin: -10px 0 0 -10px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(28, 29, 37);
+}
+
+body>div>div>div {
     height: 30px;
     width: 30px;
 }
