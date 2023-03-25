@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     overflow-x: hidden;
 }
@@ -53,7 +57,6 @@ nav>ul>li>svg {
     width: 25px;
     height: 25px;
     fill: rgb(176, 178, 195);
-    ;
 }
 
 @media only screen and (max-width: 800px) {
@@ -80,6 +83,53 @@ nav>ul>li>svg {
     font-size: 20px;
     color: white;
     font-family: 'Libre Baskerville', serif;
+    margin-bottom: 45px;
+}
+
+.aboutMeButton {
+    width: 140px;
+    background: linear-gradient(270deg, #f06449, #ef3636);
+    height: 45px;
+    color: white;
+    padding: 15px 25px 15px 25px;
+    font-size: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.content>svg {
+    width: 40px;
+    fill: white;
+    position: relative;
+    top: -41px;
+    left: 130px;
+
+    transform: translate(0);
+    transition: ease-in-out .5s
+}
+
+.aboutMeButton::after, .aboutMeButton::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background: linear-gradient(270deg, #235aa6, #213777);
+    height: 50px;
+    width: 150px;
+    left: -160px;
+    top: 0;
+
+    transform: translate(0);
+    transition: ease-in-out .5s
+}
+
+.aboutMeButton:hover::after {
+    transform: translate(200%);
+    transition: ease-in-out .5s
+}
+
+.aboutMeButton:hover ~ svg {
+    transform: translate(20%);
+    transition: ease-in-out .5s
 }
 
 .backgroundLogo {
@@ -131,11 +181,11 @@ span>div {
     top: 0;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(270deg,#235aa6,#101b3b);
+    background: linear-gradient(270deg, #235aa6, #101b3b);
     z-index: 3;
 }
 
-.xIcon{
+.xIcon {
     position: absolute;
     top: 20px;
     right: 50px;
@@ -149,7 +199,7 @@ span>div {
     position: absolute;
 }
 
-.burgerNav{
+.burgerNav {
     top: 30%;
     left: 15%;
     width: fit-content;
