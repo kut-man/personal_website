@@ -51,12 +51,70 @@ nav>ul>li {
     display: inline;
     color: rgb(176, 178, 195);
     font-size: 20px;
+    cursor: pointer;
 }
 
 nav>ul>li>svg {
     width: 25px;
     height: 25px;
     fill: rgb(176, 178, 195);
+    margin-bottom: 5px;
+}
+
+nav>ul>li::after, nav>ul>li::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    margin-left: 1%;
+    position: relative;
+    animation-fill-mode: forwards;
+}
+
+nav>ul>li::before {
+    background-color: rgb(35, 90, 166);
+    position: relative;
+    bottom: -21px;
+    animation:navUnhover .7s;
+    animation-timing-function: cubic-bezier(.694,.048,.335,1);
+}
+
+nav>ul>li:last-of-type::before {
+    bottom: -32px;
+}
+
+nav>ul>li::after {
+    background-color: rgb(242, 87, 87);
+    animation:navUnhover .3s;
+    animation-timing-function: cubic-bezier(.694,.048,.335,1);
+}
+
+nav>ul>li:hover::after, nav>ul>li:hover::before {
+    animation:navHover .3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.694,.048,.335,1);
+}
+
+@keyframes navHover {
+    0%{
+        width: 0;
+    }
+
+    100%{
+        width: 100%;
+    }
+}
+
+@keyframes navUnhover {
+    0%{
+        width: 100%;
+        left: 0;
+    }
+
+    100%{
+        width: 0;
+        left: 100%;
+    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -95,6 +153,7 @@ nav>ul>li>svg {
     font-size: 20px;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .content>svg {
@@ -103,7 +162,6 @@ nav>ul>li>svg {
     position: relative;
     top: -41px;
     left: 130px;
-
     transform: translate(0);
     transition: ease-in-out .5s
 }
@@ -114,22 +172,31 @@ nav>ul>li>svg {
     position: absolute;
     background: linear-gradient(270deg, #235aa6, #213777);
     height: 50px;
-    width: 150px;
-    left: -160px;
+    width: 110px;
+    left: -115px;
     top: 0;
-
     transform: translate(0);
+    transition: ease-in-out .4s
+}
+
+.aboutMeButton::before {
+    background: linear-gradient(270deg,#235aa6,#101b3b);
+    width: 150px;
+    left: -155px;
     transition: ease-in-out .5s
 }
 
 .aboutMeButton:hover::after {
-    transform: translate(200%);
-    transition: ease-in-out .5s
+    transform: translate(300%);
 }
 
-.aboutMeButton:hover ~ svg {
+.aboutMeButton:hover::before {
+    transform: translate(270%);
+    
+}
+
+.aboutMeButton:hover~svg {
     transform: translate(20%);
-    transition: ease-in-out .5s
 }
 
 .backgroundLogo {
