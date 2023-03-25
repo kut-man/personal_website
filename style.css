@@ -3,6 +3,7 @@ body>div {
     width: 100vw;
     height: 100vh;
     background-color: rgb(28, 29, 37);
+    font-family: 'League Spartan', sans-serif;
 }
 
 body>div>div>div {
@@ -13,4 +14,31 @@ body>div>div>div {
 .div3>svg {
     height: 20px;
     width: 35px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10% 0 10%;
+    height: 90px;
+}
+
+.logo{
+    height: 80px;
+    width: 80px;
+}
+
+ul {
+    list-style-type: none;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+li {
+    display: inline;
+    color: rgb(176, 178, 195);
+    font-size: 20px;
 }
