@@ -52,7 +52,8 @@ li {
 li>svg {
     width: 25px;
     height: 25px;
-    fill: rgb(176, 178, 195);;
+    fill: rgb(176, 178, 195);
+    ;
 }
 
 @media only screen and (max-width: 800px) {
@@ -81,11 +82,36 @@ li>svg {
     font-family: 'Libre Baskerville', serif;
 }
 
-.backgroundLogo{ 
-    height: 330px; 
-    width: 330px; 
-    position: absolute; 
-    top: 217px; 
+.backgroundLogo {
+    height: 330px;
+    width: 330px;
+    position: absolute;
+    top: 217px;
     right: 50%;
     transform: translate(100%);
+}
+
+span {
+    display: none;
+}
+
+span>div {
+    height: 4px;
+    background-color: rgb(176, 178, 195);
+    margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 650px) {
+    span {
+        display: inline;
+    }
+
+    ul {
+        display: none;
+    }
+
+    .logo {
+        height: 55px;
+        width: 55px;
+    }
 }
