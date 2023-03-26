@@ -17,3 +17,23 @@ function ParallaxEffect(e) {
 }
 
 window.addEventListener("mousemove", ParallaxEffect)
+
+function toggle() {
+    document.querySelector(".mainToggleContainer").classList.add("toogleAnimation")
+    document.querySelector(".toggleContainer").classList.add("toogleAnimation1")
+
+    document.querySelector(".burgerNav").classList.remove("menuDisappear")
+    document.querySelector(".burgerNav").classList.add("menuAppear")
+
+    document.querySelector(".contactIcons").classList.add("menuAppear")
+}
+
+function unToggle() {
+    document.querySelector(".mainToggleContainer").classList.remove("toogleAnimation")
+    document.querySelector(".toggleContainer").classList.remove("toogleAnimation1")
+
+    document.querySelector(".burgerNav").classList.remove("menuAppear")
+    document.querySelector(".burgerNav").classList.add("menuDisappear")
+    
+    document.querySelector(".contactIcons").classList.remove("menuAppear")
+}
