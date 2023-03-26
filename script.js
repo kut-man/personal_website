@@ -22,6 +22,9 @@ function toggle() {
     document.querySelector(".mainToggleContainer").classList.add("toogleAnimation")
     document.querySelector(".toggleContainer").classList.add("toogleAnimation1")
 
+    document.querySelector(".mainToggleContainer").classList.remove("unToogleAnimation")
+    document.querySelector(".toggleContainer").classList.remove("unToogleAnimation1")
+
     document.querySelector(".burgerNav").classList.remove("menuDisappear")
     document.querySelector(".burgerNav").classList.add("menuAppear")
 
@@ -31,6 +34,9 @@ function toggle() {
 function unToggle() {
     document.querySelector(".mainToggleContainer").classList.remove("toogleAnimation")
     document.querySelector(".toggleContainer").classList.remove("toogleAnimation1")
+
+    document.querySelector(".mainToggleContainer").classList.add("unToogleAnimation")
+    document.querySelector(".toggleContainer").classList.add("unToogleAnimation1")
 
     document.querySelector(".burgerNav").classList.remove("menuAppear")
     document.querySelector(".burgerNav").classList.add("menuDisappear")

@@ -335,6 +335,19 @@ span>div {
     animation-delay: .3s;
 }
 
+.unToogleAnimation {
+    display: block;
+    animation: unToggling .4s ease-in;
+    animation-fill-mode: forwards;
+}
+
+.unToogleAnimation1 {
+    display: block;
+    animation: unToggling .3s ease-out;
+    animation-fill-mode: forwards;
+    
+}
+
 @keyframes toggling {
     0% {
         left: -110%;
@@ -347,48 +360,24 @@ span>div {
 
 @keyframes unToggling {
     0% {
-        left: -110%;
+        left: 0;
     }
 
     100% {
-        left: 0;
+        left: -110%;
     }
 }
 
 .menuAppear {
     opacity: 1;
-    transform: translateY(-100%);
+    transform: translateY(-20%);
     transition-duration: .5s;
-    transition-delay: .4s;
+    transition-delay: .5s;
 }
 
 .menuDisappear {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(20%);
     transition-duration: .5s;
-    transition-delay: .4s;
+    transition-delay: .5s;
 }
-
-/* @keyframes menuAppearance {
-    0% {
-        opacity: 0;
-        transform: translateY(0);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(-10%);
-    }
-}
-
-@keyframes menuAppearance1 {
-    0% {
-        opacity: 0;
-        transform: translateY(0);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(-30%);
-    }
-} */
