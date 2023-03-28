@@ -52,8 +52,10 @@ $background-color_5: rgb(227, 216, 211);
 * {
 	box-sizing: border-box;
 }
+
 body {
 	overflow-x: hidden;
+
 	>.mainPage {
 		margin: -8px 0 0 -8px;
 		width: 100vw;
@@ -62,10 +64,21 @@ body {
 		font-family: $font-family_1;
 		overflow: hidden;
 
-		>.rightDiv, .leftDiv {
+		.backgroundLogo {
+			height: 330px;
+			width: 330px;
+			position: absolute;
+			top: 217px;
+			right: 50%;
+			transform: translate(50%);
+		}
+
+		>.rightDiv,
+		.leftDiv {
 			>.div3 {
 				width: 40px;
 			}
+
 			>div {
 				width: 30px;
 			}
@@ -80,60 +93,75 @@ nav {
 	padding: 0 11% 0 11%;
 	height: 90px;
 
-	.logo {
+	>span {
+		display: none;
+
+		>div {
+			height: 4px;
+			background-color: $grayish;
+			margin-bottom: 5px;
+		}
+	}
+
+	>.logo {
 		height: 80px;
 		width: 80px;
 	}
+}
 
-	>ul {
-		width: 450px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
 
-		>li {
-			display: inline;
-			color: $grayish;
-			font-size: 20px;
-			cursor: pointer;
 
-			>svg {
-				width: 25px;
-				fill: $grayish;
-				margin-bottom: 5px;
-			}
+nav>ul {
+	width: 450px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 
-			&::after, &::before {
-				content: '';
-				display: block;
-				width: 0;
-				height: 2px;
-				margin-left: 1%;
-				position: relative;
-				animation-fill-mode: forwards;
-				background-color: $background-color_3;
-				animation: navUnhover .3s;
-				animation-timing-function: cubic-bezier(.694, .048, .335, 1);
-			}
+	>li {
+		display: inline;
+		color: $grayish;
+		font-size: 20px;
+		cursor: pointer;
 
+		>svg {
+			width: 25px;
+			fill: $grayish;
+			margin-bottom: 5px;
+		}
+
+		&::after,
+		&::before {
+			content: '';
+			display: block;
+			width: 0;
+			height: 2px;
+			margin-left: 1%;
+			position: relative;
+			animation-fill-mode: forwards;
+			background-color: $background-color_3;
+			animation: navUnhover .3s;
+			animation-timing-function: cubic-bezier(.694, .048, .335, 1);
+		}
+
+		&::before {
+			background-color: $background-color_2;
+			bottom: -21px;
+			animation: navUnhover .7s;
+		}
+
+		&:last-of-type {
 			&::before {
-				background-color: $background-color_2;
-				bottom: -21px;
-				animation: navUnhover .7s;
+				bottom: -32px;
 			}
+		}
 
-			&:last-of-type {
-				&::before {
-					bottom: -32px;
-				}
-			}
+		&:hover {
 
-			&:hover {
-				&::after, &::before {
-					animation: navHover .3s;
-					animation-fill-mode: forwards;
-					animation-timing-function: cubic-bezier(.694, .048, .335, 1);
-				}
+			&::after,
+			&::before {
+				animation: navHover .3s;
+				animation-fill-mode: forwards;
+				animation-timing-function: cubic-bezier(.694, .048, .335, 1);
 			}
 		}
 	}
@@ -181,7 +209,8 @@ nav {
 	overflow: hidden;
 	cursor: pointer;
 
-	&::after {
+	&::after,
+	&::before {
 		content: "";
 		display: inline-block;
 		position: absolute;
@@ -195,11 +224,6 @@ nav {
 	}
 
 	&::before {
-		content: "";
-		display: inline-block;
-		position: absolute;
-		top: 0;
-		transform: translate(0);
 		background: linear-gradient(270deg, #235aa6, #101b3b);
 		width: 150px;
 		left: -155px;
@@ -218,25 +242,6 @@ nav {
 
 	&:hover~svg {
 		transform: translate(20%);
-	}
-}
-
-.backgroundLogo {
-	height: 330px;
-	width: 330px;
-	position: absolute;
-	top: 217px;
-	right: 50%;
-	transform: translate(50%);
-}
-
-span {
-	display: none;
-
-	>div {
-		height: 4px;
-		background-color: $grayish;
-		margin-bottom: 5px;
 	}
 }
 
@@ -262,72 +267,77 @@ span {
 	z-index: 3;
 	display: none;
 
-	>ul {
+	>.xIcon {
+		position: absolute;
+		top: 30px;
+		right: 20px;
+		width: 43px;
+		height: 43px;
+
+		&::after, &::before {
+			position: absolute;
+			right: 20px;
+			content: "";
+			display: inline-block;
+			width: 4px;
+			height: 44px;
+			transform: rotate(45deg);
+			background-color: $background-color_5;
+		}
+
+		&::before {
+			transform: rotate(-45deg);
+		}
+	}
+
+	>.burgerNav {
+		top: 30%;
+		left: 15%;
+		width: fit-content;
+		opacity: 0;
 		list-style: none;
 		position: absolute;
-	}
-}
 
-.xIcon {
-	position: absolute;
-	top: 30px;
-	right: 20px;
-	width: 43px;
-	height: 43px;
-
-	&::after {
-		position: absolute;
-		right: 20px;
-		content: "";
-		display: inline-block;
-		width: 4px;
-		height: 44px;
-		transform: rotate(45deg);
-		background-color: $background-color_5;
-	}
-
-	&::before {
-		position: absolute;
-		right: 20px;
-		content: "";
-		display: inline-block;
-		width: 4px;
-		height: 44px;
-		transform: rotate(45deg);
-		background-color: $background-color_5;
-		transform: rotate(-45deg);
-	}
-}
-
-.burgerNav {
-	top: 30%;
-	left: 15%;
-	width: fit-content;
-	opacity: 0;
-
-	>li {
-		font-size: 35px;
-		margin-bottom: 33px;
-		color: $font_white;
-	}
-}
-
-.contactIcons {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	padding: 0 0 0 20px;
-	width: 300px;
-	top: 90%;
-	left: 15%;
-
-	>li {
-		display: inline;
-
-		>svg {
-			fill: white;
-			width: 30px;
+		>li {
+			font-size: 35px;
+			margin-bottom: 33px;
+			color: $font_white;
 		}
+	}
+
+	>.contactIcons {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		padding: 0 0 0 20px;
+		width: 300px;
+		top: 90%;
+		left: 15%;
+		list-style: none;
+		position: absolute;
+
+		>li {
+			display: inline;
+
+			>svg {
+				fill: white;
+				width: 30px;
+			}
+		}
+	}
+
+	.menuAppear {
+		opacity: 1;
+		transform: translateY(-20%);
+		transition-duration: .5s;
+		transition-delay: .5s;
+	}
+
+	.menuDisappear {
+		opacity: 0;
+		transform: translateY(20%);
+		transition-duration: .5s;
+		transition-delay: .5s;
 	}
 }
 
@@ -354,20 +364,6 @@ span {
 	@include anim(0, .3s, unToggling, ease-out);
 }
 
-.menuAppear {
-	opacity: 1;
-	transform: translateY(-20%);
-	transition-duration: .5s;
-	transition-delay: .5s;
-}
-
-.menuDisappear {
-	opacity: 0;
-	transform: translateY(20%);
-	transition-duration: .5s;
-	transition-delay: .5s;
-}
-
 @media only screen and (max-width: 800px) {
 	nav {
 		padding: 0 5% 0 5%;
@@ -381,10 +377,6 @@ span {
 }
 
 @media only screen and (max-width: 650px) {
-	span {
-		display: inline;
-	}
-
 	nav {
 		>.logo {
 			height: 55px;
@@ -393,6 +385,10 @@ span {
 
 		>ul {
 			display: none;
+		}
+
+		span {
+			display: inline;
 		}
 	}
 

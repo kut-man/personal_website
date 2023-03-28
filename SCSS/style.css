@@ -47,10 +47,20 @@ body > .mainPage {
   font-family: "League Spartan", sans-serif;
   overflow: hidden;
 }
-body > .mainPage > .rightDiv > .div3, body > .mainPage .leftDiv > .div3 {
+body > .mainPage .backgroundLogo {
+  height: 330px;
+  width: 330px;
+  position: absolute;
+  top: 217px;
+  right: 50%;
+  transform: translate(50%);
+}
+body > .mainPage > .rightDiv > .div3,
+body > .mainPage .leftDiv > .div3 {
   width: 40px;
 }
-body > .mainPage > .rightDiv > div, body > .mainPage .leftDiv > div {
+body > .mainPage > .rightDiv > div,
+body > .mainPage .leftDiv > div {
   width: 30px;
 }
 
@@ -61,10 +71,19 @@ nav {
   padding: 0 11% 0 11%;
   height: 90px;
 }
-nav .logo {
+nav > span {
+  display: none;
+}
+nav > span > div {
+  height: 4px;
+  background-color: #b0b2c3;
+  margin-bottom: 5px;
+}
+nav > .logo {
   height: 80px;
   width: 80px;
 }
+
 nav > ul {
   width: 450px;
   display: flex;
@@ -147,7 +166,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   overflow: hidden;
   cursor: pointer;
 }
-.aboutMeButton::after {
+.aboutMeButton::after, .aboutMeButton::before {
   content: "";
   display: inline-block;
   position: absolute;
@@ -160,11 +179,6 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   transition: ease-in-out .4s;
 }
 .aboutMeButton::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  transform: translate(0);
   background: linear-gradient(270deg, #235aa6, #101b3b);
   width: 150px;
   left: -155px;
@@ -178,24 +192,6 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
 }
 .aboutMeButton:hover ~ svg {
   transform: translate(20%);
-}
-
-.backgroundLogo {
-  height: 330px;
-  width: 330px;
-  position: absolute;
-  top: 217px;
-  right: 50%;
-  transform: translate(50%);
-}
-
-span {
-  display: none;
-}
-span > div {
-  height: 4px;
-  background-color: #b0b2c3;
-  margin-bottom: 5px;
 }
 
 .mainToggleContainer {
@@ -220,19 +216,14 @@ span > div {
   z-index: 3;
   display: none;
 }
-.toggleContainer > ul {
-  list-style: none;
-  position: absolute;
-}
-
-.xIcon {
+.toggleContainer > .xIcon {
   position: absolute;
   top: 30px;
   right: 20px;
   width: 43px;
   height: 43px;
 }
-.xIcon::after {
+.toggleContainer > .xIcon::after, .toggleContainer > .xIcon::before {
   position: absolute;
   right: 20px;
   content: "";
@@ -242,31 +233,23 @@ span > div {
   transform: rotate(45deg);
   background-color: #e3d8d3;
 }
-.xIcon::before {
-  position: absolute;
-  right: 20px;
-  content: "";
-  display: inline-block;
-  width: 4px;
-  height: 44px;
-  transform: rotate(45deg);
-  background-color: #e3d8d3;
+.toggleContainer > .xIcon::before {
   transform: rotate(-45deg);
 }
-
-.burgerNav {
+.toggleContainer > .burgerNav {
   top: 30%;
   left: 15%;
   width: fit-content;
   opacity: 0;
+  list-style: none;
+  position: absolute;
 }
-.burgerNav > li {
+.toggleContainer > .burgerNav > li {
   font-size: 35px;
   margin-bottom: 33px;
   color: white;
 }
-
-.contactIcons {
+.toggleContainer > .contactIcons {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -274,13 +257,27 @@ span > div {
   width: 300px;
   top: 90%;
   left: 15%;
+  list-style: none;
+  position: absolute;
 }
-.contactIcons > li {
+.toggleContainer > .contactIcons > li {
   display: inline;
 }
-.contactIcons > li > svg {
+.toggleContainer > .contactIcons > li > svg {
   fill: white;
   width: 30px;
+}
+.toggleContainer .menuAppear {
+  opacity: 1;
+  transform: translateY(-20%);
+  transition-duration: .5s;
+  transition-delay: .5s;
+}
+.toggleContainer .menuDisappear {
+  opacity: 0;
+  transform: translateY(20%);
+  transition-duration: .5s;
+  transition-delay: .5s;
 }
 
 .toogleAnimation {
@@ -311,20 +308,6 @@ span > div {
   animation-delay: 0;
 }
 
-.menuAppear {
-  opacity: 1;
-  transform: translateY(-20%);
-  transition-duration: .5s;
-  transition-delay: .5s;
-}
-
-.menuDisappear {
-  opacity: 0;
-  transform: translateY(20%);
-  transition-duration: .5s;
-  transition-delay: .5s;
-}
-
 @media only screen and (max-width: 800px) {
   nav {
     padding: 0 5% 0 5%;
@@ -335,16 +318,15 @@ span > div {
   }
 }
 @media only screen and (max-width: 650px) {
-  span {
-    display: inline;
-  }
-
   nav > .logo {
     height: 55px;
     width: 55px;
   }
   nav > ul {
     display: none;
+  }
+  nav span {
+    display: inline;
   }
 
   .content > h1 {
