@@ -1,98 +1,109 @@
-$color_1: rgb(176, 178, 195);
-$color_2: white;
+$grayish: rgb(176, 178, 195);
+$font_white: white;
 $font-family_1: 'League Spartan', sans-serif;
 $font-family_2: 'Libre Baskerville', serif;
 $background-color_1: rgb(28, 29, 37);
 $background-color_2: rgb(35, 90, 166);
 $background-color_3: rgb(242, 87, 87);
-$background-color_4: rgb(176, 178, 195);
 $background-color_5: rgb(227, 216, 211);
 
 @keyframes navHover {
 	0% {
 		width: 0;
 	}
+
 	100% {
 		width: 100%;
 	}
 }
+
 @keyframes navUnhover {
 	0% {
 		width: 100%;
 		left: 0;
 	}
+
 	100% {
 		width: 0;
 		left: 100%;
 	}
 }
+
 @keyframes toggling {
 	0% {
 		left: -110%;
 	}
+
 	100% {
 		left: 0;
 	}
 }
+
 @keyframes unToggling {
 	0% {
 		left: 0;
 	}
+
 	100% {
 		left: -110%;
 	}
 }
+
 * {
 	box-sizing: border-box;
 }
 body {
 	overflow-x: hidden;
-	>div {
+	>.mainPage {
 		margin: -8px 0 0 -8px;
 		width: 100vw;
 		height: 100vh;
 		background-color: $background-color_1;
 		font-family: $font-family_1;
 		overflow: hidden;
-		>div {
+
+		>.rightDiv, .leftDiv {
+			>.div3 {
+				width: 40px;
+			}
 			>div {
-				height: 30px;
 				width: 30px;
 			}
 		}
 	}
 }
-.div3 {
-	>svg {
-		height: 20px;
-		width: 35px;
-	}
-}
+
 nav {
 	display: flex;
-	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 11% 0 11%;
 	height: 90px;
+
+	.logo {
+		height: 80px;
+		width: 80px;
+	}
+
 	>ul {
-		list-style-type: none;
 		width: 450px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
 		>li {
 			display: inline;
-			color: $color_1;
+			color: $grayish;
 			font-size: 20px;
 			cursor: pointer;
+
 			>svg {
 				width: 25px;
-				height: 25px;
-				fill: rgb(176, 178, 195);
+				fill: $grayish;
 				margin-bottom: 5px;
 			}
-			&::after {
+
+			&::after, &::before {
 				content: '';
 				display: block;
 				width: 0;
@@ -104,32 +115,21 @@ nav {
 				animation: navUnhover .3s;
 				animation-timing-function: cubic-bezier(.694, .048, .335, 1);
 			}
+
 			&::before {
-				content: '';
-				display: block;
-				width: 0;
-				height: 2px;
-				margin-left: 1%;
-				position: relative;
-				animation-fill-mode: forwards;
 				background-color: $background-color_2;
-				position: relative;
 				bottom: -21px;
 				animation: navUnhover .7s;
-				animation-timing-function: cubic-bezier(.694, .048, .335, 1);
 			}
+
 			&:last-of-type {
 				&::before {
 					bottom: -32px;
 				}
 			}
+
 			&:hover {
-				&::after {
-					animation: navHover .3s;
-					animation-fill-mode: forwards;
-					animation-timing-function: cubic-bezier(.694, .048, .335, 1);
-				}
-				&::before {
+				&::after, &::before {
 					animation: navHover .3s;
 					animation-fill-mode: forwards;
 					animation-timing-function: cubic-bezier(.694, .048, .335, 1);
@@ -138,27 +138,27 @@ nav {
 		}
 	}
 }
-.logo {
-	height: 80px;
-	width: 80px;
-}
+
 .content {
 	position: absolute;
 	top: 38%;
 	z-index: 1;
 	margin: 0 13% 0 13%;
 	padding-left: 3%;
+
 	>h1 {
 		font-size: 75px;
-		color: $color_2;
+		color: $font_white;
 		margin: 0;
 	}
+
 	>p {
 		font-size: 20px;
-		color: $color_2;
+		color: $font_white;
 		font-family: $font-family_2;
 		margin-bottom: 45px;
 	}
+
 	>svg {
 		width: 40px;
 		fill: white;
@@ -169,16 +169,18 @@ nav {
 		transition: ease-in-out .5s;
 	}
 }
+
 .aboutMeButton {
 	width: 140px;
 	background: linear-gradient(270deg, #f06449, #ef3636);
 	height: 45px;
-	color: $color_2;
+	color: $font_white;
 	padding: 15px 25px 15px 25px;
 	font-size: 20px;
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
+
 	&::after {
 		content: "";
 		display: inline-block;
@@ -191,34 +193,34 @@ nav {
 		transform: translate(0);
 		transition: ease-in-out .4s;
 	}
+
 	&::before {
 		content: "";
 		display: inline-block;
 		position: absolute;
-		background: linear-gradient(270deg, #235aa6, #213777);
-		height: 50px;
-		width: 110px;
-		left: -115px;
 		top: 0;
 		transform: translate(0);
-		transition: ease-in-out .4s;
 		background: linear-gradient(270deg, #235aa6, #101b3b);
 		width: 150px;
 		left: -155px;
 		transition: ease-in-out .5s;
 	}
+
 	&:hover {
 		&::after {
 			transform: translate(300%);
 		}
+
 		&::before {
 			transform: translate(270%);
 		}
 	}
+
 	&:hover~svg {
 		transform: translate(20%);
 	}
 }
+
 .backgroundLogo {
 	height: 330px;
 	width: 330px;
@@ -227,14 +229,17 @@ nav {
 	right: 50%;
 	transform: translate(50%);
 }
+
 span {
 	display: none;
+
 	>div {
 		height: 4px;
-		background-color: $background-color_4;
+		background-color: $grayish;
 		margin-bottom: 5px;
 	}
 }
+
 .mainToggleContainer {
 	position: absolute;
 	top: 0;
@@ -245,7 +250,9 @@ span {
 	z-index: 2;
 	display: none;
 }
+
 .toggleContainer {
+	font-family: $font-family_1;
 	position: absolute;
 	top: 0;
 	left: -110%;
@@ -254,17 +261,20 @@ span {
 	background: linear-gradient(270deg, #235aa6, #101b3b);
 	z-index: 3;
 	display: none;
+
 	>ul {
 		list-style: none;
 		position: absolute;
 	}
 }
+
 .xIcon {
 	position: absolute;
 	top: 30px;
 	right: 20px;
 	width: 43px;
 	height: 43px;
+
 	&::after {
 		position: absolute;
 		right: 20px;
@@ -275,6 +285,7 @@ span {
 		transform: rotate(45deg);
 		background-color: $background-color_5;
 	}
+
 	&::before {
 		position: absolute;
 		right: 20px;
@@ -287,17 +298,20 @@ span {
 		transform: rotate(-45deg);
 	}
 }
+
 .burgerNav {
 	top: 30%;
 	left: 15%;
 	width: fit-content;
 	opacity: 0;
+
 	>li {
 		font-size: 35px;
 		margin-bottom: 33px;
-		color: $color_2;
+		color: $font_white;
 	}
 }
+
 .contactIcons {
 	display: flex;
 	justify-content: space-around;
@@ -306,70 +320,82 @@ span {
 	width: 300px;
 	top: 90%;
 	left: 15%;
+
 	>li {
 		display: inline;
+
 		>svg {
 			fill: white;
 			width: 30px;
 		}
 	}
 }
+
+@mixin anim($delay, $duration, $name, $function) {
+	display: block;
+	animation: $name $duration $function;
+	animation-fill-mode: forwards;
+	animation-delay: $delay;
+}
+
 .toogleAnimation {
-	display: block;
-	animation: toggling .3s ease-out;
-	animation-fill-mode: forwards;
+	@include anim(0, .3s, toggling, ease-out);
 }
+
 .toogleAnimation1 {
-	display: block;
-	animation: toggling .4s ease-out;
-	animation-fill-mode: forwards;
-	animation-delay: .3s;
+	@include anim(.3s, .4s, toggling, ease-out);
 }
+
 .unToogleAnimation {
-	display: block;
-	animation: unToggling .4s ease-in;
-	animation-fill-mode: forwards;
+	@include anim(0, .4s, unToggling, ease-in);
 }
+
 .unToogleAnimation1 {
-	display: block;
-	animation: unToggling .3s ease-out;
-	animation-fill-mode: forwards;
+	@include anim(0, .3s, unToggling, ease-out);
 }
+
 .menuAppear {
 	opacity: 1;
 	transform: translateY(-20%);
 	transition-duration: .5s;
 	transition-delay: .5s;
 }
+
 .menuDisappear {
 	opacity: 0;
 	transform: translateY(20%);
 	transition-duration: .5s;
 	transition-delay: .5s;
 }
+
 @media only screen and (max-width: 800px) {
 	nav {
 		padding: 0 5% 0 5%;
 	}
+
 	.content {
 		>h1 {
 			font-size: 60px;
 		}
 	}
 }
+
 @media only screen and (max-width: 650px) {
 	span {
 		display: inline;
 	}
+
 	nav {
+		>.logo {
+			height: 55px;
+			width: 55px;
+		}
+
 		>ul {
 			display: none;
 		}
 	}
-	.logo {
-		height: 55px;
-		width: 55px;
-	}
+
 	.content {
 		>h1 {
 			font-size: 50px;
