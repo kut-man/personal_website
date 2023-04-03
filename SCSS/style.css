@@ -16,22 +16,6 @@
     left: 100%;
   }
 }
-@keyframes toggling {
-  0% {
-    left: -110%;
-  }
-  100% {
-    left: 0;
-  }
-}
-@keyframes unToggling {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: -110%;
-  }
-}
 * {
   box-sizing: border-box;
 }
@@ -202,7 +186,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   height: 100vh;
   background: linear-gradient(270deg, #f06449, #ee2828);
   z-index: 2;
-  display: none;
+  visibility: hidden;
 }
 
 .toggleContainer {
@@ -214,7 +198,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   height: 100vh;
   background: linear-gradient(270deg, #235aa6, #101b3b);
   z-index: 3;
-  display: none;
+  visibility: hidden;
 }
 .toggleContainer > .xIcon {
   position: absolute;
@@ -222,6 +206,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   right: 20px;
   width: 43px;
   height: 43px;
+  background-color: red;
 }
 .toggleContainer > .xIcon::after, .toggleContainer > .xIcon::before {
   position: absolute;
@@ -267,45 +252,70 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   fill: white;
   width: 30px;
 }
+.toggleContainer .xIconAppear {
+  transform: scale(2, 2);
+  transition-delay: 1s;
+  transition-duration: 3s;
+}
 .toggleContainer .menuAppear {
   opacity: 1;
-  transform: translateY(-20%);
-  transition-duration: .5s;
-  transition-delay: .5s;
+  transform: translateY(-5%);
+  transition-duration: 0.3s;
+  transition-delay: 0.7s;
+  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 .toggleContainer .menuDisappear {
   opacity: 0;
-  transform: translateY(20%);
-  transition-duration: .5s;
-  transition-delay: .5s;
+  transform: translateY(5%);
+  transition-duration: 0.3s;
+  transition-delay: 0;
+  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+.toggleContainer .contactMenuAppear {
+  opacity: 1;
+  transform: translateY(-40%);
+  transition-duration: 0.3s;
+  transition-delay: 0.7s;
+  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+.toggleContainer .contactMenuDisappear {
+  opacity: 0;
+  transform: translateY(40%);
+  transition-duration: 0.3s;
+  transition-delay: 0;
+  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 
 .toogleAnimation {
-  display: block;
-  animation: toggling 0.3s ease-out;
-  animation-fill-mode: forwards;
-  animation-delay: 0;
+  visibility: visible;
+  transform: translate(100%);
+  transition-duration: 0.4s;
+  transition-delay: 0;
+  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 
 .toogleAnimation1 {
-  display: block;
-  animation: toggling 0.4s ease-out;
-  animation-fill-mode: forwards;
-  animation-delay: 0.3s;
+  visibility: visible;
+  transform: translate(100%);
+  transition-duration: 0.5s;
+  transition-delay: 0.3s;
+  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 
 .unToogleAnimation {
-  display: block;
-  animation: unToggling 0.4s ease-in;
-  animation-fill-mode: forwards;
-  animation-delay: 0;
+  visibility: visible;
+  transform: translate(0);
+  transition-duration: 0.5s;
+  transition-delay: 0.4s;
+  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 
 .unToogleAnimation1 {
-  display: block;
-  animation: unToggling 0.3s ease-out;
-  animation-fill-mode: forwards;
-  animation-delay: 0;
+  visibility: visible;
+  transform: translate(0);
+  transition-duration: 0.3s;
+  transition-delay: 0.4s;
+  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 
 @media only screen and (max-width: 800px) {
@@ -332,6 +342,10 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   .content > h1 {
     font-size: 50px;
   }
+}
+.asas {
+  color: white;
+  fill: white;
 }
 
 /*# sourceMappingURL=style.css.map */

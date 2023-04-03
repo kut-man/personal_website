@@ -29,26 +29,6 @@ $background-color_5: rgb(227, 216, 211);
 	}
 }
 
-@keyframes toggling {
-	0% {
-		left: -110%;
-	}
-
-	100% {
-		left: 0;
-	}
-}
-
-@keyframes unToggling {
-	0% {
-		left: 0;
-	}
-
-	100% {
-		left: -110%;
-	}
-}
-
 * {
 	box-sizing: border-box;
 }
@@ -108,8 +88,6 @@ nav {
 		width: 80px;
 	}
 }
-
-
 
 nav>ul {
 	width: 450px;
@@ -253,7 +231,7 @@ nav>ul {
 	height: 100vh;
 	background: linear-gradient(270deg, #f06449, #ee2828);
 	z-index: 2;
-	display: none;
+	visibility: hidden;
 }
 
 .toggleContainer {
@@ -265,7 +243,7 @@ nav>ul {
 	height: 100vh;
 	background: linear-gradient(270deg, #235aa6, #101b3b);
 	z-index: 3;
-	display: none;
+	visibility: hidden;
 
 	>.xIcon {
 		position: absolute;
@@ -273,8 +251,10 @@ nav>ul {
 		right: 20px;
 		width: 43px;
 		height: 43px;
+		background-color: red;
 
-		&::after, &::before {
+		&::after,
+		&::before {
 			position: absolute;
 			right: 20px;
 			content: "";
@@ -326,42 +306,62 @@ nav>ul {
 		}
 	}
 
+	@mixin menuAnim($opacity, $delay, $duration, $translate) {
+		opacity: $opacity;
+		transform: translateY($translate);
+		transition-duration: $duration;
+		transition-delay: $delay;
+		transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+	}
+
+	.xIconAppear {
+		transform: scale(2, 2);
+		transition-delay: 1s;
+		transition-duration: 3s;
+	}
+
+
 	.menuAppear {
-		opacity: 1;
-		transform: translateY(-20%);
-		transition-duration: .5s;
-		transition-delay: .5s;
+		@include menuAnim(1, .7s, .3s, -5%);
 	}
 
 	.menuDisappear {
-		opacity: 0;
-		transform: translateY(20%);
-		transition-duration: .5s;
-		transition-delay: .5s;
+		@include menuAnim(0, 0, .3s, 5%);
+	}
+
+	.contactMenuAppear {
+		@include menuAnim(1, .7s, .3s, -40%);
+	}
+
+	.contactMenuDisappear {
+		@include menuAnim(0, 0, .3s, 40%);
 	}
 }
 
-@mixin anim($delay, $duration, $name, $function) {
-	display: block;
-	animation: $name $duration $function;
-	animation-fill-mode: forwards;
-	animation-delay: $delay;
+
+
+@mixin anim($delay, $duration, $translate) {
+	visibility: visible;
+	transform: translate($translate);
+	transition-duration: $duration;
+	transition-delay: $delay;
+	transition-timing-function: cubic-bezier(.694, .048, .335, 1);
 }
 
 .toogleAnimation {
-	@include anim(0, .3s, toggling, ease-out);
+	@include anim(0, .4s, 100%);
 }
 
 .toogleAnimation1 {
-	@include anim(.3s, .4s, toggling, ease-out);
+	@include anim(.3s, .5s, 100%);
 }
 
 .unToogleAnimation {
-	@include anim(0, .4s, unToggling, ease-in);
+	@include anim(.4s, .5s, 0);
 }
 
 .unToogleAnimation1 {
-	@include anim(0, .3s, unToggling, ease-out);
+	@include anim(.4s, .3s, 0);
 }
 
 @media only screen and (max-width: 800px) {
@@ -397,4 +397,9 @@ nav>ul {
 			font-size: 50px;
 		}
 	}
+}
+
+.asas{
+	color: white;
+	fill: white;
 }

@@ -25,21 +25,21 @@ function toggle() {
     document.querySelector(".mainToggleContainer").classList.remove("unToogleAnimation")
     document.querySelector(".toggleContainer").classList.remove("unToogleAnimation1")
 
-    document.querySelector(".burgerNav").classList.remove("menuDisappear")
-    document.querySelector(".burgerNav").classList.add("menuAppear")
+    document.querySelector(".burgerNav").classList.remove("menuDisappear");
+    document.querySelector(".burgerNav").classList.add("menuAppear");
 
-    document.querySelector(".contactIcons").classList.add("menuAppear")
+    document.querySelector(".contactIcons").classList.remove("contactMenuDisappear")
+    document.querySelector(".contactIcons").classList.add("contactMenuAppear")
+
+    document.querySelector(".xIcon").classList.remove("xIconDisappear")
+    document.querySelector(".xIcon").classList.add("xIconAppear")
 }
 
 function unToggle() {
-    document.querySelector(".mainToggleContainer").classList.remove("toogleAnimation")
-    document.querySelector(".toggleContainer").classList.remove("toogleAnimation1")
-
     document.querySelector(".mainToggleContainer").classList.add("unToogleAnimation")
     document.querySelector(".toggleContainer").classList.add("unToogleAnimation1")
 
-    document.querySelector(".burgerNav").classList.remove("menuAppear")
-    document.querySelector(".burgerNav").classList.add("menuDisappear")
-    
-    document.querySelector(".contactIcons").classList.remove("menuAppear")
+    document.querySelector(".burgerNav").classList.replace("menuAppear", "menuDisappear");
+    document.querySelector(".contactIcons").classList.replace("contactMenuAppear", "contactMenuDisappear"); 
+    document.querySelector(".xIcon").classList.replace("xIconAppear", "xIconDisappear"); 
 }
