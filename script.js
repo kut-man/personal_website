@@ -33,6 +33,9 @@ function toggle() {
 
     document.querySelector(".xIcon").classList.remove("xIconDisappear")
     document.querySelector(".xIcon").classList.add("xIconAppear")
+
+    window.scrollTo(0, 0);
+    document.body.style.overflow = "hidden";
 }
 
 function unToggle() {
@@ -42,4 +45,5 @@ function unToggle() {
     document.querySelector(".burgerNav").classList.replace("menuAppear", "menuDisappear");
     document.querySelector(".contactIcons").classList.replace("contactMenuAppear", "contactMenuDisappear"); 
     document.querySelector(".xIcon").classList.replace("xIconAppear", "xIconDisappear"); 
+    document.body.style.overflow = null;
 }

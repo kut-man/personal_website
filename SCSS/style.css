@@ -181,7 +181,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
 .mainToggleContainer {
   position: absolute;
   top: 0;
-  left: -110%;
+  left: -100vw;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(270deg, #f06449, #ee2828);
@@ -193,7 +193,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   font-family: "League Spartan", sans-serif;
   position: absolute;
   top: 0;
-  left: -110%;
+  left: -100vw;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(270deg, #235aa6, #101b3b);
@@ -204,17 +204,17 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   position: absolute;
   top: 30px;
   right: 20px;
-  width: 43px;
-  height: 43px;
-  background-color: red;
+  width: 40px;
+  height: 30px;
+  opacity: 0;
 }
 .toggleContainer > .xIcon::after, .toggleContainer > .xIcon::before {
   position: absolute;
   right: 20px;
   content: "";
   display: inline-block;
-  width: 4px;
-  height: 44px;
+  width: 3px;
+  height: 30px;
   transform: rotate(45deg);
   background-color: #e3d8d3;
 }
@@ -253,42 +253,48 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   width: 30px;
 }
 .toggleContainer .xIconAppear {
-  transform: scale(2, 2);
-  transition-delay: 1s;
-  transition-duration: 3s;
+  transform: scale(1.4, 1.4) translateY(0);
+  opacity: 1;
+  transition-delay: .7s;
+  transition-duration: .4s;
+}
+.toggleContainer .xIconDisappear {
+  transform: scale(1.1, 1.1) translateY(30%);
+  opacity: 0;
+  transition-duration: .4s;
 }
 .toggleContainer .menuAppear {
   opacity: 1;
   transform: translateY(-5%);
-  transition-duration: 0.3s;
+  transition-duration: 0.4s;
   transition-delay: 0.7s;
   transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 .toggleContainer .menuDisappear {
   opacity: 0;
   transform: translateY(5%);
-  transition-duration: 0.3s;
+  transition-duration: 0.4s;
   transition-delay: 0;
   transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 .toggleContainer .contactMenuAppear {
   opacity: 1;
   transform: translateY(-40%);
-  transition-duration: 0.3s;
+  transition-duration: 0.4s;
   transition-delay: 0.7s;
   transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 .toggleContainer .contactMenuDisappear {
   opacity: 0;
   transform: translateY(40%);
-  transition-duration: 0.3s;
+  transition-duration: 0.4s;
   transition-delay: 0;
   transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 
 .toogleAnimation {
   visibility: visible;
-  transform: translate(100%);
+  transform: translate(100vw);
   transition-duration: 0.4s;
   transition-delay: 0;
   transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
@@ -296,7 +302,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
 
 .toogleAnimation1 {
   visibility: visible;
-  transform: translate(100%);
+  transform: translate(100vw);
   transition-duration: 0.5s;
   transition-delay: 0.3s;
   transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
@@ -342,10 +348,6 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   .content > h1 {
     font-size: 50px;
   }
-}
-.asas {
-  color: white;
-  fill: white;
 }
 
 /*# sourceMappingURL=style.css.map */

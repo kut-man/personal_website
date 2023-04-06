@@ -226,7 +226,7 @@ nav>ul {
 .mainToggleContainer {
 	position: absolute;
 	top: 0;
-	left: -110%;
+	left: -100vw;
 	width: 100vw;
 	height: 100vh;
 	background: linear-gradient(270deg, #f06449, #ee2828);
@@ -238,7 +238,7 @@ nav>ul {
 	font-family: $font-family_1;
 	position: absolute;
 	top: 0;
-	left: -110%;
+	left: -100vw;
 	width: 100vw;
 	height: 100vh;
 	background: linear-gradient(270deg, #235aa6, #101b3b);
@@ -249,9 +249,9 @@ nav>ul {
 		position: absolute;
 		top: 30px;
 		right: 20px;
-		width: 43px;
-		height: 43px;
-		background-color: red;
+		width: 40px;
+		height: 30px;
+		opacity: 0;
 
 		&::after,
 		&::before {
@@ -259,8 +259,8 @@ nav>ul {
 			right: 20px;
 			content: "";
 			display: inline-block;
-			width: 4px;
-			height: 44px;
+			width: 3px;
+			height: 30px;
 			transform: rotate(45deg);
 			background-color: $background-color_5;
 		}
@@ -315,26 +315,33 @@ nav>ul {
 	}
 
 	.xIconAppear {
-		transform: scale(2, 2);
-		transition-delay: 1s;
-		transition-duration: 3s;
+		transform: scale(1.4, 1.4) translateY(0);
+		opacity: 1;
+		transition-delay: .7s;
+		transition-duration: .4s;
+	}
+
+	.xIconDisappear {
+		transform: scale(1.1, 1.1) translateY(30%);
+		opacity: 0;
+		transition-duration: .4s;
 	}
 
 
 	.menuAppear {
-		@include menuAnim(1, .7s, .3s, -5%);
+		@include menuAnim(1, .7s, .4s, -5%);
 	}
 
 	.menuDisappear {
-		@include menuAnim(0, 0, .3s, 5%);
+		@include menuAnim(0, 0, .4s, 5%);
 	}
 
 	.contactMenuAppear {
-		@include menuAnim(1, .7s, .3s, -40%);
+		@include menuAnim(1, .7s, .4s, -40%);
 	}
 
 	.contactMenuDisappear {
-		@include menuAnim(0, 0, .3s, 40%);
+		@include menuAnim(0, 0, .4s, 40%);
 	}
 }
 
@@ -347,11 +354,11 @@ nav>ul {
 }
 
 .toogleAnimation {
-	@include anim(0, .4s, 100%);
+	@include anim(0, .4s, 100vw);
 }
 
 .toogleAnimation1 {
-	@include anim(.3s, .5s, 100%);
+	@include anim(.3s, .5s, 100vw);
 }
 
 .unToogleAnimation {
