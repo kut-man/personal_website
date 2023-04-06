@@ -338,8 +338,6 @@ nav>ul {
 	}
 }
 
-
-
 @mixin anim($delay, $duration, $translate) {
 	visibility: visible;
 	transform: translate($translate);
@@ -397,9 +395,4 @@ nav>ul {
 			font-size: 50px;
 		}
 	}
-}
-
-.asas{
-	color: white;
-	fill: white;
 }
