@@ -186,6 +186,7 @@ nav>ul {
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
+	font-family: "League Spartan", sans-serif;
 
 	&::after,
 	&::before {
@@ -348,6 +349,107 @@ nav>ul {
 	@include anim(.3s, .5s, 100vw);
 }
 
+.projectsContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	>h6 {
+		margin-top: 90px;
+		color: #b19386;
+		font-size: 1em;
+	}
+
+	>h4 {
+		margin-top: 0;
+		font-family: League Spartan;
+		color: #4a4a4a;
+		font-size: 3em;
+	}
+
+	>.firstProjectContainer {
+		width: 950px;
+		height: 500px;
+		overflow: hidden;
+		border: 1px solid black;
+
+		>img {
+			width: inherit;
+			height: inherit;
+			object-fit: cover;
+			position: absolute;
+			z-index: -1;
+		}
+
+		>h5 {
+			color: white;
+			font-family: League Spartan;
+			font-size: 4em;
+			position: relative;
+			left: 10%;
+			top: 16vw;
+			display: inline;
+		}
+
+		>p {
+			color: white;
+			font-family: LibreBaskerville-Regular;
+			font-style: italic;
+			font-size: 1.5em;
+			position: relative;
+			left: 10%;
+			top: 15vw;
+		}
+
+		>.aboutMeButton {
+			margin: 0;
+			position: relative;
+			top: 15vw;
+			left: 10%;
+
+			&:hover~svg {
+				transform: translate(20%);
+			}
+		}
+
+
+		>svg {
+			width: 40px;
+			fill: white;
+			position: relative;
+			top: 12vw;
+			left: 23%;
+			transform: translate(0);
+			transition: ease-in-out .5s;
+		}
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.projectsContainer>.firstProjectContainer {
+		width: 800px;
+		height: 450px;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.projectsContainer>.firstProjectContainer {
+		width: 770px;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.projectsContainer>.firstProjectContainer {
+		height: 420px;
+		width: 80vw;
+
+		>h5 {
+			font-size: 3em;
+		}
+	}
+}
+
 @media only screen and (max-width: 800px) {
 	nav {
 		padding: 0 5% 0 5%;
@@ -360,7 +462,23 @@ nav>ul {
 	}
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 700px) {
+	.projectsContainer>.firstProjectContainer {
+		height: 420px;
+		width: 80vw;
+
+		>h5 {
+			font-size: 2em;
+		}
+	}
+}
+
+@media only screen and (max-width: 660px) {
+	.projectsContainer>.firstProjectContainer {
+		height: 340px;
+		width: 85vw;
+	}
+
 	nav {
 		>.logo {
 			height: 55px;
@@ -379,6 +497,22 @@ nav>ul {
 	.content {
 		>h1 {
 			font-size: 50px;
+		}
+	}
+
+	body>.mainPage>.backgroundLogo {
+		width: 50vw;
+		height: 50vw;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.projectsContainer>.firstProjectContainer {
+		height: 290px;
+		width: 90vw;
+
+		>h5 {
+			font-size: 2em;
 		}
 	}
 }
