@@ -186,7 +186,10 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   height: 100vh;
   background: linear-gradient(270deg, #f06449, #ee2828);
   z-index: 2;
-  visibility: hidden;
+  transform: translate(0);
+  transition-duration: 0.5s;
+  transition-delay: 0.4s;
+  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 
 .toggleContainer {
@@ -198,7 +201,10 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   height: 100vh;
   background: linear-gradient(270deg, #235aa6, #101b3b);
   z-index: 3;
-  visibility: hidden;
+  transform: translate(0);
+  transition-duration: 0.3s;
+  transition-delay: 0.4s;
+  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 .toggleContainer > .xIcon {
   position: absolute;
@@ -206,7 +212,6 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   right: 20px;
   width: 40px;
   height: 30px;
-  opacity: 0;
   transform: scale(1.1, 1.1) translateY(30%);
   opacity: 0;
   transition-duration: .4s;
@@ -228,9 +233,13 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   top: 30%;
   left: 15%;
   width: fit-content;
-  opacity: 0;
   list-style: none;
   position: absolute;
+  opacity: 0;
+  transform: translateY(5%);
+  transition-duration: 0.4s;
+  transition-delay: 0;
+  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 .toggleContainer > .burgerNav > li {
   font-size: 35px;
@@ -249,7 +258,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   position: absolute;
   opacity: 0;
   transform: translateY(40%);
-  transition-duration: .4s;
+  transition-duration: 0.4s;
   transition-delay: 0;
   transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
@@ -273,13 +282,6 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   transition-delay: 0.7s;
   transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
-.toggleContainer .menuDisappear {
-  opacity: 0;
-  transform: translateY(5%);
-  transition-duration: 0.4s;
-  transition-delay: 0;
-  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
-}
 .toggleContainer .contactMenuAppear {
   opacity: 1;
   transform: translateY(-40%);
@@ -287,43 +289,18 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   transition-delay: 0.7s;
   transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
-.toggleContainer .contactMenuDisappear {
-  opacity: 0;
-  transform: translateY(40%);
-  transition-duration: 0.4s;
-  transition-delay: 0;
-  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
-}
 
 .toogleAnimation {
-  visibility: visible;
   transform: translate(100vw);
   transition-duration: 0.4s;
-  transition-delay: 0;
+  transition-delay: 0s;
   transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 
 .toogleAnimation1 {
-  visibility: visible;
   transform: translate(100vw);
   transition-duration: 0.5s;
   transition-delay: 0.3s;
-  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
-}
-
-.unToogleAnimation {
-  visibility: visible;
-  transform: translate(0);
-  transition-duration: 0.5s;
-  transition-delay: 0.4s;
-  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
-}
-
-.unToogleAnimation1 {
-  visibility: visible;
-  transform: translate(0);
-  transition-duration: 0.3s;
-  transition-delay: 0.4s;
   transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 

@@ -223,6 +223,21 @@ nav>ul {
 	}
 }
 
+@mixin menuAnim($opacity, $delay, $duration, $translate) {
+	opacity: $opacity;
+	transform: translateY($translate);
+	transition-duration: $duration;
+	transition-delay: $delay;
+	transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+}
+
+@mixin anim($delay, $duration, $translate) {
+	transform: translate($translate);
+	transition-duration: $duration;
+	transition-delay: $delay;
+	transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+}
+
 .mainToggleContainer {
 	position: absolute;
 	top: 0;
@@ -231,7 +246,7 @@ nav>ul {
 	height: 100vh;
 	background: linear-gradient(270deg, #f06449, #ee2828);
 	z-index: 2;
-	visibility: hidden;
+	@include anim(.4s, .5s, 0);
 }
 
 .toggleContainer {
@@ -243,7 +258,7 @@ nav>ul {
 	height: 100vh;
 	background: linear-gradient(270deg, #235aa6, #101b3b);
 	z-index: 3;
-	visibility: hidden;
+	@include anim(.4s, .3s, 0);
 
 	>.xIcon {
 		position: absolute;
@@ -251,8 +266,6 @@ nav>ul {
 		right: 20px;
 		width: 40px;
 		height: 30px;
-		opacity: 0;
-
 		transform: scale(1.1, 1.1) translateY(30%);
 		opacity: 0;
 		transition-duration: .4s;
@@ -278,9 +291,9 @@ nav>ul {
 		top: 30%;
 		left: 15%;
 		width: fit-content;
-		opacity: 0;
 		list-style: none;
 		position: absolute;
+		@include menuAnim(0, 0, .4s, 5%);
 
 		>li {
 			font-size: 35px;
@@ -299,13 +312,7 @@ nav>ul {
 		left: 15%;
 		list-style: none;
 		position: absolute;
-
-		opacity: 0;
-		transform: translateY(40%);
-		transition-duration: .4s;
-		transition-delay: 0;
-		transition-timing-function: cubic-bezier(.694, .048, .335, 1);
-
+		@include menuAnim(0, 0, .4s, 40%);
 
 		>li {
 			display: inline;
@@ -317,14 +324,6 @@ nav>ul {
 		}
 	}
 
-	@mixin menuAnim($opacity, $delay, $duration, $translate) {
-		opacity: $opacity;
-		transform: translateY($translate);
-		transition-duration: $duration;
-		transition-delay: $delay;
-		transition-timing-function: cubic-bezier(.694, .048, .335, 1);
-	}
-
 	.xIconAppear {
 		transform: scale(1.4, 1.4) translateY(0);
 		opacity: 1;
@@ -332,46 +331,21 @@ nav>ul {
 		transition-duration: .4s;
 	}
 
-
 	.menuAppear {
 		@include menuAnim(1, .7s, .4s, -5%);
-	}
-
-	.menuDisappear {
-		@include menuAnim(0, 0, .4s, 5%);
 	}
 
 	.contactMenuAppear {
 		@include menuAnim(1, .7s, .4s, -40%);
 	}
-
-	.contactMenuDisappear {
-		@include menuAnim(0, 0, .4s, 40%);
-	}
-}
-
-@mixin anim($delay, $duration, $translate) {
-	visibility: visible;
-	transform: translate($translate);
-	transition-duration: $duration;
-	transition-delay: $delay;
-	transition-timing-function: cubic-bezier(.694, .048, .335, 1);
 }
 
 .toogleAnimation {
-	@include anim(0, .4s, 100vw);
+	@include anim(0s, .4s, 100vw);
 }
 
 .toogleAnimation1 {
 	@include anim(.3s, .5s, 100vw);
-}
-
-.unToogleAnimation {
-	@include anim(.4s, .5s, 0);
-}
-
-.unToogleAnimation1 {
-	@include anim(.4s, .3s, 0);
 }
 
 @media only screen and (max-width: 800px) {
