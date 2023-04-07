@@ -31,7 +31,7 @@ function toggle() {
     document.querySelector(".contactIcons").classList.remove("contactMenuDisappear")
     document.querySelector(".contactIcons").classList.add("contactMenuAppear")
 
-    document.querySelector(".xIcon").classList.remove("xIconDisappear")
+    // document.querySelector(".xIcon").classList.remove("xIconDisappear")
     document.querySelector(".xIcon").classList.add("xIconAppear")
 
     window.scrollTo(0, 0);
@@ -44,6 +44,6 @@ function unToggle() {
 
     document.querySelector(".burgerNav").classList.replace("menuAppear", "menuDisappear");
     document.querySelector(".contactIcons").classList.replace("contactMenuAppear", "contactMenuDisappear"); 
-    document.querySelector(".xIcon").classList.replace("xIconAppear", "xIconDisappear"); 
+    document.querySelector(".xIcon").classList.remove("xIconAppear"); 
     document.body.style.overflow = null;
 }
