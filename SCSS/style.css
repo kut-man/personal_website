@@ -47,7 +47,7 @@ body > .mainPage .contactIcons {
 body > .mainPage .contactIcons > li {
   display: inline;
 }
-body > .mainPage .contactIcons > li > svg {
+body > .mainPage .contactIcons > li a > svg {
   fill: #b0b2c3;
   width: 25px;
 }
