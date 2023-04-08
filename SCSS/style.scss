@@ -374,7 +374,6 @@ nav>ul {
 		height: 500px;
 		overflow: hidden;
 		box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .45);
-		;
 
 		>img {
 			width: inherit;
@@ -382,6 +381,7 @@ nav>ul {
 			object-fit: cover;
 			position: absolute;
 			z-index: -2;
+			transform: translateY(-120%);
 		}
 
 		&::after {
@@ -391,8 +391,25 @@ nav>ul {
 			height: 120%;
 			background-color: rgba(28, 29, 37, 0.6);
 			position: relative;
-			bottom: 50%;
+			bottom: 170%;
 			z-index: -1;
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			width: 0;
+			height: 120%;
+			background: linear-gradient(270deg,#235aa6,#101b3b);
+			position: relative;
+			opacity: .7;
+			transition-duration: .4s;
+			transition-property: width;
+		}
+
+		&:hover::before {
+			width: 100%;
+			transition-duration: .4s;
 		}
 
 		>h5 {
@@ -401,7 +418,7 @@ nav>ul {
 			font-size: 4em;
 			position: relative;
 			left: 10%;
-			top: 16vw;
+			bottom: 6em;
 			display: inline;
 		}
 
@@ -409,17 +426,17 @@ nav>ul {
 			color: white;
 			font-family: LibreBaskerville-Regular;
 			font-style: italic;
-			font-size: 1.5em;
+			font-size: 1.4em;
 			position: relative;
 			left: 10%;
-			top: 15vw;
+			bottom: 17em;
 		}
 
 		>.aboutMeButton {
 			margin: 0;
 			width: 150px;
 			position: relative;
-			top: 15vw;
+			bottom: 19em;
 			left: 10%;
 			display: inline-block;
 
@@ -432,7 +449,7 @@ nav>ul {
 			width: 40px;
 			fill: white;
 			position: relative;
-			top: 15vw;
+			bottom: 23.8em;
 			left: 8%;
 			transform: translate(0);
 			transition: ease-in-out .5s;
@@ -445,8 +462,20 @@ nav>ul {
 		width: 800px;
 		height: 450px;
 
+		>h5 {
+			bottom: 5em;
+		}
+
+		>p {
+			bottom: 15em;
+		}
+
+		>.aboutMeButton {
+			bottom: 16em;
+		}
+
 		>svg {
-			left: 7%;
+			bottom: 20em;
 		}
 	}
 }
@@ -464,6 +493,7 @@ nav>ul {
 
 		>h5 {
 			font-size: 3em;
+			bottom: 6.7em;
 		}
 	}
 }
@@ -487,10 +517,24 @@ nav>ul {
 
 		>h5 {
 			font-size: 2em;
+			bottom: 8em;
 		}
 
 		>svg {
-			left: 6%;
+			left: 7%;
+		}
+
+		>p {
+			bottom: 16em;
+			font-size: 1em;
+		}
+
+		>.aboutMeButton {
+			bottom: 13em;
+		}
+
+		>svg {
+			bottom: 16.3em;
 		}
 	}
 }
@@ -500,7 +544,7 @@ nav>ul {
 		height: 340px;
 		width: 85vw;
 		&::after {
-			bottom: 60%;
+			bottom: 160%;
 		}
 	}
 
@@ -537,15 +581,24 @@ nav>ul {
 		width: 90vw;
 
 		&::after {
-			bottom: 80%;
+			bottom: 170%;
 		}
 
 		>h5 {
-			font-size: 2em;
+			font-size: 1.7em;
+		}
+
+		>p {
+			bottom: 14em;
+		}
+
+		>.aboutMeButton {
+			bottom: 11em;
 		}
 
 		>svg {
 			left: 5%;
+			bottom: 14em;
 		}
 	}
 }

@@ -335,6 +335,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   object-fit: cover;
   position: absolute;
   z-index: -2;
+  transform: translateY(-120%);
 }
 .projectsContainer > .firstProjectContainer::after {
   content: "";
@@ -343,8 +344,23 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   height: 120%;
   background-color: rgba(28, 29, 37, 0.6);
   position: relative;
-  bottom: 50%;
+  bottom: 170%;
   z-index: -1;
+}
+.projectsContainer > .firstProjectContainer::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 120%;
+  background: linear-gradient(270deg, #235aa6, #101b3b);
+  position: relative;
+  opacity: .7;
+  transition-duration: .4s;
+  transition-property: width;
+}
+.projectsContainer > .firstProjectContainer:hover::before {
+  width: 100%;
+  transition-duration: .4s;
 }
 .projectsContainer > .firstProjectContainer > h5 {
   color: white;
@@ -352,23 +368,23 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   font-size: 4em;
   position: relative;
   left: 10%;
-  top: 16vw;
+  bottom: 6em;
   display: inline;
 }
 .projectsContainer > .firstProjectContainer > p {
   color: white;
   font-family: LibreBaskerville-Regular;
   font-style: italic;
-  font-size: 1.5em;
+  font-size: 1.4em;
   position: relative;
   left: 10%;
-  top: 15vw;
+  bottom: 17em;
 }
 .projectsContainer > .firstProjectContainer > .aboutMeButton {
   margin: 0;
   width: 150px;
   position: relative;
-  top: 15vw;
+  bottom: 19em;
   left: 10%;
   display: inline-block;
 }
@@ -379,7 +395,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   width: 40px;
   fill: white;
   position: relative;
-  top: 15vw;
+  bottom: 23.8em;
   left: 8%;
   transform: translate(0);
   transition: ease-in-out .5s;
@@ -390,8 +406,17 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
     width: 800px;
     height: 450px;
   }
+  .projectsContainer > .firstProjectContainer > h5 {
+    bottom: 5em;
+  }
+  .projectsContainer > .firstProjectContainer > p {
+    bottom: 15em;
+  }
+  .projectsContainer > .firstProjectContainer > .aboutMeButton {
+    bottom: 16em;
+  }
   .projectsContainer > .firstProjectContainer > svg {
-    left: 7%;
+    bottom: 20em;
   }
 }
 @media only screen and (max-width: 1000px) {
@@ -406,6 +431,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   }
   .projectsContainer > .firstProjectContainer > h5 {
     font-size: 3em;
+    bottom: 6.7em;
   }
 }
 @media only screen and (max-width: 800px) {
@@ -424,9 +450,20 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   }
   .projectsContainer > .firstProjectContainer > h5 {
     font-size: 2em;
+    bottom: 8em;
   }
   .projectsContainer > .firstProjectContainer > svg {
-    left: 6%;
+    left: 7%;
+  }
+  .projectsContainer > .firstProjectContainer > p {
+    bottom: 16em;
+    font-size: 1em;
+  }
+  .projectsContainer > .firstProjectContainer > .aboutMeButton {
+    bottom: 13em;
+  }
+  .projectsContainer > .firstProjectContainer > svg {
+    bottom: 16.3em;
   }
 }
 @media only screen and (max-width: 660px) {
@@ -435,7 +472,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
     width: 85vw;
   }
   .projectsContainer > .firstProjectContainer::after {
-    bottom: 60%;
+    bottom: 160%;
   }
 
   nav > .logo {
@@ -464,13 +501,20 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
     width: 90vw;
   }
   .projectsContainer > .firstProjectContainer::after {
-    bottom: 80%;
+    bottom: 170%;
   }
   .projectsContainer > .firstProjectContainer > h5 {
-    font-size: 2em;
+    font-size: 1.7em;
+  }
+  .projectsContainer > .firstProjectContainer > p {
+    bottom: 14em;
+  }
+  .projectsContainer > .firstProjectContainer > .aboutMeButton {
+    bottom: 11em;
   }
   .projectsContainer > .firstProjectContainer > svg {
     left: 5%;
+    bottom: 14em;
   }
 }
 
