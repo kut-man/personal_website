@@ -44,6 +44,29 @@ body {
 		font-family: $font-family_1;
 		overflow: hidden;
 
+		.contactIcons {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			padding: 0 0 0 20px;
+			height: 250px;
+			width: fit-content;
+			top: 30%;
+			right: 1%;
+			list-style: none;
+			position: absolute;
+	
+			>li {
+				display: inline;
+	
+				>svg {
+					fill: $grayish;
+					width: 25px;
+				}
+			}
+		}
+
 		.backgroundLogo {
 			height: 330px;
 			width: 330px;
@@ -374,6 +397,8 @@ nav>ul {
 		height: 500px;
 		overflow: hidden;
 		box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .45);
+		transition-duration: .3s;
+		transition-property: box-shadow;
 
 		>img {
 			width: inherit;
@@ -400,16 +425,12 @@ nav>ul {
 			display: block;
 			width: 0;
 			height: 120%;
-			background: linear-gradient(270deg,#235aa6,#101b3b);
+			background: linear-gradient(270deg, rgba(35, 90, 166, .9), rgba(3, 6, 14, 0.9));
 			position: relative;
-			opacity: .7;
+			opacity: .9;
 			transition-duration: .4s;
 			transition-property: width;
-		}
-
-		&:hover::before {
-			width: 100%;
-			transition-duration: .4s;
+			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
 		}
 
 		>h5 {
@@ -420,6 +441,7 @@ nav>ul {
 			left: 10%;
 			bottom: 6em;
 			display: inline;
+			transition-duration: .3s;
 		}
 
 		>p {
@@ -429,7 +451,8 @@ nav>ul {
 			font-size: 1.4em;
 			position: relative;
 			left: 10%;
-			bottom: 17em;
+			bottom: 17em; 
+			transition-duration: .3s;
 		}
 
 		>.aboutMeButton {
@@ -483,6 +506,34 @@ nav>ul {
 @media only screen and (max-width: 1000px) {
 	.projectsContainer>.firstProjectContainer {
 		width: 770px;
+	}
+}
+
+@media only screen and (min-width: 1000px) {
+	.projectsContainer>.firstProjectContainer {
+
+		&:hover::before {
+			width: 100%;
+			transition-duration: .4s;
+			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+		}
+
+		&:hover {
+			transition-duration: .3s;
+			box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .9);
+		}
+
+		&:hover>h5 {
+			transition-duration: .4s;
+			transition-delay: .3s;
+			font-size: 4.2em;
+		}
+
+		&:hover p {
+			transition-duration: .4s;
+			transition-delay: .3s;
+			font-size: 1.5em;
+		}
 	}
 }
 
@@ -543,6 +594,7 @@ nav>ul {
 	.projectsContainer>.firstProjectContainer {
 		height: 340px;
 		width: 85vw;
+
 		&::after {
 			bottom: 160%;
 		}
@@ -569,9 +621,14 @@ nav>ul {
 		}
 	}
 
-	body>.mainPage>.backgroundLogo {
-		width: 50vw;
-		height: 50vw;
+	body>.mainPage {
+		>.backgroundLogo{
+			width: 50vw;
+			height: 50vw;
+		}
+		>.contactIcons {
+			display: none;
+		}
 	}
 }
 

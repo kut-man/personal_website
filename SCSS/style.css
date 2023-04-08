@@ -31,6 +31,26 @@ body > .mainPage {
   font-family: "League Spartan", sans-serif;
   overflow: hidden;
 }
+body > .mainPage .contactIcons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 0 0 20px;
+  height: 250px;
+  width: fit-content;
+  top: 30%;
+  right: 1%;
+  list-style: none;
+  position: absolute;
+}
+body > .mainPage .contactIcons > li {
+  display: inline;
+}
+body > .mainPage .contactIcons > li > svg {
+  fill: #b0b2c3;
+  width: 25px;
+}
 body > .mainPage .backgroundLogo {
   height: 330px;
   width: 330px;
@@ -328,6 +348,8 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   height: 500px;
   overflow: hidden;
   box-shadow: 0 20px 80px 0 rgba(0, 0, 0, 0.45);
+  transition-duration: .3s;
+  transition-property: box-shadow;
 }
 .projectsContainer > .firstProjectContainer > img {
   width: inherit;
@@ -352,15 +374,12 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   display: block;
   width: 0;
   height: 120%;
-  background: linear-gradient(270deg, #235aa6, #101b3b);
+  background: linear-gradient(270deg, rgba(35, 90, 166, 0.9), rgba(3, 6, 14, 0.9));
   position: relative;
-  opacity: .7;
+  opacity: .9;
   transition-duration: .4s;
   transition-property: width;
-}
-.projectsContainer > .firstProjectContainer:hover::before {
-  width: 100%;
-  transition-duration: .4s;
+  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 .projectsContainer > .firstProjectContainer > h5 {
   color: white;
@@ -370,6 +389,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   left: 10%;
   bottom: 6em;
   display: inline;
+  transition-duration: .3s;
 }
 .projectsContainer > .firstProjectContainer > p {
   color: white;
@@ -379,6 +399,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   position: relative;
   left: 10%;
   bottom: 17em;
+  transition-duration: .3s;
 }
 .projectsContainer > .firstProjectContainer > .aboutMeButton {
   margin: 0;
@@ -422,6 +443,27 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
 @media only screen and (max-width: 1000px) {
   .projectsContainer > .firstProjectContainer {
     width: 770px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .projectsContainer > .firstProjectContainer:hover::before {
+    width: 100%;
+    transition-duration: .4s;
+    transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
+  }
+  .projectsContainer > .firstProjectContainer:hover {
+    transition-duration: .3s;
+    box-shadow: 0 20px 80px 0 rgba(0, 0, 0, 0.9);
+  }
+  .projectsContainer > .firstProjectContainer:hover > h5 {
+    transition-duration: .4s;
+    transition-delay: .3s;
+    font-size: 4.2em;
+  }
+  .projectsContainer > .firstProjectContainer:hover p {
+    transition-duration: .4s;
+    transition-delay: .3s;
+    font-size: 1.5em;
   }
 }
 @media only screen and (max-width: 900px) {
@@ -493,6 +535,9 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   body > .mainPage > .backgroundLogo {
     width: 50vw;
     height: 50vw;
+  }
+  body > .mainPage > .contactIcons {
+    display: none;
   }
 }
 @media only screen and (max-width: 400px) {
