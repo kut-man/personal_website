@@ -286,7 +286,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
 .toggleContainer > .contactIcons > li {
   display: inline;
 }
-.toggleContainer > .contactIcons > li > svg {
+.toggleContainer > .contactIcons > li a > svg {
   fill: white;
   width: 30px;
 }
@@ -344,6 +344,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   font-size: 2.7em;
 }
 .projectsContainer > .firstProjectContainer {
+  display: inline-block;
   width: 950px;
   height: 500px;
   overflow: hidden;
@@ -366,7 +367,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   height: 120%;
   background-color: rgba(28, 29, 37, 0.6);
   position: relative;
-  bottom: 170%;
+  bottom: 280%;
   z-index: -1;
 }
 .projectsContainer > .firstProjectContainer::before {
@@ -405,8 +406,8 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   margin: 0;
   width: 150px;
   position: relative;
-  bottom: 19em;
   left: 10%;
+  bottom: 18em;
   display: inline-block;
 }
 .projectsContainer > .firstProjectContainer > .aboutMeButton:hover ~ svg {
@@ -416,10 +417,25 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   width: 40px;
   fill: white;
   position: relative;
-  bottom: 23.8em;
+  bottom: 22.6em;
   left: 8%;
   transform: translate(0);
   transition: ease-in-out .5s;
+}
+.projectsContainer > .firstProjectContainer > .revealer {
+  width: 120%;
+  height: 530px;
+  background: linear-gradient(270deg, #235aa6, #101b3b);
+  position: relative;
+  bottom: 160%;
+  left: 0%;
+}
+.projectsContainer > .firstProjectContainer > .revealer.show {
+  width: 0;
+  left: 100%;
+  transition-duration: 1s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 
 @media only screen and (max-width: 1200px) {
@@ -437,7 +453,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
     bottom: 16em;
   }
   .projectsContainer > .firstProjectContainer > svg {
-    bottom: 20em;
+    bottom: 20.1em;
   }
 }
 @media only screen and (max-width: 1000px) {
@@ -474,6 +490,12 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   .projectsContainer > .firstProjectContainer > h5 {
     font-size: 3em;
     bottom: 6.7em;
+  }
+  .projectsContainer > .firstProjectContainer::after {
+    bottom: 300%;
+  }
+  .projectsContainer > .firstProjectContainer > .revealer {
+    left: 73%;
   }
 }
 @media only screen and (max-width: 800px) {
@@ -514,7 +536,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
     width: 85vw;
   }
   .projectsContainer > .firstProjectContainer::after {
-    bottom: 160%;
+    bottom: 330%;
   }
 
   nav > .logo {
@@ -546,7 +568,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
     width: 90vw;
   }
   .projectsContainer > .firstProjectContainer::after {
-    bottom: 170%;
+    bottom: 360%;
   }
   .projectsContainer > .firstProjectContainer > h5 {
     font-size: 1.7em;
@@ -559,7 +581,7 @@ nav > ul > li:hover::after, nav > ul > li:hover::before {
   }
   .projectsContainer > .firstProjectContainer > svg {
     left: 5%;
-    bottom: 14em;
+    bottom: 13.8em;
   }
 }
 

@@ -20,7 +20,7 @@ window.addEventListener("mousemove", ParallaxEffect)
 
 function toggle() {
     document.querySelector(".burgerNav").classList.toggle("menuAppear");
-    document.querySelector(".contactIcons").classList.toggle("contactMenuAppear")
+    document.querySelector(".toggleContainer>.contactIcons").classList.toggle("contactMenuAppear")
     document.querySelector(".xIcon").classList.toggle("xIconAppear")
     document.querySelector(".mainToggleContainer").classList.toggle("toogleAnimation")
     document.querySelector(".toggleContainer").classList.toggle("toogleAnimation1")
@@ -33,3 +33,19 @@ function toggle() {
         document.body.style.overflow = null;
     }
 }
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            console.log(`.${entry.target.className}>revealer`);
+            document.querySelector(`.${entry.target.className}>.revealer`).classList.add("show")
+        }
+        else {
+            document.querySelector(`.${entry.target.className}>.revealer`).classList.remove("show")
+        }
+    })
+})
+
+const hiddenElements = document.querySelectorAll('.firstProjectContainer');
+console.log(hiddenElements);
+hiddenElements.forEach((el) => observer.observe(el));

@@ -56,10 +56,10 @@ body {
 			right: 1%;
 			list-style: none;
 			position: absolute;
-	
+
 			>li {
 				display: inline;
-	
+
 				a>svg {
 					fill: $grayish;
 					width: 25px;
@@ -341,7 +341,7 @@ nav>ul {
 		>li {
 			display: inline;
 
-			>svg {
+			a>svg {
 				fill: white;
 				width: 30px;
 			}
@@ -393,6 +393,7 @@ nav>ul {
 	}
 
 	>.firstProjectContainer {
+		display: inline-block;
 		width: 950px;
 		height: 500px;
 		overflow: hidden;
@@ -416,7 +417,7 @@ nav>ul {
 			height: 120%;
 			background-color: rgba(28, 29, 37, 0.6);
 			position: relative;
-			bottom: 170%;
+			bottom: 280%;
 			z-index: -1;
 		}
 
@@ -451,7 +452,7 @@ nav>ul {
 			font-size: 1.4em;
 			position: relative;
 			left: 10%;
-			bottom: 17em; 
+			bottom: 17em;
 			transition-duration: .3s;
 		}
 
@@ -459,8 +460,8 @@ nav>ul {
 			margin: 0;
 			width: 150px;
 			position: relative;
-			bottom: 19em;
 			left: 10%;
+			bottom: 18em;
 			display: inline-block;
 
 			&:hover~svg {
@@ -472,13 +473,32 @@ nav>ul {
 			width: 40px;
 			fill: white;
 			position: relative;
-			bottom: 23.8em;
+			bottom: 22.6em;
 			left: 8%;
 			transform: translate(0);
 			transition: ease-in-out .5s;
 		}
+
+		>.revealer {
+			width: 120%;
+			height: 530px;
+			background: linear-gradient(270deg,#235aa6,#101b3b);
+			position: relative;
+			bottom: 160%;
+			left: 0%;
+
+			&.show {
+				width: 0;
+				left: 100%;
+				transition-duration: 1s;
+				transition-property: all;
+				transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+			}
+		}
 	}
 }
+
+
 
 @media only screen and (max-width: 1200px) {
 	.projectsContainer>.firstProjectContainer {
@@ -498,7 +518,7 @@ nav>ul {
 		}
 
 		>svg {
-			bottom: 20em;
+			bottom: 20.1em;
 		}
 	}
 }
@@ -511,7 +531,6 @@ nav>ul {
 
 @media only screen and (min-width: 1000px) {
 	.projectsContainer>.firstProjectContainer {
-
 		&:hover::before {
 			width: 100%;
 			transition-duration: .4s;
@@ -545,6 +564,14 @@ nav>ul {
 		>h5 {
 			font-size: 3em;
 			bottom: 6.7em;
+		}
+
+		&::after {
+			bottom: 300%;
+		}
+
+		>.revealer {
+			left: 73%;
 		}
 	}
 }
@@ -596,7 +623,7 @@ nav>ul {
 		width: 85vw;
 
 		&::after {
-			bottom: 160%;
+			bottom: 330%;
 		}
 	}
 
@@ -622,10 +649,11 @@ nav>ul {
 	}
 
 	body>.mainPage {
-		>.backgroundLogo{
+		>.backgroundLogo {
 			width: 50vw;
 			height: 50vw;
 		}
+
 		>.contactIcons {
 			display: none;
 		}
@@ -638,7 +666,7 @@ nav>ul {
 		width: 90vw;
 
 		&::after {
-			bottom: 170%;
+			bottom: 360%;
 		}
 
 		>h5 {
@@ -655,7 +683,7 @@ nav>ul {
 
 		>svg {
 			left: 5%;
-			bottom: 14em;
+			bottom: 13.8em;
 		}
 	}
 }
