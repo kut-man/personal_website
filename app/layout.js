@@ -15,9 +15,9 @@ const spartan = League_Spartan({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={spartan.variable}>
         
-        <nav className={spartan.variable}>
+        <nav>
 
           <img
             className="logo"

@@ -1,6 +1,7 @@
 $grayish: rgb(176, 178, 195);
 $blue: rgb(35, 90, 166);
 $red: rgb(242, 87, 87);
+$spartan: var(--font-spartan);
 
 @keyframes navHover {
 	0% {
@@ -26,7 +27,7 @@ $red: rgb(242, 87, 87);
 
 * {
 	box-sizing: border-box;
-	font-family: var(--font-spartan);
+	font-family: $spartan;
 }
 
 body{
@@ -109,6 +110,29 @@ nav>ul {
 				animation-fill-mode: forwards;
 				animation-timing-function: cubic-bezier(.694, .048, .335, 1);
 			}
+		}
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	nav {
+		padding: 0 5% 0 5%;
+	}
+}
+
+@media only screen and (max-width: 660px) {
+	nav {
+		>.logo {
+			height: 55px;
+			width: 55px;
+		}
+
+		>ul {
+			display: none;
+		}
+
+		span {
+			display: inline;
 		}
 	}
 }

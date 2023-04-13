@@ -1,0 +1,269 @@
+$baskerville: var(--font-baskerville);
+
+.projectsContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	>h6 {
+		margin-top: 90px;
+		color: #b19386;
+		font-size: 1em;
+		font-family: $baskerville;
+	}
+
+	>h4 {
+		margin-top: 0;
+		color: #4a4a4a;
+		font-size: 2.7em;
+	}
+
+	>.firstProjectContainer {
+		display: inline-block;
+		width: 950px;
+		height: 500px;
+		overflow: hidden;
+		box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .45);
+		transition-duration: .3s;
+		transition-property: box-shadow;
+
+		>img {
+			width: inherit;
+			height: inherit;
+			object-fit: cover;
+			position: absolute;
+			z-index: -2;
+			transform: translateY(-120%);
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 120%;
+			background-color: rgba(28, 29, 37, 0.6);
+			position: relative;
+			bottom: 280%;
+			z-index: -1;
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			width: 0;
+			height: 120%;
+			background: linear-gradient(270deg, rgba(35, 90, 166, .9), rgba(3, 6, 14, 0.9));
+			position: relative;
+			opacity: .9;
+			transition-duration: .4s;
+			transition-property: width;
+			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+		}
+
+		>h5 {
+			color: white;
+			font-size: 4em;
+			position: relative;
+			left: 10%;
+			bottom: 6em;
+			display: inline;
+			transition-duration: .3s;
+		}
+
+		>p {
+			color: white;
+			font-family: LibreBaskerville-Regular;
+			font-style: italic;
+			font-size: 1.4em;
+			position: relative;
+			left: 10%;
+			bottom: 17em;
+			transition-duration: .3s;
+		}
+
+		>.aboutMeButton {
+			margin: 0;
+			width: 150px;
+			position: relative;
+			left: 10%;
+			bottom: 18em;
+			display: inline-block;
+
+			&:hover~svg {
+				transform: translate(20%);
+			}
+		}
+
+		>svg {
+			width: 40px;
+			fill: white;
+			position: relative;
+			bottom: 22.6em;
+			left: 8%;
+			transform: translate(0);
+			transition: ease-in-out .5s;
+		}
+
+		>.revealer {
+			width: 120%;
+			height: 530px;
+			background: linear-gradient(270deg,#235aa6,#101b3b);
+			position: relative;
+			bottom: 160%;
+			left: 0%;
+
+			&.show {
+				width: 0;
+				left: 100%;
+				transition-duration: 1s;
+				transition-property: all;
+				transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.projectsContainer>.firstProjectContainer {
+		width: 800px;
+		height: 450px;
+
+		>h5 {
+			bottom: 5em;
+		}
+
+		>p {
+			bottom: 15em;
+		}
+
+		>.aboutMeButton {
+			bottom: 16em;
+		}
+
+		>svg {
+			bottom: 20.1em;
+		}
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.projectsContainer>.firstProjectContainer {
+		width: 770px;
+	}
+}
+
+@media only screen and (min-width: 1000px) {
+	.projectsContainer>.firstProjectContainer {
+		&:hover::before {
+			width: 100%;
+			transition-duration: .4s;
+			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+		}
+
+		&:hover {
+			transition-duration: .3s;
+			box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .9);
+		}
+
+		&:hover>h5 {
+			transition-duration: .4s;
+			transition-delay: .3s;
+			font-size: 4.2em;
+		}
+
+		&:hover p {
+			transition-duration: .4s;
+			transition-delay: .3s;
+			font-size: 1.5em;
+		}
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.projectsContainer>.firstProjectContainer {
+		height: 420px;
+		width: 80vw;
+
+		>h5 {
+			font-size: 3em;
+			bottom: 6.7em;
+		}
+
+		&::after {
+			bottom: 300%;
+		}
+
+		>.revealer {
+			left: 73%;
+		}
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.projectsContainer>.firstProjectContainer {
+		height: 420px;
+		width: 80vw;
+
+		>h5 {
+			font-size: 2em;
+			bottom: 8em;
+		}
+
+		>svg {
+			left: 7%;
+		}
+
+		>p {
+			bottom: 16em;
+			font-size: 1em;
+		}
+
+		>.aboutMeButton {
+			bottom: 13em;
+		}
+
+		>svg {
+			bottom: 16.3em;
+		}
+	}
+}
+
+@media only screen and (max-width: 660px) {
+	.projectsContainer>.firstProjectContainer {
+		height: 340px;
+		width: 85vw;
+
+		&::after {
+			bottom: 330%;
+		}
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.projectsContainer>.firstProjectContainer {
+		height: 290px;
+		width: 90vw;
+
+		&::after {
+			bottom: 360%;
+		}
+
+		>h5 {
+			font-size: 1.7em;
+		}
+
+		>p {
+			bottom: 14em;
+		}
+
+		>.aboutMeButton {
+			bottom: 11em;
+		}
+
+		>svg {
+			left: 5%;
+			bottom: 13.8em;
+		}
+	}
+}
