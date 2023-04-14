@@ -38,21 +38,6 @@ export default function Home() {
 
         </div>
 
-        <div className={styles.mainToggleContainer}></div>
-        <div className={styles.toggleContainer}>
-          
-          <div className={styles.xIcon}></div>
-
-          <ul className={styles.burgerNav}>
-            <li>Home</li>
-            <li>Case Studies</li>
-            <li>Experiments</li>
-            <li>Contact</li>
-          </ul>
-
-          <ContactIcons />
-
-        </div>
       </main>
 
       <Projects />
