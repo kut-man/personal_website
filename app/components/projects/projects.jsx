@@ -13,18 +13,11 @@ const Projects = () => {
     });
 
     useEffect(() => {
-        if (inView) {
-            setIsInView(true);
-        }
+        inView ? setIsInView(true) : setIsInView(false);
     }, [inView]);
 
-
-
     return (
-        <div className={styles.projectsContainer}>
-
-
-
+        <div ref={ref} className={styles.projectsContainer}>
             <h6>CASE STUDIES</h6>
             <h4>Latest Works</h4>
             <div className={styles.firstProjectContainer}>
@@ -37,7 +30,7 @@ const Projects = () => {
                         d="M405.606 167.5l-21.212 21.213 34.393 34.393H0v30h418.787L384.394 287.5l21.212 21.213 70.607-70.607">
                     </path>
                 </svg>
-                <div className={`${styles.revealer} ${isInView ? 'is-in-view' : ''}`} ref={ref}></div>
+                <div className={`${isInView ? styles.show : ''} ${styles.revealer}`} ></div>
             </div>
         </div>
     )
