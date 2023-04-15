@@ -8,18 +8,17 @@ const Navbar = () => {
 
     const [toggled, setToggled] = useState(false);
 
-    function toggle() {
-        document.querySelector(".toggleContainer>.contactIcons").classList.toggle("contactMenuAppear")
-    
-        if (document.querySelector(".xIcon").classList.contains("xIconAppear")) {
-            window.scrollTo(0, 0);
-            document.body.style.overflow = "hidden";
-        }
-        else {
-            document.body.style.overflow = null;
-        }
+    function appear() {
+        window.scrollTo(0, 0);
+        document.body.style.overflow = "hidden";
+        setToggled(true)
     }
-    
+
+    function disappear() {
+        document.body.style.overflow = null;
+        setToggled(false)
+    }
+
     return (
         <nav className={styles.nav}>
 
@@ -41,25 +40,25 @@ const Navbar = () => {
                 </li>
             </ul>
 
-            <span onClick={() => setToggled(true)}>
+            <span onClick={appear}>
                 <div style={{ width: 45 }} />
                 <div style={{ width: 35, transform: "translate(10px)" }} />
                 <div style={{ width: 25, transform: "translate(20px)" }} />
             </span>
 
-            <div className={`${styles.mainToggleContainer} ${toggled ? styles.toogleAnimation: ''}`}></div>
-            <div className={`${styles.toggleContainer} ${toggled ? styles.toogleAnimation1: ''}`}>
+            <div className={`${styles.mainToggleContainer} ${toggled ? styles.toogleAnimation : ''}`}></div>
+            <div className={`${styles.toggleContainer} ${toggled ? styles.toogleAnimation1 : ''}`}>
 
-                <div onClick={() => setToggled(false)} className={`${styles.xIcon} ${toggled ? styles.xIconAppear: ''}`}></div>
+                <div onClick={disappear} className={`${styles.xIcon} ${toggled ? styles.xIconAppear : ''}`}></div>
 
-                <ul className={`${styles.burgerNav} ${toggled ? styles.menuAppear: ''}`}>
+                <ul className={`${styles.burgerNav} ${toggled ? styles.menuAppear : ''}`}>
                     <li>Home</li>
                     <li>Case Studies</li>
                     <li>Experiments</li>
                     <li>Contact</li>
                 </ul>
 
-                <ContactIcons />
+                <ContactIcons props={{ nav: true, toggled: toggled }} />
 
             </div>
 

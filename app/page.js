@@ -30,7 +30,7 @@ export default function Home() {
 
           </div>
 
-          <ContactIcons />
+          <ContactIcons props={{nav: false}} />
 
           <img className={styles.backgroundLogo} alt="Logo"
             src="https://user-images.githubusercontent.com/73386100/231491201-77f9d1d4-ead5-434f-9959-bb07b9bf0369.png">
@@ -40,7 +40,7 @@ export default function Home() {
 
       </main>
 
-      <Projects />
+      <Projects nav={false} />
 
     </>
 

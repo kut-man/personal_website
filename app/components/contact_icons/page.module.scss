@@ -1,17 +1,20 @@
 $grayish: rgb(176, 178, 195);
 
-.contactIcons {
+
+@mixin icons($direction) {
 	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
-	padding: 0 0 0 20px;
-	height: 250px;
-	width: fit-content;
-	top: 30%;
-	right: 1%;
-	list-style: none;
 	position: absolute;
+	justify-content: space-between;
+	flex-direction: $direction;
+	list-style: none;
+}
+
+.contactIcons {
+	@include icons(column);
+	padding: 0;
+	height: 250px;
+	top: 30%;
+	right: 2%;
 
 	>li {
 		display: inline;
@@ -24,26 +27,36 @@ $grayish: rgb(176, 178, 195);
 	}
 }
 
-@media only screen and (max-width: 660px) {
-	.contactIcons {
-		opacity: 0;
-		transform: translateY(40%);
-		transition-duration: .4s;
-		transition-delay: 0;
-		transition-timing-function: cubic-bezier(.694, .048, .335, 1);
-		transition-property: opacity, transform;
-		flex-direction: row;
-		width: 300px;
-		top: 90%;
-		left: 15%;
-		display: none;
-	
-		>li>a>svg {
-			fill: white;
-			width: 30px;
-			height: 30px;
-		}
+.navContactIcons {
+	@include icons(row);
+	width: 300px;
+	top: 90%;
+	left: 15%;
+	opacity: 0;
+	transform: translateY(40%);
+	transition-duration: .4s;
+	transition-delay: 0;
+	transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+	transition-property: opacity, transform;
+
+	>li>a>svg {
+		fill: white;
+		width: 30px;
+		height: 30px;
 	}
-	
 }
 
+.contactMenuAppear {
+	opacity: 1;
+	transform: translateY(-40%);
+	transition-duration: .4s;
+	transition-delay: .7s;
+	transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+}
+
+
+@media only screen and (max-width: 660px) {
+	.contactIcons {
+		display: none;
+	}
+}

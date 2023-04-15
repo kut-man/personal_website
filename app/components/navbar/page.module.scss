@@ -2,13 +2,9 @@ $grayish: rgb(176, 178, 195);
 $blue: rgb(35, 90, 166);
 $red: rgb(242, 87, 87);
 $spartan: var(--font-spartan);
-
-
 $font_white: white;
-$baskerville: var(--font-baskerville);
 $dark_blue: rgb(28, 29, 37);
 $dark_blue_gradient: linear-gradient(270deg, #235aa6, #101b3b);
-$red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 $light_gray: rgb(227, 216, 211);
 
 @keyframes navHover {
@@ -203,9 +199,7 @@ $light_gray: rgb(227, 216, 211);
 		@include menuAnim(1, .7s, .4s, -5%);
 	}
 
-	.contactMenuAppear {
-		@include menuAnim(1, .7s, .4s, -40%);
-	}
+
 }
 
 .toogleAnimation {
