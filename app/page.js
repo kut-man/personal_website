@@ -2,6 +2,7 @@ import styles from './page.module.scss'
 import { Libre_Baskerville } from 'next/font/google';
 import ContactIcons from './components/contact_icons/contact_icons';
 import Projects from './components/projects/projects';
+import Button from './components/button/button';
 
 const baskerville = Libre_Baskerville({
   weight: ["400"],
@@ -20,13 +21,7 @@ export default function Home() {
           <div className={styles.content}>
             <h1>Kutman Eshenkulov</h1>
             <p className={baskerville.variable}>Interactive Front-end Developer</p>
-            <div className={styles.aboutMeButton}>About Me</div>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 476.213 476.213">
-              <path
-                d="M405.606 167.5l-21.212 21.213 34.393 34.393H0v30h418.787L384.394 287.5l21.212 21.213 70.607-70.607">
-              </path>
-            </svg>
+            <Button/>
 
           </div>
 

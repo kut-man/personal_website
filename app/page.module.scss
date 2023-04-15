@@ -56,64 +56,9 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 		font-family: $baskerville;
 		margin-bottom: 45px;
 	}
-
-	>svg {
-		width: 40px;
-		fill: white;
-		position: relative;
-		top: -41px;
-		left: 130px;
-		transform: translate(0);
-		transition: ease-in-out .5s;
-	}
 }
 
-.aboutMeButton {
-	width: 140px;
-	background: $red_gradient;
-	height: 45px;
-	color: $font_white;
-	padding: 15px 25px 15px 25px;
-	font-size: 20px;
-	position: relative;
-	overflow: hidden;
-	cursor: pointer;
 
-	&::after,
-	&::before {
-		content: "";
-		display: inline-block;
-		position: absolute;
-		background: linear-gradient(270deg, #235aa6, #213777);
-		height: 50px;
-		width: 110px;
-		left: -115px;
-		top: 0;
-		transform: translate(0);
-		transition: ease-in-out .4s;
-	}
-
-	&::before {
-		background: $dark_blue_gradient;
-		width: 150px;
-		left: -155px;
-		transition: ease-in-out .5s;
-	}
-
-	&:hover {
-		&::after {
-			transform: translate(300%);
-		}
-
-		&::before {
-			transform: translate(270%);
-		}
-	}
-
-	&:hover~svg {
-		transform: translate(20%);
-	}
-}
 
 @media only screen and (max-width: 800px) {
 	.content {
