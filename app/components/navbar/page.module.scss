@@ -37,6 +37,11 @@ $light_gray: rgb(227, 216, 211);
 	height: 90px;
 	background-color: #1c1d25;
 
+	>.logo {
+		height: 80px;
+		width: 80px;
+	}
+
 	>span {
 		display: none;
 
@@ -45,11 +50,6 @@ $light_gray: rgb(227, 216, 211);
 			background-color: $grayish;
 			margin-bottom: 5px;
 		}
-	}
-
-	>.logo {
-		height: 80px;
-		width: 80px;
 	}
 }
 
@@ -109,14 +109,6 @@ $light_gray: rgb(227, 216, 211);
 	}
 }
 
-@mixin menuAnim($opacity, $delay, $duration, $translate) {
-	opacity: $opacity;
-	transform: translateY($translate);
-	transition-duration: $duration;
-	transition-delay: $delay;
-	transition-timing-function: cubic-bezier(.694, .048, .335, 1);
-}
-
 @mixin anim($delay, $duration, $translate) {
 	transform: translate($translate);
 	transition-duration: $duration;
@@ -136,7 +128,6 @@ $light_gray: rgb(227, 216, 211);
 }
 
 .toggleContainer {
-
 	position: absolute;
 	top: 0;
 	left: -100vw;
@@ -173,6 +164,14 @@ $light_gray: rgb(227, 216, 211);
 		}
 	}
 
+	@mixin menuAnim($opacity, $delay, $duration, $translate) {
+		opacity: $opacity;
+		transform: translateY($translate);
+		transition-duration: $duration;
+		transition-delay: $delay;
+		transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+	}
+
 	>.burgerNav {
 		top: 30%;
 		left: 15%;
@@ -198,8 +197,6 @@ $light_gray: rgb(227, 216, 211);
 	.menuAppear {
 		@include menuAnim(1, .7s, .4s, -5%);
 	}
-
-
 }
 
 .toogleAnimation {
@@ -227,7 +224,7 @@ $light_gray: rgb(227, 216, 211);
 			display: none;
 		}
 
-		span {
+		>span {
 			display: inline;
 		}
 	}

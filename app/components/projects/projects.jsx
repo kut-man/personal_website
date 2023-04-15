@@ -18,8 +18,10 @@ const Projects = () => {
 
     return (
         <div ref={ref} className={styles.projectsContainer}>
+
             <h6>CASE STUDIES</h6>
             <h4>Latest Works</h4>
+
             <div className={styles.firstProjectContainer}>
                 <img src="http://riccardozanutta.com/img/cerasa-work.jpg" alt="Project Image"></img>
                 <h5>Cerasa Redesing</h5>
@@ -32,6 +34,7 @@ const Projects = () => {
                 </svg>
                 <div className={`${isInView ? styles.show : ''} ${styles.revealer}`} ></div>
             </div>
+            
         </div>
     )
 }

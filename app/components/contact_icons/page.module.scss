@@ -1,12 +1,17 @@
 $grayish: rgb(176, 178, 195);
 
-
 @mixin icons($direction) {
 	display: flex;
 	position: absolute;
 	justify-content: space-between;
 	flex-direction: $direction;
 	list-style: none;
+}
+
+@mixin iconsTransition($translate) {
+	transform: translateY($translate);
+	transition-duration: .4s;
+	transition-timing-function: cubic-bezier(.694, .048, .335, 1);
 }
 
 .contactIcons {
@@ -33,10 +38,7 @@ $grayish: rgb(176, 178, 195);
 	top: 90%;
 	left: 15%;
 	opacity: 0;
-	transform: translateY(40%);
-	transition-duration: .4s;
-	transition-delay: 0;
-	transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+	@include iconsTransition(40%);
 	transition-property: opacity, transform;
 
 	>li>a>svg {
@@ -48,12 +50,9 @@ $grayish: rgb(176, 178, 195);
 
 .contactMenuAppear {
 	opacity: 1;
-	transform: translateY(-40%);
-	transition-duration: .4s;
+	@include iconsTransition(-40%);
 	transition-delay: .7s;
-	transition-timing-function: cubic-bezier(.694, .048, .335, 1);
 }
-
 
 @media only screen and (max-width: 660px) {
 	.contactIcons {
