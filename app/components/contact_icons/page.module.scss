@@ -34,7 +34,7 @@ $grayish: rgb(176, 178, 195);
 
 .navContactIcons {
 	@include icons(row);
-	width: 300px;
+	width: 250px;
 	top: 90%;
 	left: 15%;
 	opacity: 0;
@@ -57,5 +57,15 @@ $grayish: rgb(176, 178, 195);
 @media only screen and (max-width: 660px) {
 	.contactIcons {
 		display: none;
+	}
+
+	.navContactIcons {
+		padding: 20px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.navContactIcons {
+		width: 200px;
 	}
 }
