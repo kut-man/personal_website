@@ -1,10 +1,10 @@
 $baskerville: var(--font-baskerville);
 $font_white: white;
-$dark_blue: rgb(28, 29, 37);
+// $dark_blue: rgb(28, 29, 37);
 $dark_blue_gradient: linear-gradient(270deg, #235aa6, #101b3b);
 $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 
-.projectsContainer {
+.container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -23,205 +23,259 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 		font-size: 2.7em;
 	}
 
-	>.firstProjectContainer {
-		display: inline-block;
+	>.projectContainer {
 		width: 950px;
 		height: 500px;
-		overflow: hidden;
+		background-image: url('http://riccardozanutta.com/img/cerasa-work.jpg');
+		background-size: cover;
 		box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .45);
 		transition-duration: .3s;
 		transition-property: box-shadow;
-
-		>img {
-			width: inherit;
-			height: inherit;
-			object-fit: cover;
-			position: absolute;
-			z-index: -2;
-			transform: translateY(-120%);
-		}
-
-		&::after {
-			content: "";
-			display: block;
-			width: 100%;
-			height: 120%;
-			background-color: rgba(28, 29, 37, 0.6);
-			position: relative;
-			bottom: 280%;
-			z-index: -1;
-		}
+		position: relative;
 
 		&::before {
 			content: "";
-			display: block;
-			width: 0;
-			height: 120%;
+			display: inline-block;
+			width: 100%;
+			height: 100%;
 			background: linear-gradient(270deg, rgba(35, 90, 166, .9), rgba(3, 6, 14, 0.9));
-			position: relative;
+			position: absolute;
 			opacity: .9;
 			transition-duration: .4s;
 			transition-property: width;
 			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
 		}
 
-		>h5 {
-			color: white;
-			font-size: 4em;
-			position: relative;
-			left: 10%;
-			bottom: 6em;
-			display: inline;
-			transition-duration: .3s;
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			width: inherit;
+			height: inherit;
+			background-color: rgba(28, 29, 37, 0.6);
 		}
-
-		>p {
-			color: white;
-			font-family: LibreBaskerville-Regular;
-			font-style: italic;
-			font-size: 1.4em;
-			position: relative;
-			left: 10%;
-			bottom: 17em;
-			transition-duration: .3s;
-		}
-
-
 
 		>.revealer {
-			width: 120%;
-			height: 530px;
+			width: 100%;
+			height: 100%;
 			background: linear-gradient(270deg,#235aa6,#101b3b);
-			position: relative;
-			bottom: 160%;
-			left: 0%;
-
+			position: absolute;
+			z-index: 2;
+			right: 0;
 			&.show {
 				width: 0;
-				left: 100%;
 				transition-duration: 1s;
-				transition-property: all;
+				transition-property: width;
 				transition-timing-function: cubic-bezier(.694, .048, .335, 1);
 			}
 		}
-	}
-}
 
-@media only screen and (max-width: 1200px) {
-	.projectsContainer>.firstProjectContainer {
-		width: 800px;
-		height: 450px;
-
-		>h5 {
-			bottom: 5em;
-		}
-
-		>p {
-			bottom: 15em;
-		}
-	}
-}
-
-@media only screen and (max-width: 1000px) {
-	.projectsContainer>.firstProjectContainer {
-		width: 770px;
-	}
-}
-
-@media only screen and (min-width: 1000px) {
-	.projectsContainer>.firstProjectContainer {
-		&:hover::before {
+		>.project {
+			position: absolute;
+			top: 0;
+			left: 0;
 			width: 100%;
-			transition-duration: .4s;
-			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
-		}
+			height: 100%;
+			z-index: 1;
 
-		&:hover {
-			transition-duration: .3s;
-			box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .9);
-		}
+			>h5 {
+				color: white;
+				font-size: 4em;
+				display: inline;
+				transition-duration: .3s;
+			}
 
-		&:hover>h5 {
-			transition-duration: .4s;
-			transition-delay: .3s;
-			font-size: 4.2em;
-		}
+			>p {
+				color: white;
+				font-family: LibreBaskerville-Regular;
+				font-style: italic;
+				font-size: 1.4em;
+				transition-duration: .3s;
+			}
 
-		&:hover p {
-			transition-duration: .4s;
-			transition-delay: .3s;
-			font-size: 1.5em;
-		}
-	}
-}
+			>.button {
+				background-color: red;
+				display: inline-block;
+				position: relative;
 
-@media only screen and (max-width: 900px) {
-	.projectsContainer>.firstProjectContainer {
-		height: 420px;
-		width: 80vw;
+				>button {
+					width: 150px;
+					background: $red_gradient;
+					height: 45px;
+					color: $font_white;
+					padding: 15px 25px 15px 25px;
+					font-size: 20px;
+					position: relative;
+					overflow: hidden;
+					border: none;
 
-		>h5 {
-			font-size: 3em;
-			bottom: 6.7em;
-		}
+					&::after,
+					&::before {
+						content: "";
+						display: inline-block;
+						position: absolute;
+						background: linear-gradient(270deg, #235aa6, #213777);
+						height: 50px;
+						width: 110px;
+						left: -115px;
+						top: 0;
+						transform: translate(0);
+						transition: ease-in-out .4s;
+					}
 
-		&::after {
-			bottom: 300%;
-		}
+					&::before {
+						background: $dark_blue_gradient;
+						width: 150px;
+						left: -155px;
+						transition: ease-in-out .5s;
+					}
 
-		>.revealer {
-			left: 73%;
-		}
-	}
-}
+					&:hover {
+						&::after {
+							transform: translate(300%);
+						}
 
-@media only screen and (max-width: 700px) {
-	.projectsContainer>.firstProjectContainer {
-		height: 420px;
-		width: 80vw;
+						&::before {
+							transform: translate(270%);
+						}
+					}
 
-		>h5 {
-			font-size: 2em;
-			bottom: 8em;
-		}
+					&:hover~svg {
+						transform: translate(20%);
+					}
+				}
 
-		>svg {
-			left: 7%;
-		}
-
-		>p {
-			bottom: 16em;
-			font-size: 1em;
-		}
-	}
-}
-
-@media only screen and (max-width: 660px) {
-	.projectsContainer>.firstProjectContainer {
-		height: 340px;
-		width: 85vw;
-
-		&::after {
-			bottom: 330%;
-		}
-	}
-}
-
-@media only screen and (max-width: 400px) {
-	.projectsContainer>.firstProjectContainer {
-		height: 290px;
-		width: 90vw;
-
-		&::after {
-			bottom: 360%;
-		}
-
-		>h5 {
-			font-size: 1.7em;
-		}
-
-		>p {
-			bottom: 14em;
+				>svg {
+					width: 40px;
+					fill: white;
+					position: absolute;
+					top: 8%;
+					right: -15%;
+					transform: translate(0);
+					transition: ease-in-out .5s;
+				}
+			}
 		}
 	}
+
 }
+
+
+// @media only screen and (max-width: 1200px) {
+// 	.projectsContainer>.firstProjectContainer {
+// 		width: 800px;
+// 		height: 450px;
+
+// 		>h5 {
+// 			bottom: 5em;
+// 		}
+
+// 		>p {
+// 			bottom: 15em;
+// 		}
+// 	}
+// }
+
+// @media only screen and (max-width: 1000px) {
+// 	.projectsContainer>.firstProjectContainer {
+// 		width: 770px;
+// 	}
+// }
+
+// @media only screen and (min-width: 1000px) {
+// 	.projectsContainer>.firstProjectContainer {
+// 		&:hover::before {
+// 			width: 100%;
+// 			transition-duration: .4s;
+// 			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+// 		}
+
+// 		&:hover {
+// 			transition-duration: .3s;
+// 			box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .9);
+// 		}
+
+// 		&:hover>h5 {
+// 			transition-duration: .4s;
+// 			transition-delay: .3s;
+// 			font-size: 4.2em;
+// 		}
+
+// 		&:hover p {
+// 			transition-duration: .4s;
+// 			transition-delay: .3s;
+// 			font-size: 1.5em;
+// 		}
+// 	}
+// }
+
+// @media only screen and (max-width: 900px) {
+// 	.projectsContainer>.firstProjectContainer {
+// 		height: 420px;
+// 		width: 80vw;
+
+// 		>h5 {
+// 			font-size: 3em;
+// 			bottom: 6.7em;
+// 		}
+
+// 		&::after {
+// 			bottom: 300%;
+// 		}
+
+// 		>.revealer {
+// 			left: 73%;
+// 		}
+// 	}
+// }
+
+// @media only screen and (max-width: 700px) {
+// 	.projectsContainer>.firstProjectContainer {
+// 		height: 420px;
+// 		width: 80vw;
+
+// 		>h5 {
+// 			font-size: 2em;
+// 			bottom: 8em;
+// 		}
+
+// 		>svg {
+// 			left: 7%;
+// 		}
+
+// 		>p {
+// 			bottom: 16em;
+// 			font-size: 1em;
+// 		}
+// 	}
+// }
+
+// @media only screen and (max-width: 660px) {
+// 	.projectsContainer>.firstProjectContainer {
+// 		height: 340px;
+// 		width: 85vw;
+
+// 		&::after {
+// 			bottom: 330%;
+// 		}
+// 	}
+// }
+
+// @media only screen and (max-width: 400px) {
+// 	.projectsContainer>.firstProjectContainer {
+// 		height: 290px;
+// 		width: 90vw;
+
+// 		&::after {
+// 			bottom: 360%;
+// 		}
+
+// 		>h5 {
+// 			font-size: 1.7em;
+// 		}
+
+// 		>p {
+// 			bottom: 14em;
+// 		}
+// 	}
+// }
