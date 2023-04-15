@@ -24,7 +24,7 @@ const Projects = () => {
                 <div className={`${isInView ? styles.show : ''} ${styles.revealer}`}></div>
                 <div className={styles.project}>
 
-                    <h5>Cerasa Redesing</h5>
+                    <h5 className={styles.projectName}>Cerasa Redesing</h5>
                     <p>Leader in bathroom furniture since 1983.</p>
 
                     <div className={styles.button}>

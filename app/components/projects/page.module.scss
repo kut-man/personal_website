@@ -36,7 +36,7 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 		&::before {
 			content: "";
 			display: inline-block;
-			width: 100%;
+			width: 0;
 			height: 100%;
 			background: linear-gradient(270deg, rgba(35, 90, 166, .9), rgba(3, 6, 14, 0.9));
 			position: absolute;
@@ -44,6 +44,7 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 			transition-duration: .4s;
 			transition-property: width;
 			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+			z-index: 1;
 		}
 
 		&::after {
@@ -53,6 +54,7 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 			width: inherit;
 			height: inherit;
 			background-color: rgba(28, 29, 37, 0.6);
+			
 		}
 
 		>.revealer {
@@ -72,13 +74,11 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 
 		>.project {
 			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
+			top: 50%;
+			left: 10%;
 			z-index: 1;
 
-			>h5 {
+			>.projectName {
 				color: white;
 				font-size: 4em;
 				display: inline;
@@ -94,7 +94,6 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 			}
 
 			>.button {
-				background-color: red;
 				display: inline-block;
 				position: relative;
 
@@ -157,7 +156,6 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 			}
 		}
 	}
-
 }
 
 
@@ -182,32 +180,32 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 // 	}
 // }
 
-// @media only screen and (min-width: 1000px) {
-// 	.projectsContainer>.firstProjectContainer {
-// 		&:hover::before {
-// 			width: 100%;
-// 			transition-duration: .4s;
-// 			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
-// 		}
+@media only screen and (min-width: 1000px) {
+	.container>.projectContainer {
+		&:hover::before {
+			width: 100%;
+			transition-duration: .4s;
+			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+		}
 
-// 		&:hover {
-// 			transition-duration: .3s;
-// 			box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .9);
-// 		}
+		&:hover {
+			transition-duration: .3s;
+			box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .9);
+		}
 
-// 		&:hover>h5 {
-// 			transition-duration: .4s;
-// 			transition-delay: .3s;
-// 			font-size: 4.2em;
-// 		}
+		// &:hover>h5 {
+		// 	transition-duration: .4s;
+		// 	transition-delay: .3s;
+		// 	font-size: 4.2em;
+		// }
 
-// 		&:hover p {
-// 			transition-duration: .4s;
-// 			transition-delay: .3s;
-// 			font-size: 1.5em;
-// 		}
-// 	}
-// }
+		// &:hover p {
+		// 	transition-duration: .4s;
+		// 	transition-delay: .3s;
+		// 	font-size: 1.5em;
+		// }
+	}
+}
 
 // @media only screen and (max-width: 900px) {
 // 	.projectsContainer>.firstProjectContainer {
