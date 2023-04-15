@@ -4,53 +4,6 @@ $dark_blue: rgb(28, 29, 37);
 $dark_blue_gradient: linear-gradient(270deg, #235aa6, #101b3b);
 $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 
-.aboutMeButton {
-	width: 140px;
-	background: $red_gradient;
-	height: 45px;
-	color: $font_white;
-	padding: 15px 25px 15px 25px;
-	font-size: 20px;
-	position: relative;
-	overflow: hidden;
-	cursor: pointer;
-
-	&::after,
-	&::before {
-		content: "";
-		display: inline-block;
-		position: absolute;
-		background: linear-gradient(270deg, #235aa6, #213777);
-		height: 50px;
-		width: 110px;
-		left: -115px;
-		top: 0;
-		transform: translate(0);
-		transition: ease-in-out .4s;
-	}
-
-	&::before {
-		background: $dark_blue_gradient;
-		width: 150px;
-		left: -155px;
-		transition: ease-in-out .5s;
-	}
-
-	&:hover {
-		&::after {
-			transform: translate(300%);
-		}
-
-		&::before {
-			transform: translate(270%);
-		}
-	}
-
-	&:hover~svg {
-		transform: translate(20%);
-	}
-}
-
 .projectsContainer {
 	display: flex;
 	flex-direction: column;
@@ -133,28 +86,7 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 			transition-duration: .3s;
 		}
 
-		>.aboutMeButton {
-			margin: 0;
-			width: 150px;
-			position: relative;
-			left: 10%;
-			bottom: 18em;
-			display: inline-block;
 
-			&:hover~svg {
-				transform: translate(20%);
-			}
-		}
-
-		>svg {
-			width: 40px;
-			fill: white;
-			position: relative;
-			bottom: 22.6em;
-			left: 8%;
-			transform: translate(0);
-			transition: ease-in-out .5s;
-		}
 
 		>.revealer {
 			width: 120%;
@@ -186,14 +118,6 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 
 		>p {
 			bottom: 15em;
-		}
-
-		>.aboutMeButton {
-			bottom: 16em;
-		}
-
-		>svg {
-			bottom: 20.1em;
 		}
 	}
 }
@@ -269,14 +193,6 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 			bottom: 16em;
 			font-size: 1em;
 		}
-
-		>.aboutMeButton {
-			bottom: 13em;
-		}
-
-		>svg {
-			bottom: 16.3em;
-		}
 	}
 }
 
@@ -306,15 +222,6 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 
 		>p {
 			bottom: 14em;
-		}
-
-		>.aboutMeButton {
-			bottom: 11em;
-		}
-
-		>svg {
-			left: 5%;
-			bottom: 13.8em;
 		}
 	}
 }
