@@ -6,13 +6,12 @@ $dark_blue: rgb(28, 29, 37);
 	overflow-x: hidden;
 
 	>.mainPage {
-		margin: -8px 0 0 -8px;
 		width: 100vw;
 		height: 100vh;
 		background-color: $dark_blue;
 		overflow: hidden;
 
-		.content {
+		>.content {
 			position: absolute;
 			top: 38%;
 			z-index: 1;
@@ -34,7 +33,7 @@ $dark_blue: rgb(28, 29, 37);
 			}
 		}
 
-		.backgroundLogo {
+		>.backgroundLogo {
 			height: 330px;
 			width: 330px;
 			position: absolute;
@@ -57,7 +56,7 @@ $dark_blue: rgb(28, 29, 37);
 }
 
 @media only screen and (max-width: 800px) {
-	.content {
+	.main>.mainPage>.content {
 		>h1 {
 			font-size: 60px;
 		}
@@ -65,7 +64,7 @@ $dark_blue: rgb(28, 29, 37);
 }
 
 @media only screen and (max-width: 660px) {
-	.content {
+	.main>.mainPage>.content {
 		>h1 {
 			font-size: 50px;
 		}
