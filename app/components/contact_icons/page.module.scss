@@ -38,6 +38,7 @@ $grayish: rgb(176, 178, 195);
 	top: 90%;
 	left: 15%;
 	opacity: 0;
+	margin: 0;
 	@include iconsTransition(40%);
 	transition-property: opacity, transform;
 
