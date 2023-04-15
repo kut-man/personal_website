@@ -1,7 +1,4 @@
 $baskerville: var(--font-baskerville);
-$font_white: white;
-$dark_blue_gradient: linear-gradient(270deg, #235aa6, #101b3b);
-$red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 
 .container {
 	display: flex;
@@ -147,9 +144,15 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 }
 
 @media only screen and (max-width: 900px) {
-	.container>.projectContainer {
-		width: 85vw;
-		height: 420px;
+	.container{
+		>h4 {
+			font-size: 1.8em;
+			margin-bottom: 80px;
+		}
+		>.projectContainer {
+			width: 85vw;
+			height: 420px;
+		}
 	}
 
 	.project {

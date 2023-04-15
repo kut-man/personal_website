@@ -1,8 +1,6 @@
 $font_white: white;
 $baskerville: var(--font-baskerville);
 $dark_blue: rgb(28, 29, 37);
-$dark_blue_gradient: linear-gradient(270deg, #235aa6, #101b3b);
-$red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 
 .main {
 	overflow-x: hidden;
@@ -13,6 +11,28 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 		height: 100vh;
 		background-color: $dark_blue;
 		overflow: hidden;
+
+		.content {
+			position: absolute;
+			top: 38%;
+			z-index: 1;
+			margin: 0 13% 0 13%;
+			padding-left: 3%;
+
+			>h1 {
+				font-size: 75px;
+
+				color: $font_white;
+				margin: 0;
+			}
+
+			>p {
+				font-size: 20px;
+				color: $font_white;
+				font-family: $baskerville;
+				margin-bottom: 45px;
+			}
+		}
 
 		.backgroundLogo {
 			height: 330px;
@@ -35,30 +55,6 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 		}
 	}
 }
-
-.content {
-	position: absolute;
-	top: 38%;
-	z-index: 1;
-	margin: 0 13% 0 13%;
-	padding-left: 3%;
-
-	>h1 {
-		font-size: 75px;
-
-		color: $font_white;
-		margin: 0;
-	}
-
-	>p {
-		font-size: 20px;
-		color: $font_white;
-		font-family: $baskerville;
-		margin-bottom: 45px;
-	}
-}
-
-
 
 @media only screen and (max-width: 800px) {
 	.content {
