@@ -7,14 +7,9 @@ $dark_blue: rgb(28, 29, 37);
 
 	>.mainPage {
 		width: 100vw;
-		height: 100vh;
+		height: calc(100vh - 90px);
 		background-color: $dark_blue;
 		overflow: hidden;
-
-		svg{
-			width: 100px;
-			height: 100px;
-		}
 
 		>.content {
 			position: absolute;

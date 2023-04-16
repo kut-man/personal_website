@@ -6,7 +6,7 @@
             stroke: #f06449;
             stroke-miterlimit: 10;
             stroke-width: 60px;
-                            }
+            }
         </style>
     </defs>
     <path class="cls-3" d="M664,226c0,102.17-56.86,185-127,185S410,328.17,410,226"

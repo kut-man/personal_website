@@ -6,7 +6,7 @@
             stroke: aqua;
             stroke-miterlimit: 10;
             stroke-width: 60px;
-        }
+            }
         </style>
     </defs>
     <polygon class="cls-7" points="226.32 60.06 51.92 362.56 400.73 362.56 226.32 60.06" />
