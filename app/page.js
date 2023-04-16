@@ -4,7 +4,7 @@ import ContactIcons from './components/contact_icons/contact_icons';
 import Projects from './components/projects/projects';
 import Button from './components/button/button';
 import Image from 'next/image';
-import RightParallax from './components/parallax/RightParallax';
+import Parallax from './components/parallax/Parallax';
 
 const baskerville = Libre_Baskerville({
   weight: ["400"],
@@ -16,9 +16,9 @@ const baskerville = Libre_Baskerville({
 export default function Home() {
   return (
     <>
+      <Parallax />
+      
       <main className={styles.main}>
-
-        <RightParallax/>
 
         <div className={styles.mainPage}>
 

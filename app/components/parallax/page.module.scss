@@ -1,46 +1,97 @@
-.rightDiv {
+.div {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
 	position: absolute;
 	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
+	z-index: 2;
+
+
+	>div {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+	}
 
 	svg {
 		width: 30px;
 		position: relative;
 	}
 
-	svg:nth-of-type(1) {
-		top: 67vh;
-		left: 94vw;
+	>.rightDiv {
+		svg:nth-of-type(1) {
+			top: 67vh;
+			left: 94vw;
+		}
+
+		svg:nth-of-type(2) {
+			top: 19vh;
+			left: 32vw;
+		}
+
+		svg:nth-of-type(3) {
+			top: 79vh;
+			left: 4vw;
+		}
+
+		svg:nth-of-type(4) {
+			top: 19vh;
+			left: 66vw;
+		}
+
+		svg:nth-of-type(5) {
+			top: 2vh;
+			left: 84vw;
+		}
+
+		>.stick {
+			height: 30px;
+			width: 5px;
+			background-color: aqua;
+			transform: rotate(130deg);
+			position: relative;
+			left: 25vw;
+		}
 	}
 
-	svg:nth-of-type(2) {
-		top: 19vh;
-		left: 32vw;
-	}
+	>.leftDiv {
+		svg:nth-of-type(1) {
+			top: 22vh;
+			left: 94vw;
+		}
 
-	svg:nth-of-type(3) {
-		top: 79vh;
-		left: 4vw;
-	}
+		svg:nth-of-type(2) {
+			top: 95vh;
+			left: 40vw;
+			width: 40px;
+		}
 
-	svg:nth-of-type(4) {
-		top: 19vh;
-		left: 66vw;
-	}
+		svg:nth-of-type(3) {
+			top: 19vh;
+			right: 7vw;
+			width: 40px;
+		}
 
-	svg:nth-of-type(5) {
-		top: 2vh;
-		left: 84vw;
-	}
+		>.stick1 {
+			height: 30px;
+			width: 5px;
+			background-color: aqua;
+			transform: rotate(130deg);
+			position: relative;
+			top: 93vh;
+			left: 80vw;
+		}
 
-	>.stick {
-		height: 30px;
-		width: 5px;
-		background-color: aqua; 
-		transform: rotate(130deg); 
-		position: relative;
-		left: 25vw;
+		>.stick2 {
+			height: 30px;
+			width: 5px;
+			background-color: aqua;
+			transform: rotate(130deg);
+			position: relative;
+			top: 89vh;
+			left: 5vw;
+		}
 	}
 }
