@@ -2,7 +2,6 @@ import styles from './page.module.scss'
 import { FaInstagram, FaTelegram, FaGithub, FaLinkedin, FaRegEnvelope } from "react-icons/fa";
 
 export default function ContactIcons({ props }) {
-    console.log(props);
     return (
         <ul className={`${props.nav ? styles.navContactIcons : styles.contactIcons} ${props?.toggled ? styles.contactMenuAppear : ''}`}>
             <li>

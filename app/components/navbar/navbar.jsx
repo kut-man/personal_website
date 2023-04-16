@@ -3,6 +3,7 @@
 import styles from './page.module.scss'
 import ContactIcons from '../contact_icons/contact_icons';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const Navbar = () => {
 
@@ -22,11 +23,13 @@ const Navbar = () => {
     return (
         <nav className={styles.nav}>
 
-            <img
+            <Image
                 className={styles.logo}
                 src="https://user-images.githubusercontent.com/73386100/231491201-77f9d1d4-ead5-434f-9959-bb07b9bf0369.png"
-                alt="Logo">
-            </img>
+                alt="Logo"
+                width={80}
+                height={80}
+            />
 
             <ul>
                 <li>Case Studies</li>
