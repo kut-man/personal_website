@@ -34,7 +34,10 @@ $light_gray: rgb(227, 216, 211);
 	justify-content: space-between;
 	padding: 0 11% 0 11%;
 	height: 90px;
-	background-color: #1c1d25;
+	width: inherit;
+	position: relative;
+	background-color: transparent;
+	z-index: 1;
 
 	>.logo {
 		height: 80px;

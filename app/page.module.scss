@@ -1,6 +1,5 @@
 $font_white: white;
 $baskerville: var(--font-baskerville);
-$dark_blue: rgb(28, 29, 37);
 
 .main {
 	overflow-x: hidden;
@@ -8,7 +7,7 @@ $dark_blue: rgb(28, 29, 37);
 	>.mainPage {
 		width: 100vw;
 		height: calc(100vh - 90px);
-		background-color: $dark_blue;
+		position: relative;
 		overflow: hidden;
 
 		>.content {

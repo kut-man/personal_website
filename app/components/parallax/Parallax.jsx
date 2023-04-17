@@ -2,9 +2,10 @@
 
 import { HalfCircle, Triangle, TwoHalfCircles } from "@/app/src";
 import styles from './page.module.scss'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Parallax = () => {
+    console.log("Rerender")
 
     const [translate, setTranslate] = useState({ x: 0, y: 0 });
 
@@ -14,9 +15,14 @@ const Parallax = () => {
         setTimeout(() => setTranslate({ x: moveX, y: moveY }), 200);
     }
 
+    useEffect(() => {
+      document.querySelector("main").addEventListener("mousemove", ParallaxEffect)
+    }, [])
+    
+
     return (
 
-        <div onMouseMove={(e) => ParallaxEffect(e)} className={styles.div}>
+        <div className={styles.div}>
             <div style={{ transform: `translate(${translate.x}px, ${translate.y}px)` }} className={styles.leftDiv}>
 
                 <Triangle />
