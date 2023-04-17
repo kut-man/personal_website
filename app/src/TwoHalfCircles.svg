@@ -3,9 +3,8 @@
         <style>
             .cls-3 {
                 fill: transparent;
-            stroke: #f06449;
-            stroke-miterlimit: 10;
-            stroke-width: 60px;
+                stroke-miterlimit: 10;
+                stroke-width: 60px;
             }
         </style>
     </defs>

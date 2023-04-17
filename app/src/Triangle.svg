@@ -3,9 +3,8 @@
         <style>
             .cls-7 {
                 fill: transparent;
-            stroke: aqua;
-            stroke-miterlimit: 10;
-            stroke-width: 60px;
+                stroke-miterlimit: 10;
+                stroke-width: 60px;
             }
         </style>
     </defs>
