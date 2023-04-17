@@ -32,7 +32,7 @@ $light_gray: rgb(227, 216, 211);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0 11% 0 11%;
+	padding: 0 10% 0 10%;
 	height: 90px;
 	width: inherit;
 	position: relative;
@@ -56,10 +56,12 @@ $light_gray: rgb(227, 216, 211);
 }
 
 .nav>ul {
-	width: 450px;
+	width: 420px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: 0;
+	margin-right: 3%;
 
 	>li {
 		display: inline;
@@ -68,9 +70,8 @@ $light_gray: rgb(227, 216, 211);
 		cursor: pointer;
 
 		>svg {
-			width: 25px;
+			width: 20px;
 			fill: $grayish;
-			margin-bottom: 5px;
 		}
 
 		&::after,
@@ -95,7 +96,7 @@ $light_gray: rgb(227, 216, 211);
 
 		&:last-of-type {
 			&::before {
-				bottom: -37px;
+				bottom: -26.6px;
 			}
 		}
 

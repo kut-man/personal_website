@@ -17,8 +17,16 @@ export default function Home() {
   return (
     <>
       <Parallax />
-      
+
       <main className={styles.main}>
+
+        <Image
+          className={styles.backgroundLogo}
+          alt="Logo"
+          src="https://user-images.githubusercontent.com/73386100/231491201-77f9d1d4-ead5-434f-9959-bb07b9bf0369.png"
+          width={330}
+          height={330}
+        />
 
         <div className={styles.mainPage}>
 
@@ -31,13 +39,7 @@ export default function Home() {
 
           <ContactIcons props={{ nav: false }} />
 
-          <Image
-            className={styles.backgroundLogo}
-            alt="Logo"
-            src="https://user-images.githubusercontent.com/73386100/231491201-77f9d1d4-ead5-434f-9959-bb07b9bf0369.png"
-            width={330}
-            height={330}
-          />
+
 
         </div>
 

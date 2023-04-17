@@ -4,6 +4,16 @@ $baskerville: var(--font-baskerville);
 .main {
 	overflow-x: hidden;
 
+	>.backgroundLogo {
+		height: 330px;
+		width: 330px;
+		position: absolute;
+		top: 43%;
+		right: 50%;
+		transform: translate(50%, -50%);
+		z-index: 0;
+	}
+
 	>.mainPage {
 		width: 100vw;
 		height: calc(100vh - 90px);
@@ -12,8 +22,7 @@ $baskerville: var(--font-baskerville);
 
 		>.content {
 			position: absolute;
-			top: 38%;
-			z-index: 1;
+			top: 28%;
 			margin: 0 13% 0 13%;
 			padding-left: 3%;
 
@@ -32,14 +41,7 @@ $baskerville: var(--font-baskerville);
 			}
 		}
 
-		>.backgroundLogo {
-			height: 330px;
-			width: 330px;
-			position: absolute;
-			top: 50%;
-			right: 50%;
-			transform: translate(50%, -50%);
-		}
+
 
 		>.rightDiv,
 		.leftDiv {
@@ -69,11 +71,9 @@ $baskerville: var(--font-baskerville);
 		}
 	}
 
-	.main>.mainPage {
-		>.backgroundLogo {
-			width: 50vw;
-			height: 50vw;
-		}
+	.main>.backgroundLogo {
+		width: 50vw;
+		height: 50vw;
 	}
 }
 
