@@ -10,8 +10,8 @@ const Parallax = () => {
     const [translate, setTranslate] = useState({ x: 0, y: 0 });
 
     function ParallaxEffect(e) {
-        let moveX = e.clientX / 10;
-        let moveY = e.clientY / 10;
+        let moveX = e.clientX / 20;
+        let moveY = e.clientY / 15;
         setTimeout(() => setTranslate({ x: moveX, y: moveY }), 200);
     }
 
@@ -23,7 +23,7 @@ const Parallax = () => {
     return (
 
         <div className={styles.div}>
-            <div style={{ transform: `translate(${translate.x}px, ${translate.y}px)` }} className={styles.leftDiv}>
+            <div style={{ transform: `translate(${-translate.x}px, ${-translate.y}px)` }} className={styles.leftDiv}>
 
                 <Triangle />
                 <TwoHalfCircles />
@@ -33,7 +33,7 @@ const Parallax = () => {
 
             </div>
 
-            <div style={{ transform: `translate(${-translate.x}px, ${-translate.y}px)` }} className={styles.rightDiv}>
+            <div style={{ transform: `translate(${translate.x}px, ${translate.y}px)` }} className={styles.rightDiv}>
 
                 <HalfCircle />
                 <Triangle />

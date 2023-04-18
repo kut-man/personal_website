@@ -25,6 +25,7 @@ $dark_blue: rgb(28, 29, 37);
 		svg:nth-of-type(1) {
 			top: 67vh;
 			left: 94vw;
+			transform: rotate(180deg);
 		}
 
 		svg:nth-of-type(1) > path {
@@ -33,7 +34,8 @@ $dark_blue: rgb(28, 29, 37);
 
 		svg:nth-of-type(2) {
 			top: 19vh;
-			left: 32vw;
+			left: 33vw;
+			transform: rotate(180deg);
 		}
 
 		svg:nth-of-type(2) > path {
@@ -42,7 +44,8 @@ $dark_blue: rgb(28, 29, 37);
 
 		svg:nth-of-type(3) {
 			top: 79vh;
-			left: 4vw;
+			left: 7vw;
+			transform: rotate(-130deg);
 		}
 
 		svg:nth-of-type(3) > path {
@@ -51,7 +54,7 @@ $dark_blue: rgb(28, 29, 37);
 
 		svg:nth-of-type(4) {
 			top: 19vh;
-			left: 66vw;
+			left: 69vw;
 		}
 
 		svg:nth-of-type(4) > path {
@@ -60,7 +63,7 @@ $dark_blue: rgb(28, 29, 37);
 
 		svg:nth-of-type(5) {
 			top: 2vh;
-			left: 84vw;
+			left: 86vw;
 		}
 
 		svg:nth-of-type(5) > path {
@@ -71,16 +74,18 @@ $dark_blue: rgb(28, 29, 37);
 			height: 30px;
 			width: 5px;
 			background-color: aqua;
-			transform: rotate(130deg);
+			transform: rotate(20deg);
 			position: relative;
-			left: 25vw;
+			left: 26vw;
+			top: -3vh;
 		}
 	}
 
 	>.leftDiv {
 		svg:nth-of-type(1) {
-			top: 22vh;
-			left: 94vw;
+			top: 21vh;
+			left: 93vw;
+			transform: rotate(45deg);
 		}
 
 		svg:nth-of-type(1) > path {
@@ -88,9 +93,10 @@ $dark_blue: rgb(28, 29, 37);
 		}
 
 		svg:nth-of-type(2) {
-			top: 95vh;
-			left: 40vw;
+			top: 94vh;
+			left: 41vw;
 			width: 40px;
+			transform: rotate(95deg);
 		}
 
 		svg:nth-of-type(2) > path {
@@ -99,8 +105,9 @@ $dark_blue: rgb(28, 29, 37);
 
 		svg:nth-of-type(3) {
 			top: 19vh;
-			right: 7vw;
+			left: 0vw;
 			width: 40px;
+			transform: rotate(140deg);
 		}
 
 		svg:nth-of-type(3) > path {
@@ -113,7 +120,7 @@ $dark_blue: rgb(28, 29, 37);
 			background-color: aqua;
 			transform: rotate(130deg);
 			position: relative;
-			top: 93vh;
+			top: 90vh;
 			left: 80vw;
 		}
 
@@ -121,9 +128,9 @@ $dark_blue: rgb(28, 29, 37);
 			height: 30px;
 			width: 5px;
 			background-color: yellow;
-			transform: rotate(130deg);
+			transform: rotate(40deg);
 			position: relative;
-			top: 89vh;
+			top: 86vh;
 			left: 5vw;
 		}
 	}
