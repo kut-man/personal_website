@@ -1,5 +1,5 @@
 import './globals.scss'
-import { League_Spartan } from 'next/font/google';
+import { League_Spartan } from '@next/font/google';
 import Navbar from './components/navbar/navbar';
 
 export const metadata = {

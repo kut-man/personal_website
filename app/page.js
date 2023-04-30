@@ -1,5 +1,5 @@
 import styles from './page.module.scss'
-import { Libre_Baskerville } from 'next/font/google';
+import { Libre_Baskerville } from '@next/font/google';
 import ContactIcons from './components/contact_icons/contact_icons';
 import Projects from './components/projects/projects';
 import Button from './components/button/button';
@@ -33,7 +33,7 @@ export default function Home() {
           <div className={styles.content}>
             <h1>Kutman Eshenkulov</h1>
             <p className={baskerville.variable}>Interactive Front-end Developer</p>
-            <Button />
+            <Button text={"About Me"} />
 
           </div>
 
