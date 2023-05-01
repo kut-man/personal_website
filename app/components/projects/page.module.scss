@@ -3,18 +3,17 @@ $baskerville: var(--font-baskerville);
 .projectContainer {
 	width: 940px;
 	height: 480px;
-	background-image: url('http://riccardozanutta.com/img/cerasa-work.jpg');
 	background-size: cover;
 	box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .45);
 	transition-duration: .3s;
 	transition-property: box-shadow;
 	position: relative;
+	margin-bottom: 100px;
 
 	.projectNumber {
 		font-size: larger;
 		position: absolute;
 		font-size: 15vw;
-		right: 0;
 		opacity: 0;
 		z-index: 1;
 		overflow: hidden;

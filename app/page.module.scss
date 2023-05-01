@@ -3,6 +3,7 @@ $baskerville: var(--font-baskerville);
 
 .main {
 	overflow-x: hidden;
+	margin-bottom: 70px;
 
 	>.backgroundLogo {
 		height: 330px;
@@ -61,10 +62,10 @@ $baskerville: var(--font-baskerville);
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin-bottom: 100px;
 
 	>h6 {
-		margin-top: 90px;
+		margin-top: 20px;
+		margin-bottom: 25px;
 		color: #b19386;
 		font-size: 1em;
 		font-family: $baskerville;

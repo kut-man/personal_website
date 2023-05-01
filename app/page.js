@@ -13,6 +13,33 @@ export const baskerville = Libre_Baskerville({
   variable: '--font-baskerville'
 })
 
+const projects = [
+  {
+    id: 1,
+    projectName: "Cerasa Redesign",
+    projectDescription: "Leader in bathroom furniture since 1983.",
+    projectImage: 'http://riccardozanutta.com/img/cerasa-work.jpg'
+  },
+  {
+    id: 2,
+    projectName: "Project Lato",
+    projectDescription: "The Next generation Management System.",
+    projectImage: 'http://riccardozanutta.com/img/cerasa-work.jpg'
+  },
+  {
+    id: 3,
+    projectName: "Villaggi La Francesca",
+    projectDescription: "A green oasis on the sea of the Cinque Terre",
+    projectImage: 'http://riccardozanutta.com/img/cerasa-work.jpg'
+  },
+  {
+    id: 4,
+    projectName: "Project Sportland",
+    projectDescription: "The Nature of Wellness.",
+    projectImage: 'http://riccardozanutta.com/img/cerasa-work.jpg'
+  }
+];
+
 export default function Home() {
   return (
     <>
@@ -39,8 +66,6 @@ export default function Home() {
 
           <ContactIcons props={{ nav: false }} />
 
-
-
         </div>
 
       </main>
@@ -48,7 +73,14 @@ export default function Home() {
       <div className={styles.container}>
         <h6>CASE STUDIES</h6>
         <h4>Latest Works</h4>
-        <Projects nav={false} />
+
+        {projects.map(obj => <Projects key={obj.id} {...obj} />)}
+
+      </div>
+
+      <div className={styles.container}>
+        <h6>EXPERIMENTS & OPEN SOURCE</h6>
+        <h4>Web is fun.</h4>
       </div>
 
     </>
