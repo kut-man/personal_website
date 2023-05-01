@@ -25,10 +25,14 @@ const Footer = () => {
             </div>
 
             <ul>
-                <li> <a href="">LinkedIn</a> </li>
-                <li> <a href="">Github</a> </li>
-                <li> <a href="">Codepen</a> </li>
-                <li> <a href="">Telegram</a> </li>
+                <li>
+                    <a href="">LinkedIn</a>
+                    <a href="">Telegram</a>
+                </li>
+                <li> 
+                    <a href="">Github</a>
+                    <a href="">Codepen</a>
+                </li>
             </ul>
             <p className={baskerville.className}>© 2023 Kutman Eshenkulov - All rights reserved -
                 <a className={baskerville.className} href=""> Contact</a>
