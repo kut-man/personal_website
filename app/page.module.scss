@@ -56,6 +56,41 @@ $baskerville: var(--font-baskerville);
 	}
 }
 
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 100px;
+
+	>h6 {
+		margin-top: 90px;
+		color: #b19386;
+		font-size: 1em;
+		font-family: $baskerville;
+	}
+
+	>h4 {
+		margin-top: 0;
+		color: #4a4a4a;
+		font-size: 2.7em;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.container {
+		>h4 {
+			font-size: 1.8em;
+			margin-bottom: 80px;
+		}
+
+		>.projectContainer {
+			width: 85vw;
+			height: 420px;
+		}
+	}
+}
+
 @media only screen and (max-width: 800px) {
 	.main>.mainPage>.content {
 		>h1 {

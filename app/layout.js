@@ -1,6 +1,7 @@
-import './globals.scss'
+import './globals.scss';
 import { League_Spartan } from '@next/font/google';
 import Navbar from './components/navbar/navbar';
+import Footer from './components/footer/footer';
 
 export const metadata = {
   title: 'Kutman Eshenkulov',
@@ -41,7 +42,7 @@ const RootLayout = ({ children }) => {
       <body className={spartan.variable}>
         <Navbar />
         {children}
-
+        <Footer />
       </body>
     </html>
   )

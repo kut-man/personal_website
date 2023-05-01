@@ -1,108 +1,88 @@
 $baskerville: var(--font-baskerville);
 
-.container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	margin-bottom: 100px;
+.projectContainer {
+	width: 940px;
+	height: 480px;
+	background-image: url('http://riccardozanutta.com/img/cerasa-work.jpg');
+	background-size: cover;
+	box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .45);
+	transition-duration: .3s;
+	transition-property: box-shadow;
+	position: relative;
 
-	>h6 {
-		margin-top: 90px;
-		color: #b19386;
-		font-size: 1em;
-		font-family: $baskerville;
+	.projectNumber {
+		font-size: larger;
+		position: absolute;
+		font-size: 15vw;
+		right: 0;
+		opacity: 0;
+		z-index: 1;
+		overflow: hidden;
+		display: inline-block;
+		color: royalblue;
+		background: linear-gradient(to top, midnightblue, midnightblue 50%, royalblue 50%);
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 100% 200%;
+		background-repeat: no-repeat;
+		background-position: 0 0%;
+
+		transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+		transition-duration: .4s;
+		transition-delay: .3s;
 	}
 
-	>h4 {
-		margin-top: 0;
-		color: #4a4a4a;
-		font-size: 2.7em;
+	&::before {
+		content: "";
+		display: inline-block;
+		width: 0;
+		height: 100%;
+		background: linear-gradient(270deg, rgba(35, 90, 166, .9), rgba(3, 6, 14, 0.9));
+		position: absolute;
+		opacity: .9;
+		transition-duration: .4s;
+		transition-property: width;
+		transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+		z-index: 1;
 	}
 
-	>.projectContainer {
-		width: 940px;
-		height: 480px;
-		background-image: url('http://riccardozanutta.com/img/cerasa-work.jpg');
-		background-size: cover;
-		box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .45);
-		transition-duration: .3s;
-		transition-property: box-shadow;
-		position: relative;
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		width: inherit;
+		height: inherit;
+		background-color: rgba(28, 29, 37, 0.6);
 
-		.projectNumber {
-			font-size: larger;
-			position: absolute;
-			font-size: 15vw;
-			right: 0;
-			opacity: 0;
-			z-index: 1;
-			overflow: hidden;
-			display: inline-block;
-			color: royalblue;
-			background: linear-gradient(to top, midnightblue, midnightblue 50%, royalblue 50%);
-			background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-size: 100% 200%;
-			background-repeat: no-repeat;
-			background-position: 0 0%;
+	}
 
-			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
-			transition-duration: .4s;
-			transition-delay: .3s;
-		}
+	&:hover>.projectNumber {
+		transition-duration: .4s;
+		opacity: 1;
+		transition-delay: .1s;
+		transform: translateY(-10%);
+		transition-timing-function: cubic-bezier(.694, .048, .335, 1);
 
-		&::before {
-			content: "";
-			display: inline-block;
+		background-position: 0 100%;
+	}
+
+	>.revealer {
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(270deg, #235aa6, #101b3b);
+		position: absolute;
+		z-index: 2;
+		right: 0;
+
+		&.show {
 			width: 0;
-			height: 100%;
-			background: linear-gradient(270deg, rgba(35, 90, 166, .9), rgba(3, 6, 14, 0.9));
-			position: absolute;
-			opacity: .9;
-			transition-duration: .4s;
+			transition-duration: 1s;
 			transition-property: width;
 			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
-			z-index: 1;
-		}
-
-		&::after {
-			content: "";
-			display: block;
-			position: absolute;
-			width: inherit;
-			height: inherit;
-			background-color: rgba(28, 29, 37, 0.6);
-
-		}
-
-		&:hover>.projectNumber {
-			transition-duration: .4s;
-			opacity: 1;
-			transition-delay: .1s;
-			transform: translateY(-10%);
-			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
-
-			background-position: 0 100%;
-		}
-
-		>.revealer {
-			width: 100%;
-			height: 100%;
-			background: linear-gradient(270deg, #235aa6, #101b3b);
-			position: absolute;
-			z-index: 2;
-			right: 0;
-
-			&.show {
-				width: 0;
-				transition-duration: 1s;
-				transition-property: width;
-				transition-timing-function: cubic-bezier(.694, .048, .335, 1);
-			}
 		}
 	}
 }
+
 
 .project {
 	position: absolute;
@@ -128,14 +108,14 @@ $baskerville: var(--font-baskerville);
 }
 
 @media only screen and (max-width: 1200px) {
-	.container>.projectContainer {
+	.projectContainer {
 		width: 800px;
 		height: 450px;
 	}
 }
 
 @media only screen and (max-width: 1000px) {
-	.container>.projectContainer {
+	.projectContainer {
 		width: 720px;
 		height: 480px;
 	}
@@ -155,7 +135,7 @@ $baskerville: var(--font-baskerville);
 }
 
 @media only screen and (min-width: 1000px) {
-	.container>.projectContainer {
+	.projectContainer {
 		&:hover::before {
 			width: 100%;
 			transition-duration: .4s;
@@ -176,18 +156,6 @@ $baskerville: var(--font-baskerville);
 }
 
 @media only screen and (max-width: 900px) {
-	.container {
-		>h4 {
-			font-size: 1.8em;
-			margin-bottom: 80px;
-		}
-
-		>.projectContainer {
-			width: 85vw;
-			height: 420px;
-		}
-	}
-
 	.project {
 		>.projectName {
 			font-size: 2.5em;
@@ -200,7 +168,7 @@ $baskerville: var(--font-baskerville);
 }
 
 @media only screen and (max-width: 700px) {
-	.container>.projectContainer {
+	.projectContainer {
 		height: 350px;
 	}
 
@@ -233,7 +201,7 @@ $baskerville: var(--font-baskerville);
 }
 
 @media only screen and (max-width: 400px) {
-	.container>.projectContainer {
+	.projectContainer {
 		height: 250px;
 		width: 90vw;
 	}

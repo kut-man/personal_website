@@ -6,7 +6,7 @@ import Button from './components/button/button';
 import Image from 'next/image';
 import ParallaxEffect from './components/parallax/ParallaxEffect';
 
-const baskerville = Libre_Baskerville({
+export const baskerville = Libre_Baskerville({
   weight: ["400"],
   subsets: ["latin"],
   style: ["italic"],
@@ -45,7 +45,11 @@ export default function Home() {
 
       </main>
 
-      <Projects nav={false} />
+      <div className={styles.container}>
+        <h6>CASE STUDIES</h6>
+        <h4>Latest Works</h4>
+        <Projects nav={false} />
+      </div>
 
     </>
 
