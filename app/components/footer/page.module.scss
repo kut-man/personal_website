@@ -15,17 +15,35 @@ $baskerville: var(--font-baskerville);
 	align-items: center;
 	padding: 8% 0;
 
-	>ul{
+	>div {
+		position: relative;
+		span {
+			color: white;
+			font-size: 18px;
+			position: absolute;
+			top: 50%;
+			opacity: 0;
+			transition-duration: .3s;
+		}
+		&:hover>span {
+			opacity: 1;
+			transform: translate(60%);
+			transition-duration: .3s;
+		}
+	}
+
+	>ul {
 		width: 450px;
 		padding: 0;
 		margin: 30px 0;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+
 		>li {
 			display: inline;
 			font-size: 1.2rem;
-			
+
 			>a {
 				text-decoration: none;
 				color: white;

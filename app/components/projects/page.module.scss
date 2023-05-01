@@ -8,7 +8,7 @@ $baskerville: var(--font-baskerville);
 	transition-duration: .3s;
 	transition-property: box-shadow;
 	position: relative;
-	margin-bottom: 100px;
+	margin-bottom: 140px;
 
 	.projectNumber {
 		font-size: larger;
@@ -19,7 +19,7 @@ $baskerville: var(--font-baskerville);
 		overflow: hidden;
 		display: inline-block;
 		color: royalblue;
-		background: linear-gradient(to top, midnightblue, midnightblue 50%, royalblue 50%);
+		background: linear-gradient(to top, white, white 50%, #99999d 50%);
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-size: 100% 200%;
@@ -56,13 +56,16 @@ $baskerville: var(--font-baskerville);
 	}
 
 	&:hover>.projectNumber {
-		transition-duration: .4s;
 		opacity: 1;
-		transition-delay: .1s;
 		transform: translateY(-10%);
 		transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+		transition-property: transform;
+		transition-duration: .4s;
 
-		background-position: 0 100%;
+		transition-property: background-position;
+		transition-duration: .4s;
+		transition-delay: .3s;
+		background-position: 0 100%;	  
 	}
 
 	>.revealer {

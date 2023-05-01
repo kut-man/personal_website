@@ -17,8 +17,9 @@ const Projects = ({ id, projectName, projectDescription, projectImage }) => {
     }, [inView]);
 
     return (
-        <div ref={ref} className={styles.projectContainer} style={{ backgroundImage: `url(${projectImage})` }}>
-            <span style={id % 2 == 0 ? { left: "0" } : { right: "0" }} className={styles.projectNumber} >0{id}</span>
+        <div ref={ref} className={styles.projectContainer}
+            style={id % 2 == 0 ? { marginRight: "50px", backgroundImage: `url(${projectImage})` } : { marginLeft: "50px", backgroundImage: `url(${projectImage})` }}>
+            <span style={id % 2 == 0 ? { left: "-5%" } : { right: "0" }} className={styles.projectNumber} >0{id}</span>
             <div className={`${isInView ? styles.show : ''} ${styles.revealer}`}></div>
             <div className={styles.project}>
 
