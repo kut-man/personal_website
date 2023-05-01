@@ -26,9 +26,10 @@ $baskerville: var(--font-baskerville);
 		background-repeat: no-repeat;
 		background-position: 0 0%;
 
+		transform: translateY(0);
 		transition-timing-function: cubic-bezier(.694, .048, .335, 1);
 		transition-duration: .4s;
-		transition-delay: .3s;
+		transition-delay: 0;
 	}
 
 	&::before {
@@ -55,19 +56,6 @@ $baskerville: var(--font-baskerville);
 
 	}
 
-	&:hover>.projectNumber {
-		opacity: 1;
-		transform: translateY(-10%);
-		transition-timing-function: cubic-bezier(.694, .048, .335, 1);
-		transition-property: transform;
-		transition-duration: .4s;
-
-		transition-property: background-position;
-		transition-duration: .4s;
-		transition-delay: .3s;
-		background-position: 0 100%;	  
-	}
-
 	>.revealer {
 		width: 100%;
 		height: 100%;
@@ -84,7 +72,6 @@ $baskerville: var(--font-baskerville);
 		}
 	}
 }
-
 
 .project {
 	position: absolute;
@@ -119,7 +106,9 @@ $baskerville: var(--font-baskerville);
 @media only screen and (max-width: 1000px) {
 	.projectContainer {
 		width: 720px;
-		height: 480px;
+		height: 450px;
+		margin-right: 0 !important;
+		margin-left: 0 !important;
 	}
 
 	.project {
@@ -154,10 +143,34 @@ $baskerville: var(--font-baskerville);
 			transition-delay: .3s;
 			transform: scale(1.1);
 		}
+
+		&:hover>.projectNumber {
+			opacity: 1;
+			transform: translateY(-10%);
+			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+			transition-property: transform opacity;
+			transition-duration: .4s;
+			animation: projectAnim .4s ease-in-out .3s;
+			animation-fill-mode: forwards;
+		}
+	
+		@keyframes projectAnim {
+			0% {
+				background-position: 0 0;
+			}
+		
+			100% {
+				background-position: 0 100%;
+			}
+		}
 	}
 }
 
 @media only screen and (max-width: 900px) {
+	.projectContainer {
+		height: 350px;
+		width: 80vw;
+	}
 	.project {
 		>.projectName {
 			font-size: 2.5em;
