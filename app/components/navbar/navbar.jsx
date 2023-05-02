@@ -104,19 +104,22 @@ const Navbar = () => {
 
                     </div>
                     <form>
-                        <div className={styles.xIcon}></div>
+                        <div className={styles.xIcon}>
+                            <span className={styles.stick1}></span>
+                            <span className={styles.stick2}></span>
+                        </div>
                         <h1>Let's talk.</h1>
                         <p className={baskerville.className}>New projects, freelance inquiry or even coffee.</p>
                         <label htmlFor="">Name *</label>
-                        <div>
+                        <div className={styles.input}>
                             <input type="text" />
                         </div>
                         <label htmlFor="">E-mail *</label>
-                        <div>
+                        <div className={styles.input}>
                             <input type="text" />
                         </div>
                         <label htmlFor="">Message *</label>
-                        <div>
+                        <div className={styles.input}>
                             <textarea name="" id="" cols="30" rows="6"></textarea>
                         </div>
                         <Button text={"Send Message"} />

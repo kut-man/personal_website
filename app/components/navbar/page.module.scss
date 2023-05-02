@@ -318,10 +318,9 @@ $light_gray: rgb(227, 216, 211);
 				width: 40px;
 				height: 30px;
 				transform: scale(1.1, 1.1) translateY(30%);
-				transition-duration: .4s;
 
-				&::after,
-				&::before {
+				>span {
+					overflow: hidden;
 					position: absolute;
 					right: 20px;
 					content: "";
@@ -330,18 +329,63 @@ $light_gray: rgb(227, 216, 211);
 					height: 30px;
 					transform: rotate(45deg);
 					background-color: $light_gray;
+					transition-property: transform;
+					transition-duration: .4s;
+					transition-timing-function: cubic-bezier(.694,.048,.335,1);
 				}
 
-				&::before {
+				>.stick2 {
 					transform: rotate(-45deg);
 				}
+
+				&:hover>.stick1 {
+					transform: rotate(135deg);
+				}
+
+				&:hover>.stick2 {
+					transform: rotate(-135deg);
+				}
+
+				&:hover>span {
+					background-color: white;
+				}
+
+				>.stick1::before, .stick2::before {
+					position: absolute;
+					content: "";
+					display: inline-block;
+					background-color: gray;
+					height: 100%;
+					width: 100%;
+					transition-property: transform;
+					transition-duration: .4s;
+					bottom: -100%;
+					z-index: 6;
+				}
+
+				>.stick2::before {
+					top: -100%;
+				}
+
+				&:hover>.stick1::before {
+					background-color: red;
+					transition-property: transform;
+					transform: translateY(-200%);
+				}
+
+				&:hover>.stick2::before {
+					background-color: red;
+					transition-property: transform;
+					transform: translateY(200%);
+				}
+
 			}
 
 			>p:first-of-type {
 				font-size: 12px;
 			}
 
-			>div {
+			>.input {
 				position: relative;
 
 				>input,
@@ -361,30 +405,47 @@ $light_gray: rgb(227, 216, 211);
 				>input {
 					height: 40px;
 				}
-	
+
 				>textarea {
 					margin-bottom: 40px;
 				}
 
-				&::before{
+				&::before,
+				&::after {
+
 					content: "";
 					display: block;
-					height: 2px;
 					width: 100%;
-					background-color: red;
+					height: 2px;
 					position: absolute;
 					bottom: 0;
+					width: 0;
+					transition-property: width;
+					transition-duration: .3s;
+					transition-timing-function: cubic-bezier(.694, .048, .335, 1);
 				}
 
-				&::after{
-					content: "";
-					display: block;
-					height: 2px;
-					width: 100%;
-					background-color: green;
-					position: absolute;
-					bottom: 0;
+				&::before {
+					
+					background-color: #f06449;
 				}
+
+				&::after {
+					background-color: #26408b;
+				}
+
+				&:hover::before {
+					width: 100%;
+					
+					transition-duration: .45s;
+				}
+
+				&:hover::after {
+					transition-delay: .1s;
+					width: 100%;
+					transition-duration: .45s;
+				}
+
 			}
 		}
 	}
