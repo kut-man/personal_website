@@ -7,7 +7,7 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 	position: relative;
 
 	>button {
-		width: 150px;
+		width: fit-content;
 		background: $red_gradient;
 		height: 45px;
 		color: $font_white;

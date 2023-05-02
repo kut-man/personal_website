@@ -4,6 +4,16 @@ import styles from './page.module.scss'
 import ContactIcons from '../contact_icons/contact_icons';
 import { useState } from 'react';
 import Image from 'next/image';
+import Button from '../button/button';
+import { FaReact, FaCss3Alt } from 'react-icons/fa';
+import { SiJavascript, SiNextdotjs } from 'react-icons/si';
+import { Libre_Baskerville } from '@next/font/google';
+
+const baskerville = Libre_Baskerville({
+    weight: ["400"],
+    subsets: ["latin"],
+    variable: '--font-baskerville'
+})
 
 const Navbar = () => {
 
@@ -63,6 +73,56 @@ const Navbar = () => {
 
                 <ContactIcons props={{ nav: true, toggled: toggled }} />
 
+            </div>
+
+            <div className={styles.contact}>
+                <h1></h1>
+                <div>
+                    <div>
+                        <h2>About Me.</h2>
+                        <p className={baskerville.className}>Interactive Front-end developer.</p>
+                        <p className={baskerville.className}>
+                            I'm Kutman Eshenkulov, a 20-year-old Kyrgyz Freelance Front-end developer. I'm a weird guy who likes making weird things with web technologies.
+                            I like to resolve design problems, create smart user interface and imagine useful interaction, developing rich web experiences & web applications.
+                            When not studing or futzing around with code, I love reading books with hot chocolate.
+                        </p>
+
+                        <div className={styles.icons}>
+                            <span className={styles.reactIcon}>
+                                <FaReact />
+                            </span>
+                            <span className={styles.jsIcon}>
+                                <SiJavascript />
+                            </span>
+                            <span className={styles.cssIcon}>
+                                <FaCss3Alt />
+                            </span>
+                            <span className={styles.nextjsIcon}>
+                                <SiNextdotjs />
+                            </span>
+                        </div>
+
+                    </div>
+                    <form>
+                        <div className={styles.xIcon}></div>
+                        <h1>Let's talk.</h1>
+                        <p className={baskerville.className}>New projects, freelance inquiry or even coffee.</p>
+                        <label htmlFor="">Name *</label>
+                        <div>
+                            <input type="text" />
+                        </div>
+                        <label htmlFor="">E-mail *</label>
+                        <div>
+                            <input type="text" />
+                        </div>
+                        <label htmlFor="">Message *</label>
+                        <div>
+                            <textarea name="" id="" cols="30" rows="6"></textarea>
+                        </div>
+                        <Button text={"Send Message"} />
+                    </form>
+                </div>
+                <h1></h1>
             </div>
 
         </nav>

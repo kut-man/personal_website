@@ -73,6 +73,10 @@ $baskerville: var(--font-baskerville);
 @media only screen and (max-width: 500px) {
 	.footer>ul {
 		width: 100%;
+
+		>li {
+			width: 100%;
+		}
 	}
 
 	.footer>ul>li:first-of-type {
