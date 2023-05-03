@@ -1,11 +1,29 @@
-$grayish: rgb(176, 178, 195);
 $blue: rgb(35, 90, 166);
 $red: rgb(242, 87, 87);
 $font_white: white;
 $dark_blue: rgb(28, 29, 37);
-$dark_blue_gradient: linear-gradient(270deg, #235aa6, #101b3b);
-$light_gray: rgb(227, 216, 211);
-$baskerville: var(--font-baskerville);
+
+@keyframes navHover {
+	0% {
+		width: 0;
+	}
+
+	100% {
+		width: 100%;
+	}
+}
+
+@keyframes navUnhover {
+	0% {
+		width: 100%;
+		left: 0;
+	}
+
+	100% {
+		width: 0;
+		left: 100%;
+	}
+}
 
 .footer {
 	background-color: #1c1d25;
@@ -19,7 +37,7 @@ $baskerville: var(--font-baskerville);
 		position: relative;
 
 		span {
-			color: white;
+			color: $font_white;
 			font-size: 18px;
 			position: absolute;
 			top: 50%;
@@ -39,7 +57,6 @@ $baskerville: var(--font-baskerville);
 		padding: 0;
 		margin: 30px 0;
 
-
 		>li {
 			width: 50%;
 			font-size: 1.2rem;
@@ -49,19 +66,49 @@ $baskerville: var(--font-baskerville);
 
 			>a {
 				text-decoration: none;
-				color: white;
+				color: $font_white;
+				position: relative;
+
+				&::after,
+				&::before {
+					content: '';
+					display: block;
+					width: 0;
+					height: 3px;
+					position: absolute;
+					bottom: -4px;
+					animation-fill-mode: forwards;
+					background-color: $red;
+					animation: navUnhover .3s;
+					animation-timing-function: cubic-bezier(.694, .048, .335, 1);
+				}
+
+				&::before {
+					background-color: $blue;
+					animation: navUnhover .7s;
+				}
+
+				&:hover {
+
+					&::after,
+					&::before {
+						animation: navHover .3s;
+						animation-fill-mode: forwards;
+						animation-timing-function: cubic-bezier(.694, .048, .335, 1);
+					}
+				}
 			}
 		}
 	}
 
 	>p {
-		color: white;
+		color: $font_white;
 		font-weight: 400;
 		font-style: normal;
 		font-size: .8em;
 
 		>a {
-			color: white;
+			color: $font_white;
 			font-weight: 400;
 			font-style: normal;
 			font-size: 1em;

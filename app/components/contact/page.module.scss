@@ -1,12 +1,10 @@
-$grayish: rgb(176, 178, 195);
-$blue: rgb(35, 90, 166);
+$grayish: hsla(0, 0%, 95%, .97);
+$blue: #26408b;
 $red: rgb(242, 87, 87);
-$font_white: white;
-$dark_blue: rgb(28, 29, 37);
-$dark_blue_gradient: linear-gradient(270deg, #235aa6, #101b3b);
 $light_gray: rgb(227, 216, 211);
 
 .contact {
+	z-index: 2;
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -32,7 +30,7 @@ $light_gray: rgb(227, 216, 211);
 		>div {
 			width: 50%;
 			padding: 80px;
-			background-color: hsla(0, 0%, 95%, .97);
+			background-color: $grayish;
 			position: relative;
 			top: -100%;
 			transition-duration: .45s;
@@ -118,7 +116,7 @@ $light_gray: rgb(227, 216, 211);
 
 		>form {
 			width: 50%;
-			color: hsla(0, 0%, 95%, .97);
+			color: $grayish;
 			padding: 80px;
 			background-color: rgba(28, 29, 37, .985);
 			position: relative;
@@ -214,8 +212,9 @@ $light_gray: rgb(227, 216, 211);
 					margin: 15px 0;
 					width: 100%;
 					outline: none;
-					border-bottom: 1px solid hsla(0, 0%, 95%, .97);
+					border-bottom: 1px solid $grayish;
 					padding: 8px;
+					caret-color: white;
 				}
 
 				>input {
@@ -245,7 +244,7 @@ $light_gray: rgb(227, 216, 211);
 				}
 
 				&::after {
-					background-color: #26408b;
+					background-color: $blue;
 					height: 2.5px;
 					bottom: -0.8px;
 				}

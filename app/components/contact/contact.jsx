@@ -51,16 +51,16 @@ const Contact = ({ setContactOpen }) => {
                     <p className={baskerville.className}>
                         Interactive Front-end developer.
                     </p>
+
                     <p className={baskerville.className}>
-                        I'm Kutman Eshenkulov, a 20-year-old Kyrgyz{" "}
-                        <strong>Freelance Front-end developer</strong>. I'm a weird guy who
-                        likes making weird things with web technologies. <br />I like to{" "}
-                        <strong>resolve</strong> design problems, <strong>create</strong>{" "}
-                        smart user interface and <strong>imagine</strong> useful
-                        interaction, developing rich web experiences &{" "}
-                        <strong>web applications</strong>. <br />
-                        When not studing or futzing around with code, I love reading books
-                        with hot chocolate.
+                        I&apos;m Kutman Eshenkulov, a 20-year-old Kyrgyz
+                        <strong>Freelance Front-end developer</strong>.
+                        I&apos;m a weird guy who likes making weird things with web technologies.
+                        <br />I like to<strong>resolve</strong> design problems,
+                        <strong>create</strong> smart user interface and
+                        <strong>imagine</strong> useful interaction, developing rich web experiences
+                        &amp; <strong>web applications</strong>.
+                        <br />When not studying or futzing around with code, I love reading books with hot chocolate.
                     </p>
 
                     <div className={styles.icons}>
@@ -83,7 +83,7 @@ const Contact = ({ setContactOpen }) => {
                         <span className={styles.stick1}></span>
                         <span className={styles.stick2}></span>
                     </div>
-                    <h1>Let's talk.</h1>
+                    <h1>Let&apos;s talk.</h1>
                     <p className={baskerville.className}>
                         New projects, freelance inquiry or even coffee.
                     </p>
