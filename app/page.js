@@ -61,7 +61,6 @@ export default function Home() {
             <h1>Kutman Eshenkulov</h1>
             <p className={baskerville.variable}>Interactive Front-end Developer</p>
             <Button text={"About Me"} />
-
           </div>
 
           <ContactIcons props={{ nav: false }} />

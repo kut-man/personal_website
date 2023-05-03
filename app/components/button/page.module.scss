@@ -17,6 +17,16 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 		overflow: hidden;
 		border: none;
 
+		&:disabled {
+			cursor: not-allowed;
+			opacity: .65;
+		}
+
+		&:disabled~svg {
+			cursor: not-allowed;
+			opacity: .65;
+		}
+
 		&::after,
 		&::before {
 			content: "";
