@@ -6,28 +6,6 @@ $dark_blue: rgb(28, 29, 37);
 $dark_blue_gradient: linear-gradient(270deg, #235aa6, #101b3b);
 $light_gray: rgb(227, 216, 211);
 
-@keyframes navHover {
-	0% {
-		width: 0;
-	}
-
-	100% {
-		width: 100%;
-	}
-}
-
-@keyframes navUnhover {
-	0% {
-		width: 100%;
-		left: 0;
-	}
-
-	100% {
-		width: 0;
-		left: 100%;
-	}
-}
-
 .nav {
 	display: flex;
 	align-items: center;
@@ -69,31 +47,35 @@ $light_gray: rgb(227, 216, 211);
 		font-size: 20px;
 		cursor: pointer;
 		position: relative;
+		overflow: hidden;
+		transition-property: color;
+		transition-duration: .4s;
 
 		>svg {
 			width: 20px;
 			fill: $grayish;
 			margin: 0 10px;
+			transition-property: fill;
+			transition-duration: .4s;
 		}
 
 		&::after,
 		&::before {
 			content: '';
 			display: block;
-			width: 0;
+			background-color: $red;
+			width: 100%;
 			height: 2.5px;
 			margin-left: 1%;
 			position: absolute;
 			bottom: 0;
-			animation-fill-mode: forwards;
-			background-color: $red;
-			animation: navUnhover .3s;
-			animation-timing-function: cubic-bezier(.694, .048, .335, 1);
+			left: 100%;
+			transition-duration: .4s;
 		}
 
 		&::before {
 			background-color: $blue;
-			animation: navUnhover .7s;
+			transition-delay: .2s;
 		}
 
 		&:last-of-type {
@@ -101,12 +83,17 @@ $light_gray: rgb(227, 216, 211);
 		}
 
 		&:hover {
+			color: white;
+
+			>svg {
+				fill: white;
+			}
 
 			&::after,
 			&::before {
-				animation: navHover .3s;
-				animation-fill-mode: forwards;
-				animation-timing-function: cubic-bezier(.694, .048, .335, 1);
+				left: -100%;
+				transition-property: transform;
+				transform: translate(100%);
 			}
 		}
 	}

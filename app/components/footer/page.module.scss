@@ -3,28 +3,6 @@ $red: rgb(242, 87, 87);
 $font_white: white;
 $dark_blue: rgb(28, 29, 37);
 
-@keyframes navHover {
-	0% {
-		width: 0;
-	}
-
-	100% {
-		width: 100%;
-	}
-}
-
-@keyframes navUnhover {
-	0% {
-		width: 100%;
-		left: 0;
-	}
-
-	100% {
-		width: 0;
-		left: 100%;
-	}
-}
-
 .footer {
 	background-color: #1c1d25;
 	display: flex;
@@ -68,33 +46,34 @@ $dark_blue: rgb(28, 29, 37);
 				text-decoration: none;
 				color: $font_white;
 				position: relative;
+				overflow: hidden;
+				height: 25px;
 
 				&::after,
 				&::before {
 					content: '';
 					display: block;
-					width: 0;
+					width: 100%;
 					height: 3px;
 					position: absolute;
-					bottom: -4px;
-					animation-fill-mode: forwards;
+					bottom: 0;
+					left: 100%;
 					background-color: $red;
-					animation: navUnhover .3s;
-					animation-timing-function: cubic-bezier(.694, .048, .335, 1);
+					transition-duration: .4s;
 				}
 
 				&::before {
 					background-color: $blue;
-					animation: navUnhover .7s;
+					transition-delay: .2s;
 				}
 
 				&:hover {
 
 					&::after,
 					&::before {
-						animation: navHover .3s;
-						animation-fill-mode: forwards;
-						animation-timing-function: cubic-bezier(.694, .048, .335, 1);
+						left: -100%;
+						transition-property: transform;
+						transform: translate(100%);
 					}
 				}
 			}

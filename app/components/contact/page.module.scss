@@ -263,10 +263,4 @@ $light_gray: rgb(227, 216, 211);
 			}
 		}
 	}
-
-	&[visible="true"]>div>form {
-		transition-delay: .2s ;
-		transform: translateY(-100%);
-		transition-duration: .3s;
-	}
 }

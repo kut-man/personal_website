@@ -8,8 +8,6 @@ import { HalfCircle, Triangle, TwoHalfCircles } from "@/app/src";
 const ParallaxEffect = () => {
     const sceneRef = useRef(null);
 
-    console.log("Rerender")
-
     useEffect(() => {
         const parallax = new Parallax(sceneRef.current, {
             invertX: false
