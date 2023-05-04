@@ -40,6 +40,7 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body className={spartan.variable}>
+        <div id='portal'></div>
         <Navbar />
         {children}
         <Footer />

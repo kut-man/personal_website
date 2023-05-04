@@ -6,6 +6,7 @@ import Button from "../button/button";
 import { FaReact, FaCss3Alt } from "react-icons/fa";
 import { SiJavascript, SiNextdotjs } from "react-icons/si";
 import { Libre_Baskerville } from "@next/font/google";
+import { createPortal } from "react-dom";
 
 const baskerville = Libre_Baskerville({
     weight: ["400"],
@@ -13,27 +14,19 @@ const baskerville = Libre_Baskerville({
     variable: "--font-baskerville",
 });
 
-const transition = [
-    {
-        transform: 'translateY(100%)',
-    },
-    {
-        transform: 'translateY(-100%)',
-        transitionDelay: '.2s'
-    },
-    {
-        boxShadow: '0 20px 80px 0 rgba(0, 0, 0, .45)',
-        transitionDuration: '.45s'
-    }
-];
-
 const Contact = ({ setContactOpen }) => {
 
     const [first, setfirst] = useState([{}, {}, {}]);
 
     useEffect(() => {
-        setfirst(transition);
+        setfirst([styles.anim1, styles.anim2, styles.anim3]);
+        document.body.style.overflow = "hidden";
+
+        return () => {
+            document.body.style.overflow = null;
+          }
     }, [])
+    
 
     function disappear() {
         setfirst([{}, {}]);
@@ -42,11 +35,11 @@ const Contact = ({ setContactOpen }) => {
         }, 450);
     }
 
-    return (
-        <div style={first[2]} className={styles.contact}>
+    return createPortal (
+        <div className={`${styles.contact} ${first[2]}`}>
             <h1></h1>
             <div>
-                <div style={first[0]}>
+                <div className={first[0]}>
                     <h2>About Me.</h2>
                     <p className={baskerville.className}>
                         Interactive Front-end developer.
@@ -78,7 +71,7 @@ const Contact = ({ setContactOpen }) => {
                         </span>
                     </div>
                 </div>
-                <form style={first[1]}>
+                <form className={first[1]}>
                     <div onClick={disappear} className={styles.xIcon}>
                         <span className={styles.stick1}></span>
                         <span className={styles.stick2}></span>
@@ -103,7 +96,8 @@ const Contact = ({ setContactOpen }) => {
                 </form>
             </div>
             <h1></h1>
-        </div>
+        </div>,
+        document.getElementById('portal')
     );
 };
 

@@ -3,6 +3,11 @@ $blue: #26408b;
 $red: rgb(242, 87, 87);
 $light_gray: rgb(227, 216, 211);
 
+.anim3 {
+	box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .45);
+	transition-duration: .45s;
+}
+
 .contact {
 	z-index: 2;
 	position: fixed;
@@ -25,7 +30,7 @@ $light_gray: rgb(227, 216, 211);
 		flex-direction: row;
 		height: 100%;
 		position: relative;
-		overflow: hidden;
+		//overflow: hidden;
 
 		>div {
 			width: 50%;
@@ -145,7 +150,7 @@ $light_gray: rgb(227, 216, 211);
 					background-color: $light_gray;
 					transition-property: transform;
 					transition-duration: .4s;
-					transition-timing-function: cubic-bezier(.694,.048,.335,1);
+					transition-timing-function: cubic-bezier(.694, .048, .335, 1);
 				}
 
 				>.stick2 {
@@ -164,7 +169,8 @@ $light_gray: rgb(227, 216, 211);
 					background-color: white;
 				}
 
-				>.stick1::before, .stick2::before {
+				>.stick1::before,
+				.stick2::before {
 					position: absolute;
 					content: "";
 					display: inline-block;
@@ -251,7 +257,7 @@ $light_gray: rgb(227, 216, 211);
 
 				&:hover::before {
 					width: 100%;
-					
+
 					transition-duration: .45s;
 				}
 
@@ -260,6 +266,69 @@ $light_gray: rgb(227, 216, 211);
 					width: 100%;
 					transition-duration: .45s;
 				}
+			}
+		}
+
+		>.anim1 {
+			transform: translateY(100%);
+		}
+
+		>.anim2 {
+			transform: translateY(-100%);
+			transition-delay: .2s;
+		}
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.contact {
+		width: 90vw
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.contact {
+		width: 95vw
+	}
+}
+
+@media only screen and (max-width: 850px) {
+	.contact {
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translate(0);
+		height: fit-content;
+		width: 100vw;
+
+		>div {
+			flex-direction: column-reverse;
+			justify-content: center;
+			align-items: center;
+
+			>div {
+				position: static;
+				width: 100%;
+			}
+
+			>form {
+				position: static;
+				width: 100%;
+			}
+
+			>.anim1 {
+				transform: translateY(0);
+				
+			}
+
+			>.anim2 {
+				transform: translateY(0);
+				transition-delay: .2s;
+			}
+
+			>.anim3 {
+				box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .45);
+				transition-duration: .45s;
 			}
 		}
 	}
