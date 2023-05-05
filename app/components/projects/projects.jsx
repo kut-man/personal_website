@@ -9,7 +9,7 @@ const Projects = ({ id, projectName, projectDescription, projectImage }) => {
 
     const [isInView, setIsInView] = useState(false);
     const [ref, inView] = useInView({
-        threshold: 0.3,
+        threshold: 0.1,
     });
 
     useEffect(() => {

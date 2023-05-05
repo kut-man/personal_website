@@ -60,7 +60,7 @@ const Navbar = () => {
                     <li>Home</li>
                     <li>Case Studies</li>
                     <li>Experiments</li>
-                    <li>Contact</li>
+                    <li onClick={() => setContactOpen(true)} >Contact</li>
                 </ul>
 
                 <ContactIcons props={{ nav: true, toggled: toggled }} />
