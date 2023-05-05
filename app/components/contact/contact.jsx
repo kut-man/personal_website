@@ -24,9 +24,9 @@ const Contact = ({ setContactOpen }) => {
 
         return () => {
             document.body.style.overflow = null;
-          }
+        }
     }, [])
-    
+
 
     function disappear() {
         setfirst([{}, {}]);
@@ -35,10 +35,33 @@ const Contact = ({ setContactOpen }) => {
         }, 450);
     }
 
-    return createPortal (
+    return createPortal(
         <div className={`${styles.contact} ${first[2]}`}>
             <h1></h1>
             <div>
+                <form className={first[1]}>
+                    <div onClick={disappear} className={styles.xIcon}>
+                        <span className={styles.stick1}></span>
+                        <span className={styles.stick2}></span>
+                    </div>
+                    <h1>Let&apos;s talk.</h1>
+                    <p className={baskerville.className}>
+                        New projects, freelance inquiry or even coffee.
+                    </p>
+                    <label htmlFor="">Name *</label>
+                    <div className={styles.input}>
+                        <input type="text" />
+                    </div>
+                    <label htmlFor="">E-mail *</label>
+                    <div className={styles.input}>
+                        <input type="text" />
+                    </div>
+                    <label htmlFor="">Message *</label>
+                    <div className={styles.input}>
+                        <textarea name="" id="" cols="30" rows="6"></textarea>
+                    </div>
+                    <Button disabled text={"Send Message"} />
+                </form>
                 <div className={first[0]}>
                     <h2>About Me.</h2>
                     <p className={baskerville.className}>
@@ -71,29 +94,6 @@ const Contact = ({ setContactOpen }) => {
                         </span>
                     </div>
                 </div>
-                <form className={first[1]}>
-                    <div onClick={disappear} className={styles.xIcon}>
-                        <span className={styles.stick1}></span>
-                        <span className={styles.stick2}></span>
-                    </div>
-                    <h1>Let&apos;s talk.</h1>
-                    <p className={baskerville.className}>
-                        New projects, freelance inquiry or even coffee.
-                    </p>
-                    <label htmlFor="">Name *</label>
-                    <div className={styles.input}>
-                        <input type="text" />
-                    </div>
-                    <label htmlFor="">E-mail *</label>
-                    <div className={styles.input}>
-                        <input type="text" />
-                    </div>
-                    <label htmlFor="">Message *</label>
-                    <div className={styles.input}>
-                        <textarea name="" id="" cols="30" rows="6"></textarea>
-                    </div>
-                    <Button disabled text={"Send Message"} />
-                </form>
             </div>
             <h1></h1>
         </div>,
