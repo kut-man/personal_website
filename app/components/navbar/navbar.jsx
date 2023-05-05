@@ -20,6 +20,7 @@ const Navbar = () => {
     function disappear() {
         document.body.style.overflow = null;
         setToggled(false)
+        setContactOpen(true)
     }
 
     return (
@@ -57,10 +58,10 @@ const Navbar = () => {
                 <div onClick={disappear} className={`${styles.xIcon} ${toggled ? styles.xIconAppear : ''}`}></div>
 
                 <ul className={`${styles.burgerNav} ${toggled ? styles.menuAppear : ''}`}>
-                    <li>Home</li>
-                    <li>Case Studies</li>
-                    <li>Experiments</li>
-                    <li onClick={() => setContactOpen(true)} >Contact</li>
+                    <li onClick={disappear}>Home</li>
+                    <li onClick={disappear}>Case Studies</li>
+                    <li onClick={disappear}>Experiments</li>
+                    <li onClick={disappear}>Contact</li>
                 </ul>
 
                 <ContactIcons props={{ nav: true, toggled: toggled }} />
