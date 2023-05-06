@@ -17,10 +17,10 @@ const Navbar = () => {
         setToggled(true)
     }
 
-    function disappear() {
+    function disappear(xIcon) {
         document.body.style.overflow = null;
         setToggled(false)
-        setContactOpen(true)
+        xIcon ? null : setContactOpen(true);
     }
 
     return (
@@ -55,7 +55,7 @@ const Navbar = () => {
             <div className={`${styles.mainToggleContainer} ${toggled ? styles.toogleAnimation : ''}`}></div>
             <div className={`${styles.toggleContainer} ${toggled ? styles.toogleAnimation1 : ''}`}>
 
-                <div onClick={disappear} className={`${styles.xIcon} ${toggled ? styles.xIconAppear : ''}`}></div>
+                <div onClick={() => disappear(true)} className={`${styles.xIcon} ${toggled ? styles.xIconAppear : ''}`}></div>
 
                 <ul className={`${styles.burgerNav} ${toggled ? styles.menuAppear : ''}`}>
                     <li onClick={disappear}>Home</li>
