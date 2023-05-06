@@ -45,7 +45,8 @@ const Contact = ({ setContactOpen }) => {
             name: "",
             email: "",
             text: "",
-            disabled: false
+            disabled: false,
+            animation: true
         });
 
         emailjs.sendForm('service_7zkzeii', 'template_41ht47e', form.current, 'user_gbguGQSWNN1nYTouV1Kx3')
@@ -54,13 +55,18 @@ const Contact = ({ setContactOpen }) => {
             }, (error) => {
                 console.log(error.text);
             });
+
+        setTimeout(() => {
+            setEmail((prev) => ({...prev, animation: false}));
+        }, 2500);
     };
 
     const [email, setEmail] = useState({
         name: "",
         email: "",
         text: "",
-        disabled: true
+        disabled: true,
+        animation: false
     });
 
 
@@ -76,7 +82,8 @@ const Contact = ({ setContactOpen }) => {
         <div className={`${styles.contact} ${first[2]}`}>
             <h1></h1>
             <div>
-                <form  ref={form} onSubmit={sendEmail} className={first[1]}>
+                <form animation={`${email.animation}`} ref={form} onSubmit={sendEmail} className={first[1]}>
+                    <p className={styles.appreciationText}></p>
                     <div onClick={disappear} className={styles.xIcon}>
                         <span className={styles.stick1}></span>
                         <span className={styles.stick2}></span>
@@ -155,37 +162,3 @@ const Contact = ({ setContactOpen }) => {
 };
 
 export default Contact;
-
-
-function EmailForm() {
-    const [email, setEmail] = useState("");
-    const [emailError, setEmailError] = useState("");
-
-    function handleEmailChange(event) {
-        const emailRegex = /^\S+@\S+\.\S+$/;
-        const isValidEmail = emailRegex.test(event.target.value);
-        setEmail(event.target.value);
-        if (!isValidEmail) {
-            setEmailError("Please enter a valid email");
-        } else {
-            setEmailError("");
-        }
-    }
-
-    return (
-        <form>
-            <label htmlFor="email">Email:</label>
-            <input
-                type="email"
-                id="email"
-                name="email"
-                value={email}
-                onChange={handleEmailChange}
-            />
-            <span>{emailError}</span>
-            <button type="submit" disabled={!email}>
-                Submit
-            </button>
-        </form>
-    );
-}

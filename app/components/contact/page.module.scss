@@ -121,6 +121,7 @@ $light_gray: rgb(227, 216, 211);
 		}
 
 		>form {
+			overflow: hidden;
 			width: 50%;
 			color: $grayish;
 			padding: 80px;
@@ -130,6 +131,68 @@ $light_gray: rgb(227, 216, 211);
 			transition-property: top, transform;
 			transition-duration: .45s;
 			transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
+
+			&::before,
+			&::after, >.appreciationText {
+				content: "";
+				display: inline-block;
+				background-color: red;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				transform: translate(-100%);
+				transition-property: transform;
+				transition-duration: .45s;
+				transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+			}
+
+			>.appreciationText, >.appreciationText::after {
+				background-color:#61dafb;
+				margin: 0;
+				opacity: 0;
+				transition-property: opacity, transform;
+				transition-duration: .45s;
+				transition-delay: 0;
+				z-index: 1;
+			}
+
+			>.appreciationText::after{
+				content: "Thank You! Your message has been sent.";
+				display: inline-block;
+				position: absolute;
+				font-size: 30px;
+				width: 333px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, 10%);
+			}
+
+			&[animation="true"]>.appreciationText {
+				transform: translate(0);
+				transition-delay: .6s;
+				opacity: 1;
+			}
+
+			&[animation="true"]>.appreciationText::after {
+				transform: translate(-50%, -50%);
+				transition-delay: 1s;
+				opacity: 1;
+			}
+
+			&::after {
+				background-color: green;
+			}
+
+			&[animation="true"]::after {
+				transform: translate(0);
+				transition-delay: .15s;
+			}
+
+			&[animation="true"]::before {
+				transform: translate(0);
+			}
 
 			>.xIcon {
 				position: absolute;
@@ -213,8 +276,6 @@ $light_gray: rgb(227, 216, 211);
 
 			>.input {
 				position: relative;
-
-
 
 				>input,
 				>textarea {
@@ -347,8 +408,8 @@ $light_gray: rgb(227, 216, 211);
 	}
 }
 
-// @media only screen and (max-width: 500px) {
-// 	.contact>div>div {
-// 		height: 80%;
-// 	}
-// }
+@media only screen and (max-width: 500px) {
+	.contact>div>div {
+		height: 70%;
+	}
+}
