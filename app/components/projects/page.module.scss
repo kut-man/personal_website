@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 $baskerville: var(--font-baskerville);
 
 .projectContainer {
@@ -27,7 +29,7 @@ $baskerville: var(--font-baskerville);
 		background-position: 0 0%;
 
 		transform: translateY(0);
-		transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+		transition-timing-function: $custom_function;
 		transition-duration: .4s;
 		transition-delay: 0;
 	}
@@ -42,7 +44,7 @@ $baskerville: var(--font-baskerville);
 		opacity: .9;
 		transition-duration: .4s;
 		transition-property: width;
-		transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+		transition-timing-function: $custom_function;
 		z-index: 1;
 	}
 
@@ -59,7 +61,7 @@ $baskerville: var(--font-baskerville);
 	>.revealer {
 		width: 100%;
 		height: 100%;
-		background: linear-gradient(270deg, #235aa6, #101b3b);
+		background: $dark_blue_gradient;
 		position: absolute;
 		z-index: 2;
 		right: 0;
@@ -68,7 +70,7 @@ $baskerville: var(--font-baskerville);
 			width: 0;
 			transition-duration: 1s;
 			transition-property: width;
-			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+			transition-timing-function: $custom_function;
 		}
 	}
 }
@@ -130,7 +132,7 @@ $baskerville: var(--font-baskerville);
 		&:hover::before {
 			width: 100%;
 			transition-duration: .4s;
-			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+			transition-timing-function: $custom_function;
 		}
 
 		&:hover {
@@ -147,7 +149,7 @@ $baskerville: var(--font-baskerville);
 		&:hover>.projectNumber {
 			opacity: 1;
 			transform: translateY(-10%);
-			transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+			transition-timing-function: $custom_function;
 			transition-property: transform opacity;
 			transition-duration: .4s;
 			animation: projectAnim .4s ease-in-out .3s;

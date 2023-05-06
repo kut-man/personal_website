@@ -1,6 +1,4 @@
-$font_white: white;
-$dark_blue_gradient: linear-gradient(270deg, #235aa6, #101b3b);
-$red_gradient: linear-gradient(270deg, #f06449, #ef3636);
+@import '../../variables.scss';
 
 .button {
 	display: inline-block;
@@ -8,9 +6,9 @@ $red_gradient: linear-gradient(270deg, #f06449, #ef3636);
 
 	>button {
 		width: fit-content;
-		background: $red_gradient;
+		background: linear-gradient(270deg, #f06449, #ef3636);;
 		height: 45px;
-		color: $font_white;
+		color: white;
 		padding: 15px 25px 15px 25px;
 		font-size: 20px;
 		position: relative;

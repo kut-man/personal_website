@@ -1,17 +1,9 @@
 import styles from './page.module.scss'
-import { Libre_Baskerville } from '@next/font/google';
 import ContactIcons from './components/contact_icons/contact_icons';
 import Projects from './components/projects/projects';
 import ButtonContact from './components/buttonContact/buttonContact';
 import Image from 'next/image';
 import ParallaxEffect from './components/parallax/ParallaxEffect';
-
-export const baskerville = Libre_Baskerville({
-  weight: ["400"],
-  subsets: ["latin"],
-  style: ["italic"],
-  variable: '--font-baskerville'
-})
 
 const projects = [
   {
@@ -59,7 +51,7 @@ export default function Home() {
 
           <div className={styles.content}>
             <h1>Kutman Eshenkulov</h1>
-            <p className={baskerville.variable}>Interactive Front-end Developer</p>
+            <p>Interactive Front-end Developer</p>
             <ButtonContact text={"About Me"} />
           </div>
 

@@ -1,5 +1,6 @@
 import './globals.scss';
-import { League_Spartan } from '@next/font/google';
+import './variables.scss';
+import { League_Spartan, Libre_Baskerville } from '@next/font/google';
 import Navbar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 
@@ -36,10 +37,17 @@ const spartan = League_Spartan({
   variable: '--font-spartan'
 });
 
+export const baskerville = Libre_Baskerville({
+  weight: ["400"],
+  subsets: ["latin"],
+  style: ["italic", "normal"],
+  variable: '--font-baskerville'
+})
+
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body className={spartan.variable}>
+      <body className={`${spartan.variable} ${baskerville.variable}`}>
         <div id='portal'> </div>
         <Navbar />
         {children}

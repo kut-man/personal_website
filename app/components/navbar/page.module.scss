@@ -1,10 +1,6 @@
+@import '../../variables.scss';
+
 $grayish: rgb(176, 178, 195);
-$blue: rgb(35, 90, 166);
-$red: rgb(242, 87, 87);
-$font_white: white;
-$dark_blue: rgb(28, 29, 37);
-$dark_blue_gradient: linear-gradient(270deg, #235aa6, #101b3b);
-$light_gray: rgb(227, 216, 211);
 
 .nav {
 	display: flex;
@@ -74,7 +70,7 @@ $light_gray: rgb(227, 216, 211);
 		}
 
 		&::before {
-			background-color: $blue;
+			background-color: rgb(35, 90, 166);
 			transition-delay: .2s;
 		}
 
@@ -103,7 +99,7 @@ $light_gray: rgb(227, 216, 211);
 	transform: translate($translate);
 	transition-duration: $duration;
 	transition-delay: $delay;
-	transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+	transition-timing-function: $custom_function;
 }
 
 .mainToggleContainer {
@@ -159,7 +155,7 @@ $light_gray: rgb(227, 216, 211);
 		transform: translateY($translate);
 		transition-duration: $duration;
 		transition-delay: $delay;
-		transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+		transition-timing-function: $custom_function;
 	}
 
 	>.burgerNav {
@@ -173,7 +169,7 @@ $light_gray: rgb(227, 216, 211);
 		>li {
 			font-size: 35px;
 			margin-bottom: 33px;
-			color: $font_white;
+			color: white;
 			cursor: pointer;
 		}
 	}

@@ -1,4 +1,4 @@
-$grayish: rgb(176, 178, 195);
+@import '../../variables.scss';
 
 @mixin icons($direction) {
 	display: flex;
@@ -11,7 +11,7 @@ $grayish: rgb(176, 178, 195);
 @mixin iconsTransition($translate) {
 	transform: translateY($translate);
 	transition-duration: .4s;
-	transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+	transition-timing-function: $custom_function;
 }
 
 .contactIcons {
@@ -25,7 +25,7 @@ $grayish: rgb(176, 178, 195);
 		display: inline;
 
 		a>* {
-			fill: $grayish;
+			fill: rgb(176, 178, 195);
 			width: 25px;
 			height: 25px;
 		}

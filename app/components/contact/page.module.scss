@@ -1,7 +1,5 @@
+@import '../../variables.scss';
 $grayish: hsla(0, 0%, 95%, .97);
-$blue: #26408b;
-$red: rgb(242, 87, 87);
-$light_gray: rgb(227, 216, 211);
 
 .anim3 {
 	box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .45);
@@ -20,7 +18,7 @@ $light_gray: rgb(227, 216, 211);
 	box-shadow: 0;
 	transition-duration: .2s;
 	transition-property: box-shadow;
-	transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
+	transition-timing-function: $custom_function;
 
 	>h1 {
 		position: absolute;
@@ -40,8 +38,13 @@ $light_gray: rgb(227, 216, 211);
 			position: relative;
 			top: -100%;
 			transition-duration: .45s;
-			transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
+			transition-timing-function: $custom_function;
 			transition-property: top, transform;
+
+			>p{
+				font-family: $baskerville;
+				font-style: normal;
+			}
 
 			>p:first-of-type {
 				font-size: 12px;
@@ -54,7 +57,7 @@ $light_gray: rgb(227, 216, 211);
 
 				>strong {
 					font-family: inherit;
-					color: #f06449;
+					color: $red;
 				}
 			}
 
@@ -71,9 +74,9 @@ $light_gray: rgb(227, 216, 211);
 					>svg {
 						width: 55px;
 						height: 55px;
-						fill: #1c1d25;
+						fill: $dark_blue;
 						transition-duration: .3s;
-						transition-timing-function: cubic-bezier(.694, .048, .335, 1)
+						transition-timing-function: $custom_function
 					}
 				}
 
@@ -88,7 +91,7 @@ $light_gray: rgb(227, 216, 211);
 						visibility: hidden;
 						transform: translateY(0);
 						transition-duration: .3s;
-						transition-timing-function: cubic-bezier(.694, .048, .335, 1)
+						transition-timing-function: $custom_function
 					}
 
 					&:hover>svg {
@@ -130,7 +133,7 @@ $light_gray: rgb(227, 216, 211);
 			top: 100%;
 			transition-property: top, transform;
 			transition-duration: .45s;
-			transition-timing-function: cubic-bezier(0.694, 0.048, 0.335, 1);
+			transition-timing-function: $custom_function;
 
 			&::before,
 			&::after, >.appreciationText {
@@ -145,7 +148,7 @@ $light_gray: rgb(227, 216, 211);
 				transform: translate(-100%);
 				transition-property: transform;
 				transition-duration: .45s;
-				transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+				transition-timing-function: $custom_function;
 			}
 
 			>.appreciationText, >.appreciationText::after {
@@ -214,7 +217,7 @@ $light_gray: rgb(227, 216, 211);
 					background-color: $light_gray;
 					transition-property: transform;
 					transition-duration: .4s;
-					transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+					transition-timing-function: $custom_function;
 				}
 
 				>.stick2 {
@@ -252,20 +255,24 @@ $light_gray: rgb(227, 216, 211);
 				}
 
 				&:hover>.stick1::before {
-					background-color: #f06449;
+					background-color: $red;
 					transition-property: transform;
 					transform: translateY(-200%);
 				}
 
 				&:hover>.stick2::before {
-					background-color: #f06449;
+					background-color: $red;
 					transition-property: transform;
 					transform: translateY(200%);
 				}
 
 			}
 
-			>p:first-of-type {
+			>p {
+				font-family: $baskerville;
+			}
+
+			>p:nth-of-type(2) {
 				font-size: 12px;
 			}
 
@@ -311,16 +318,16 @@ $light_gray: rgb(227, 216, 211);
 					width: 0;
 					transition-property: width;
 					transition-duration: .3s;
-					transition-timing-function: cubic-bezier(.694, .048, .335, 1);
+					transition-timing-function: $custom_function;
 				}
 
 				&::before {
 					height: 1px;
-					background-color: #f06449;
+					background-color: $red;
 				}
 
 				&::after {
-					background-color: $blue;
+					background-color: #26408b;;
 					height: 2.5px;
 					bottom: -0.8px;
 				}

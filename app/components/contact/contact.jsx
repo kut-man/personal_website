@@ -5,15 +5,8 @@ import { useState, useEffect, useRef } from "react";
 import Button from "../button/button";
 import { FaReact, FaCss3Alt } from "react-icons/fa";
 import { SiJavascript, SiNextdotjs } from "react-icons/si";
-import { Libre_Baskerville } from "@next/font/google";
 import { createPortal } from "react-dom";
 import emailjs from '@emailjs/browser';
-
-const baskerville = Libre_Baskerville({
-    weight: ["400"],
-    subsets: ["latin"],
-    variable: "--font-baskerville",
-});
 
 const Contact = ({ setContactOpen }) => {
 
@@ -89,7 +82,7 @@ const Contact = ({ setContactOpen }) => {
                         <span className={styles.stick2}></span>
                     </div>
                     <h2>Let&apos;s talk.</h2>
-                    <p className={baskerville.className}>
+                    <p>
                         New projects, freelance inquiry or even coffee.
                     </p>
                     <label>Name *</label>
@@ -124,11 +117,11 @@ const Contact = ({ setContactOpen }) => {
                 </form>
                 <div className={first[0]}>
                     <h2>About Me.</h2>
-                    <p className={baskerville.className}>
+                    <p>
                         Interactive Front-end developer.
                     </p>
 
-                    <p className={baskerville.className}>
+                    <p>
                         I&apos;m Kutman Eshenkulov, a 20-year-old Kyrgyz
                         <strong> Freelance Front-end developer</strong>.
                         I&apos;m a weird guy who likes making weird things with web technologies.

@@ -2,7 +2,7 @@
 
 import styles from './page.module.scss'
 import Image from 'next/image';
-import { baskerville } from '@/app/page';
+
 
 const Footer = () => {
 
@@ -34,8 +34,8 @@ const Footer = () => {
                     <a href="">Codepen</a>
                 </li>
             </ul>
-            <p className={baskerville.className}>© 2023 Kutman Eshenkulov - All rights reserved -
-                <a className={baskerville.className} href=""> Contact</a>
+            <p>© 2023 Kutman Eshenkulov - All rights reserved -
+                <a href=""> Contact</a>
             </p>
         </footer>
     )

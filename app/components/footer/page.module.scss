@@ -1,10 +1,7 @@
-$blue: rgb(35, 90, 166);
-$red: rgb(242, 87, 87);
-$font_white: white;
-$dark_blue: rgb(28, 29, 37);
+@import '../../variables.scss';
 
 .footer {
-	background-color: #1c1d25;
+	background-color: $dark_blue;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -15,7 +12,7 @@ $dark_blue: rgb(28, 29, 37);
 		position: relative;
 
 		span {
-			color: $font_white;
+			color: white;
 			font-size: 18px;
 			position: absolute;
 			top: 50%;
@@ -44,7 +41,7 @@ $dark_blue: rgb(28, 29, 37);
 
 			>a {
 				text-decoration: none;
-				color: $font_white;
+				color: white;
 				position: relative;
 				overflow: hidden;
 				height: 25px;
@@ -63,7 +60,7 @@ $dark_blue: rgb(28, 29, 37);
 				}
 
 				&::before {
-					background-color: $blue;
+					background-color: rgb(35, 90, 166);
 					transition-delay: .2s;
 				}
 
@@ -81,13 +78,15 @@ $dark_blue: rgb(28, 29, 37);
 	}
 
 	>p {
-		color: $font_white;
+		color: white;
 		font-weight: 400;
 		font-style: normal;
 		font-size: .8em;
+		font-family: $baskerville;
 
 		>a {
-			color: $font_white;
+			font-family: $baskerville;
+			color: white;
 			font-weight: 400;
 			font-style: normal;
 			font-size: 1em;
