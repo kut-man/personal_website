@@ -308,15 +308,22 @@ $light_gray: rgb(227, 216, 211);
 			display: block;
 
 			>div {
+				padding: 10%;
 				position: static;
 				width: 100%;
 				transform: translate(-100%);
 			}
 
 			>form {
+				padding: 10%;
 				position: static;
 				width: 100%;
 				transform: translate(100%);
+
+				>.xIcon {
+					top: 10vw;
+					right: 10%;
+				}
 			}
 
 			>.anim1 {

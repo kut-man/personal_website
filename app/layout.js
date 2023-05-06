@@ -34,7 +34,7 @@ const spartan = League_Spartan({
   weight: ["700"],
   subsets: ["latin"],
   variable: '--font-spartan'
-})
+});
 
 const RootLayout = ({ children }) => {
   return (
