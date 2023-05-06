@@ -17,10 +17,15 @@ const Navbar = () => {
         setToggled(true)
     }
 
-    function disappear(xIcon) {
+    function disappear(prop) {
         document.body.style.overflow = null;
         setToggled(false)
-        xIcon ? null : setContactOpen(true);
+
+        switch (prop) {
+            case "contact":
+                setContactOpen(true);
+                break;
+        }
     }
 
     return (
@@ -55,13 +60,13 @@ const Navbar = () => {
             <div className={`${styles.mainToggleContainer} ${toggled ? styles.toogleAnimation : ''}`}></div>
             <div className={`${styles.toggleContainer} ${toggled ? styles.toogleAnimation1 : ''}`}>
 
-                <div onClick={() => disappear(true)} className={`${styles.xIcon} ${toggled ? styles.xIconAppear : ''}`}></div>
+                <div onClick={disappear} className={`${styles.xIcon} ${toggled ? styles.xIconAppear : ''}`}></div>
 
                 <ul className={`${styles.burgerNav} ${toggled ? styles.menuAppear : ''}`}>
-                    <li onClick={disappear}>Home</li>
-                    <li onClick={disappear}>Case Studies</li>
-                    <li onClick={disappear}>Experiments</li>
-                    <li onClick={disappear}>Contact</li>
+                    <li onClick={() => disappear("")}>Home</li>
+                    <li onClick={() => disappear("")}>Case Studies</li>
+                    <li onClick={() => disappear("")}>Experiments</li>
+                    <li onClick={() => disappear("contact")}>Contact</li>
                 </ul>
 
                 <ContactIcons props={{ nav: true, toggled: toggled }} />

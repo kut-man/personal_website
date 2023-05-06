@@ -206,8 +206,15 @@ $light_gray: rgb(227, 216, 211);
 				font-size: 12px;
 			}
 
+			>label {
+				display: inline-block;
+				margin-top: 20px;
+			}
+
 			>.input {
 				position: relative;
+
+
 
 				>input,
 				>textarea {
@@ -216,12 +223,13 @@ $light_gray: rgb(227, 216, 211);
 					border-left: none;
 					border-right: none;
 					border-top: none;
-					margin: 15px 0;
+					margin: 0;
 					width: 100%;
 					outline: none;
-					border-bottom: 1px solid $grayish;
-					padding: 8px;
-					caret-color: white;
+					border-bottom: 1px solid silver;
+					caret-color: silver;
+					color: silver;
+					font-size: 100%;
 				}
 
 				>input {
@@ -336,5 +344,11 @@ $light_gray: rgb(227, 216, 211);
 				transition-delay: .45s;
 			}
 		}
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.contact>div>div {
+		height: 80%;
 	}
 }

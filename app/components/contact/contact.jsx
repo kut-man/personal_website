@@ -81,7 +81,7 @@ const Contact = ({ setContactOpen }) => {
                         <span className={styles.stick1}></span>
                         <span className={styles.stick2}></span>
                     </div>
-                    <h1>Let&apos;s talk.</h1>
+                    <h2>Let&apos;s talk.</h2>
                     <p className={baskerville.className}>
                         New projects, freelance inquiry or even coffee.
                     </p>
