@@ -14,18 +14,25 @@ const Navbar = () => {
     function appear() {
         window.scrollTo(0, 0);
         document.body.style.overflow = "hidden";
-        setToggled(true)
+        setToggled(true);
     }
 
-    function disappear(prop) {
+    function disappear() {
         document.body.style.overflow = null;
-        setToggled(false)
+        setToggled(false);
+    }
 
-        switch (prop) {
-            case "contact":
-                setContactOpen(true);
-                break;
+    function scrollTo(type) {
+        if (type == "experiments") {
+            setTimeout(() => window.scroll({ top: document.body.scrollHeight, behavior: 'smooth' }), 600);
         }
+        else if (type = "studies") {
+            setTimeout(() => window.scroll({ top: window.innerHeight, behavior: 'smooth' }), 600);
+        }
+        else {
+            setContactOpen(false);
+        }
+        disappear();
     }
 
     return (
@@ -39,9 +46,9 @@ const Navbar = () => {
                 height={80}
             />
 
-            <ul style={{opacity: `${contactOpen ? "0" : "1"}`}}>
-                <li>Case Studies</li>
-                <li>Experiments</li>
+            <ul style={{ opacity: `${contactOpen ? "0" : "1"}` }}>
+                <li onClick={() => window.scroll({ top: window.innerHeight, behavior: 'smooth' })} >Case Studies</li>
+                <li onClick={() => window.scroll({ top: document.body.scrollHeight, behavior: 'smooth' })} >Experiments</li>
                 <li onClick={() => setContactOpen(true)} >Contanct</li>
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -63,10 +70,10 @@ const Navbar = () => {
                 <div onClick={disappear} className={`${styles.xIcon} ${toggled ? styles.xIconAppear : ''}`}></div>
 
                 <ul className={`${styles.burgerNav} ${toggled ? styles.menuAppear : ''}`}>
-                    <li onClick={() => disappear("")}>Home</li>
-                    <li onClick={() => disappear("")}>Case Studies</li>
-                    <li onClick={() => disappear("")}>Experiments</li>
-                    <li onClick={() => disappear("contact")}>Contact</li>
+                    <li onClick={disappear}>Home</li>
+                    <li onClick={() => scrollTo("studies")}>Case Studies</li>
+                    <li onClick={() => scrollTo("experiments")}>Experiments</li>
+                    <li onClick={() => scrollTo("contact")}>Contact</li>
                 </ul>
 
                 <ContactIcons props={{ nav: true, toggled: toggled }} />
