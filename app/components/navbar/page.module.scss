@@ -1,7 +1,5 @@
 @import '../../variables.scss';
 
-$grayish: rgb(176, 178, 195);
-
 .nav {
 	display: flex;
 	align-items: center;
@@ -36,6 +34,9 @@ $grayish: rgb(176, 178, 195);
 	align-items: center;
 	padding: 0;
 	margin-right: 3%;
+	opacity: 1;
+	transition-property: opacity;
+	transition-duration: .3s;
 
 	>li {
 		display: inline;

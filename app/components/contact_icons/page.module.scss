@@ -25,10 +25,18 @@
 		display: inline;
 
 		a>* {
-			fill: rgb(176, 178, 195);
+			fill: $grayish;
 			width: 25px;
 			height: 25px;
+			transition-property: fill;
+			transition-duration: .3s;
+			transition-timing-function: ease;
 		}
+
+		&:hover>a>svg {
+			fill: white;
+		}
+
 	}
 }
 

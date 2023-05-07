@@ -13,23 +13,18 @@ $grayish: hsla(0, 0%, 95%, .97);
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	height: 90vh;
-	width: 75vw;
+	height: 690px;
+	width: 1200px;
 	box-shadow: 0;
 	transition-duration: .2s;
 	transition-property: box-shadow;
 	transition-timing-function: $custom_function;
-
-	>h1 {
-		position: absolute;
-	}
 
 	>div {
 		display: flex;
 		flex-direction: row-reverse;
 		height: 100%;
 		position: relative;
-		//overflow: hidden;
 
 		>div {
 			width: 50%;
@@ -40,6 +35,16 @@ $grayish: hsla(0, 0%, 95%, .97);
 			transition-duration: .45s;
 			transition-timing-function: $custom_function;
 			transition-property: top, transform;
+			overflow: hidden;
+
+			>h1 {
+				font-size: 240px;
+				color: #4a4a4a;
+				opacity: .07;
+				position: absolute;
+				margin: 0;
+				top: 4%;
+			}
 
 			>p{
 				font-family: $baskerville;
@@ -114,7 +119,7 @@ $grayish: hsla(0, 0%, 95%, .97);
 				}
 
 				>.cssIcon {
-					@include icon("is Fun.", #e54d26);
+					@include icon("is Fun.", $red);
 				}
 
 				>.nextjsIcon {
@@ -135,11 +140,21 @@ $grayish: hsla(0, 0%, 95%, .97);
 			transition-duration: .45s;
 			transition-timing-function: $custom_function;
 
+			>h1 {
+				font-size: 240px;
+				color: #fff;
+				opacity: .03;
+				position: absolute;
+				margin: 0;
+				right: -50%;
+				bottom: 4%;
+			}
+
 			&::before,
 			&::after, >.appreciationText {
 				content: "";
 				display: inline-block;
-				background-color: red;
+				background-color: $red;
 				width: 100%;
 				height: 100%;
 				position: absolute;
@@ -395,6 +410,10 @@ $grayish: hsla(0, 0%, 95%, .97);
 				position: static;
 				width: 100%;
 				transform: translate(100%);
+
+				>h1 {
+					right: -40%;
+				}
 
 				>.xIcon {
 					top: 10vw;

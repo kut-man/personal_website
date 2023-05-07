@@ -39,7 +39,7 @@ const Navbar = () => {
                 height={80}
             />
 
-            <ul>
+            <ul style={{opacity: `${contactOpen ? "0" : "1"}`}}>
                 <li>Case Studies</li>
                 <li>Experiments</li>
                 <li onClick={() => setContactOpen(true)} >Contanct</li>

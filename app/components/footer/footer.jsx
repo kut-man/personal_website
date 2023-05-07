@@ -35,7 +35,7 @@ const Footer = () => {
                 </li>
             </ul>
             <p>© 2023 Kutman Eshenkulov - All rights reserved -
-                <a href=""> Contact</a>
+                <a href = "mailto: kutman.stel@gmail.com"> Contact</a>
             </p>
         </footer>
     )

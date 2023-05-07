@@ -10,6 +10,8 @@ import emailjs from '@emailjs/browser';
 
 const Contact = ({ setContactOpen }) => {
 
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     const [first, setfirst] = useState([{}, {}, {}]);
 
     useEffect(() => {
@@ -50,7 +52,7 @@ const Contact = ({ setContactOpen }) => {
             });
 
         setTimeout(() => {
-            setEmail((prev) => ({...prev, animation: false}));
+            setEmail((prev) => ({ ...prev, animation: false }));
         }, 2500);
     };
 
@@ -73,9 +75,11 @@ const Contact = ({ setContactOpen }) => {
 
     return createPortal(
         <div className={`${styles.contact} ${first[2]}`}>
-            <h1></h1>
             <div>
                 <form animation={`${email.animation}`} ref={form} onSubmit={sendEmail} className={first[1]}>
+
+                    <h1>Contact</h1>
+
                     <p className={styles.appreciationText}></p>
                     <div onClick={disappear} className={styles.xIcon}>
                         <span className={styles.stick1}></span>
@@ -116,6 +120,9 @@ const Contact = ({ setContactOpen }) => {
 
                 </form>
                 <div className={first[0]}>
+
+                    <h1>About</h1>
+
                     <h2>About Me.</h2>
                     <p>
                         Interactive Front-end developer.
@@ -148,7 +155,6 @@ const Contact = ({ setContactOpen }) => {
                     </div>
                 </div>
             </div>
-            <h1></h1>
         </div>,
         document.getElementById('portal')
     );
