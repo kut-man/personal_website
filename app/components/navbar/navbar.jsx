@@ -23,14 +23,14 @@ const Navbar = () => {
     }
 
     function scrollTo(type) {
-        if (type == "experiments") {
+        if (type === "experiments") {
             setTimeout(() => window.scroll({ top: document.body.scrollHeight, behavior: 'smooth' }), 600);
         }
-        else if (type = "studies") {
+        else if (type === "studies") {
             setTimeout(() => window.scroll({ top: window.innerHeight, behavior: 'smooth' }), 600);
         }
         else {
-            setContactOpen(false);
+            setContactOpen(true);
         }
         disappear();
     }

@@ -10,12 +10,19 @@ import emailjs from '@emailjs/browser';
 
 const Contact = ({ setContactOpen }) => {
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    const [first, setfirst] = useState([{}, {}, {}]);
+    const [animationClass, setAnimationClass] = useState([{}, {}, {}]);
+    const [email, setEmail] = useState({
+        name: "",
+        email: "",
+        text: "",
+        disabled: true,
+        animation: false
+    });
+    const form = useRef();
 
     useEffect(() => {
-        setfirst([styles.anim1, styles.anim2, styles.anim3]);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setAnimationClass([styles.anim1, styles.anim2, styles.anim3]);
         document.body.style.overflow = "hidden";
 
         return () => {
@@ -23,14 +30,19 @@ const Contact = ({ setContactOpen }) => {
         }
     }, [])
 
+    useEffect(() => {
+        const emailRegex = /^\S+@\S+\.\S+$/;
+        if (emailRegex.test(email.email) && email.name !== "" && email.text !== "") {
+            setEmail((prev) => ({ ...prev, disabled: false }));
+        }
+    }, [email])
+
     function disappear() {
-        setfirst([{}, {}]);
+        setAnimationClass([{}, {}]);
         setTimeout(() => {
             setContactOpen(false)
         }, 450);
     }
-
-    const form = useRef();
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -56,27 +68,10 @@ const Contact = ({ setContactOpen }) => {
         }, 2500);
     };
 
-    const [email, setEmail] = useState({
-        name: "",
-        email: "",
-        text: "",
-        disabled: true,
-        animation: false
-    });
-
-
-
-    useEffect(() => {
-        const emailRegex = /^\S+@\S+\.\S+$/;
-        if (emailRegex.test(email.email) && email.name != "" && email.text != "") {
-            setEmail((prev) => ({ ...prev, disabled: false }));
-        }
-    }, [email])
-
     return createPortal(
-        <div className={`${styles.contact} ${first[2]}`}>
+        <div className={`${styles.contact} ${animationClass[2]}`}>
             <div>
-                <form animation={`${email.animation}`} ref={form} onSubmit={sendEmail} className={first[1]}>
+                <form animation={`${email.animation}`} ref={form} onSubmit={sendEmail} className={animationClass[1]}>
 
                     <h1>Contact</h1>
 
@@ -119,7 +114,7 @@ const Contact = ({ setContactOpen }) => {
                     <Button disabled={email.disabled} type="submit" text={"Send Message"} />
 
                 </form>
-                <div className={first[0]}>
+                <div className={animationClass[0]}>
 
                     <h1>About</h1>
 
@@ -129,14 +124,17 @@ const Contact = ({ setContactOpen }) => {
                     </p>
 
                     <p>
-                        I&apos;m Kutman Eshenkulov, a 20-year-old Kyrgyz
-                        <strong> Freelance Front-end developer</strong>.
-                        I&apos;m a weird guy who likes making weird things with web technologies.
-                        <br />I like to<strong> resolve</strong> design problems,
-                        <strong> create</strong> smart user interface and
-                        <strong> imagine</strong> useful interaction, developing rich web experiences
-                        &amp; <strong>web applications</strong>.
-                        <br />When not studying or futzing around with code, I love reading books with hot chocolate.
+                        My name is <strong>Kutman Eshenkulov</strong> and I'm a
+                        <strong> student</strong> studying software engineering at a university.
+                        I have gained experience in <strong>front-end development</strong> through
+                        actively learning and practicing computer programming.
+                        <br />
+                        I enjoy brainstorming ways to improve <strong>user interfaces </strong>
+                        and other design problems, so developing <strong>web applications </strong>
+                        is a great way to unleash my <strong>creativity</strong>.
+                        And speaking of creative outlets, you'll often find me
+                        reading a good book or watching a movie with a bowl of
+                        popcorn in hand!
                     </p>
 
                     <div className={styles.icons}>
