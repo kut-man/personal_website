@@ -33,7 +33,6 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 0;
-	margin-right: 3%;
 	opacity: 1;
 	transition-property: opacity;
 	transition-duration: .3s;
@@ -47,14 +46,6 @@
 		overflow: hidden;
 		transition-property: color;
 		transition-duration: .4s;
-
-		>svg {
-			width: 20px;
-			fill: $grayish;
-			margin: 0 10px;
-			transition-property: fill;
-			transition-duration: .4s;
-		}
 
 		&::after,
 		&::before {
@@ -75,16 +66,8 @@
 			transition-delay: .2s;
 		}
 
-		&:last-of-type {
-			width: 40px;
-		}
-
 		&:hover {
 			color: white;
-
-			>svg {
-				fill: white;
-			}
 
 			&::after,
 			&::before {
