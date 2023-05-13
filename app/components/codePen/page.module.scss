@@ -1,9 +1,14 @@
+@import '../../variables.scss';
+
 .link {
 	position: relative;
 	width: 100%;
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
 
 	.container {
-		box-shadow: 0 20px 60px 0 rgba(0,0,0,.15);
+		box-shadow: 0 20px 60px 0 rgba(0, 0, 0, .15);
 		background-color: white;
 		overflow: hidden;
 		width: 100%;
@@ -12,41 +17,94 @@
 		justify-content: space-between;
 		flex-direction: row;
 		align-items: end;
+		padding: 5%;
+		color: black;
 
-		>div{
-			width: 100%;
+		>.title {
+			width: 150%;
+
+			>h5 {
+				margin: 0 8px;
+
+				&::before {
+					content: "";
+					display: inline-block;
+					background-color: black;
+					height: .1em;
+					width: 8px;
+					margin: 4px 7px;
+				}
+			}
+
+			>p {
+				font-family: $baskerville;
+				font-size: .75em;
+				margin: 5px 30px;
+			}
 		}
 
 		>.number {
 			display: inline-flex;
 			flex-direction: row;
+			width: 100px;
+			height: 10px;
 			align-items: center;
 			justify-content: start;
-			width: fit-content;
-			transform: rotate(90deg);
-			background-color: red;
-			
+			overflow: hidden;
+			transform: rotate(-90deg);
+			position: relative;
+			top: -6%;
+
+			>h4 {
+				margin: 0 4px;
+				font-family: $baskerville;
+				font-size: .5em;
+				transition-duration: 0.45s;
+			}
+
 
 			>div {
-				width: 50px;
-				height: 5px;
+				width: 40px;
+				position: relative;
+				left: -10px;
+				height: .1em;
 				background-color: black;
+				transition-duration: 0.45s;
+				transition-timing-function: cubic-bezier(0.52, 0.01, 0.16, 1);
+			}
+		}
+	}
+
+	.circle {
+		background-image: url("http://riccardozanutta.com/img/codepen-loader.gif");
+		background-size: 700px;
+		background-position: 50%;
+		background-repeat: no-repeat;
+		width: 240px;
+		height: 240px;
+		position: absolute;
+		border-radius: 50%;
+		top: 10%;
+		transition-duration: .3s;
+		transition-timing-function: ease;
+	}
+
+	&:hover{
+		>.circle {
+			transform: scale(1.1);
+		}
+		>.container>.number {
+			>div {
+				height: .15em;
+				left: 0;
+			}
+
+			>h4 {
+				transform: translateX(15px);
+				transition-delay: .25s;
 			}
 		}
 	}
 	
-	.circle {
-		background-image: url("http://riccardozanutta.com/img/codepen-loader.gif");
-		background-size: 700px;
-		background-position: -220px;
-		background-repeat: no-repeat;
-		width: 250px;
-		height: 250px;
-		position: absolute;
-		border-radius: 50%;
-		top: 50%;
-		right: 50%;
-		transform: translate(50%, -50%);
-	}
+	
 }
-
