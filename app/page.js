@@ -4,6 +4,7 @@ import Projects from './components/projects/projects';
 import ButtonContact from './components/buttonContact/buttonContact';
 import Image from 'next/image';
 import ParallaxEffect from './components/parallax/ParallaxEffect';
+import Experiments from './components/experiments/experiments';
 
 const projects = [
   {
@@ -72,6 +73,7 @@ export default function Home() {
       <div className={styles.container}>
         <h6>EXPERIMENTS & OPEN SOURCE</h6>
         <h4>Web is fun.</h4>
+        <Experiments />
       </div>
 
     </>
