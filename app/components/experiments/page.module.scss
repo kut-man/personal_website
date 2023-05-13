@@ -4,8 +4,26 @@
 	width: 100%;
 }
 
+@media only screen and (max-width: 830px) {
+	.container {
+		flex-wrap: wrap;
+	}
+}
+
 @media only screen and (max-width: 500px) {
 	.container {
 		flex-direction: column;
+
+		>a {
+			width: 100%;
+
+			&:nth-child(2n)>div>h1 {
+				left: 0;
+			}
+
+			&:nth-child(2n+1)>div>h1 {
+				right: -5%;
+			}
+		}
 	}
 }

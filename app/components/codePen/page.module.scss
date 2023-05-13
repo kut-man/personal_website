@@ -19,9 +19,36 @@
 		align-items: end;
 		padding: 5%;
 		color: black;
+		position: relative;
+
+		>h1{
+			position: absolute;
+			display: none;
+			font-size: 160px;
+			color: #fce0db;
+			top: 0;
+			right: -8%;
+			margin: 0;
+			padding: 0;
+			opacity: .45;
+		}
+
+		&::before {
+			content: "";
+			display: inline-block;
+			width: 0;
+			height: 100%;
+			background-color: #fce0db;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition-duration: 0.4s;
+			transition-timing-function: cubic-bezier(0.52, 0.01, 0.16, 1);
+		}
 
 		>.title {
-			width: 150%;
+			width: 95%;
+			z-index: 1;
 
 			>h5 {
 				margin: 0 8px;
@@ -44,30 +71,28 @@
 		}
 
 		>.number {
-			display: inline-flex;
-			flex-direction: row;
-			width: 100px;
-			height: 10px;
-			align-items: center;
-			justify-content: start;
+			width: 5%;
+			height: 80px;
 			overflow: hidden;
-			transform: rotate(-90deg);
 			position: relative;
-			top: -6%;
+			z-index: 1;
 
 			>h4 {
 				margin: 0 4px;
 				font-family: $baskerville;
 				font-size: .5em;
 				transition-duration: 0.45s;
+				position: absolute;
+				bottom: 40px;
+				transform: rotate(90deg);
 			}
 
-
 			>div {
-				width: 40px;
-				position: relative;
-				left: -10px;
-				height: .1em;
+				height: 40px;
+				width: .1em;
+				position: absolute;
+				bottom: -10px;
+				left: 50%;
 				background-color: black;
 				transition-duration: 0.45s;
 				transition-timing-function: cubic-bezier(0.52, 0.01, 0.16, 1);
@@ -80,31 +105,82 @@
 		background-size: 700px;
 		background-position: 50%;
 		background-repeat: no-repeat;
-		width: 240px;
-		height: 240px;
+		width: 230px;
+		height: 230px;
 		position: absolute;
 		border-radius: 50%;
 		top: 10%;
 		transition-duration: .3s;
 		transition-timing-function: ease;
+		z-index: 1;
 	}
 
-	&:hover{
+	&:hover {
 		>.circle {
 			transform: scale(1.1);
 		}
-		>.container>.number {
-			>div {
-				height: .15em;
-				left: 0;
+
+		>.container {
+			&::before {
+				transition-delay: .2s;
+				width: 100%;
 			}
 
-			>h4 {
-				transform: translateX(15px);
-				transition-delay: .25s;
+			>.number {
+				>div {
+					bottom: 0;
+					width: .15em;
+				}
+
+				>h4 {
+					bottom: 50px;
+					transition-delay: .15s;
+				}
 			}
 		}
+
+
 	}
+}
+
+@media only screen and (max-width: 1025px) {
+	.link {
+		.container {
+			height: 320px;
+
+			>h1{
+				display: block;
+			}
+
+			>.title {
+				width: 100%;
 	
+				>h5 {
+					margin: 0;
+				}
 	
+				>p {
+					font-size: .71em;
+					margin: 5px 25px;
+				}
+			}
+
+			>.number {
+				display: none;
+			}
+		}
+
+		.circle {
+			background-size: 700px;
+			background-position: 50%;
+			width: 180px;
+			height: 180px;
+		}
+	}
+}
+
+@media only screen and (max-width: 830px) {
+	.link {
+		width: 50%;
+	}
 }
