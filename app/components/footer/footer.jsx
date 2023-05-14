@@ -26,12 +26,12 @@ const Footer = () => {
 
             <ul>
                 <li>
-                    <a href="">LinkedIn</a>
-                    <a href="">Telegram</a>
+                    <a href="https://www.linkedin.com/in/kutman-eshenkulov-186842233/" target="_blank">LinkedIn</a>
+                    <a href="https://t.me/kut_man" target="_blank">Telegram</a>
                 </li>
                 <li> 
-                    <a href="">Github</a>
-                    <a href="">Codepen</a>
+                    <a href="https://github.com/kut-man" target="_blank">Github</a>
+                    <a href="https://codepen.io/Kutman-Eshenkulov" target="_blank">Codepen</a>
                 </li>
             </ul>
             <p>© 2023 Kutman Eshenkulov - All rights reserved -
