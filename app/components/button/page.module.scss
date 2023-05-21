@@ -1,12 +1,12 @@
-@import '../../../variables.scss';
+@import '../../variables.scss';
 
-.button {
+.container {
 	display: inline-block;
 	position: relative;
 
-	>button {
+	>.button {
 		width: fit-content;
-		background: linear-gradient(270deg, #f06449, #ef3636);;
+		background: linear-gradient(270deg, #f06449, #ef3636);
 		height: 45px;
 		color: white;
 		padding: 15px 25px 15px 25px;
@@ -15,7 +15,13 @@
 		overflow: hidden;
 		border: none;
 
-		&:disabled, &:disabled~svg {
+		>a {
+			color: white;
+			text-decoration: none;
+		}
+
+		&:disabled,
+		&:disabled~svg {
 			cursor: not-allowed;
 			opacity: .65;
 		}
