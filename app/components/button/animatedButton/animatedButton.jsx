@@ -1,10 +1,10 @@
 "use client"
 
 import Button from "../button/button";
-import Contact from "../contact/contact";
+import Contact from "../../contact/contact";
 import { useState } from "react";
 
-const ButtonContact = ({text}) => {
+const AnimatedButton = ({ text }) => {
 
     const [open, setOpen] = useState(false)
 
@@ -16,4 +16,4 @@ const ButtonContact = ({text}) => {
     )
 }
 
-export default ButtonContact;
+export default AnimatedButton;

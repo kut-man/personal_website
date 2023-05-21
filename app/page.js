@@ -1,7 +1,7 @@
 import styles from './page.module.scss'
 import ContactIcons from './components/contact_icons/contact_icons';
 import Projects from './components/projects/projects';
-import ButtonContact from './components/buttonContact/buttonContact';
+import Button from './components/button/animatedButton/animatedButton';
 import Image from 'next/image';
 import ParallaxEffect from './components/parallax/ParallaxEffect';
 import Experiments from './components/experiments/experiments';
@@ -42,17 +42,17 @@ export default function Home() {
           height={330}
         />
 
-        <div className={styles.mainPage}>
+        <section className={styles.mainPage}>
 
           <div className={styles.content}>
             <h1>Kutman Eshenkulov</h1>
             <p>Interactive Front-end Developer</p>
-            <ButtonContact text={"About Me"} />
+            <Button text={"About Me"} />
           </div>
 
           <ContactIcons props={{ nav: false }} />
 
-        </div>
+        </section>
 
       </main>
 

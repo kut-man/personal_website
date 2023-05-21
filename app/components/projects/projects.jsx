@@ -3,7 +3,7 @@
 import styles from './page.module.scss'
 import { useInView } from 'react-intersection-observer';
 import { useState, useEffect } from 'react';
-import Button from '../button/button';
+import LinkPage from '../button/linkPage/linkPage';
 
 const Projects = ({ id, projectName, projectDescription, projectImage }) => {
 
@@ -17,7 +17,7 @@ const Projects = ({ id, projectName, projectDescription, projectImage }) => {
     }, [inView]);
 
     return (
-        <div ref={ref} className={styles.projectContainer}
+        <article ref={ref} className={styles.projectContainer}
             style={id % 2 == 0 ? { marginRight: "50px", backgroundImage: `url(${projectImage})` } : { marginLeft: "50px", backgroundImage: `url(${projectImage})` }}>
             <span style={id % 2 == 0 ? { left: "-5%" } : { right: "0" }} className={styles.projectNumber} >0{id}</span>
             <div className={`${isInView ? styles.show : ''} ${styles.revealer}`}></div>
@@ -26,9 +26,9 @@ const Projects = ({ id, projectName, projectDescription, projectImage }) => {
                 <h5 className={styles.projectName}>{projectName}</h5>
                 <p>{projectDescription}</p>
 
-                <Button text={"Case Study"} />
+                <LinkPage text={"Case Study"} />
             </div>
-        </div>
+        </article>
     )
 }
 
