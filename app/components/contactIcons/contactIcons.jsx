@@ -1,10 +1,10 @@
 import styles from './page.module.scss'
 import { FaInstagram, FaTelegram, FaGithub, FaLinkedin, FaRegEnvelope } from "react-icons/fa";
 
-export default function ContactIcons({ props }) {
+export default function ContactIcons({ toggled }) {
 
     return (
-        <ul className={`${props.nav ? styles.navContactIcons : styles.contactIcons} ${props?.toggled ? styles.contactMenuAppear : ''}`}>
+        <ul className={`${styles.contactIcons} ${toggled ? styles.contactMenuAppear : ''}`}>
             <li>
                 <a href="https://github.com/kut-man" target="_blank">
                     <FaGithub />
@@ -25,7 +25,7 @@ export default function ContactIcons({ props }) {
                     <FaInstagram />
                 </a>
             </li>
-            <li style={props.nav ? { display: 'none' } : {}}>
+            <li>
                 <a href="mailto: kutman.stel@gmail.com" target="_blank">
                     <FaRegEnvelope />
                 </a>

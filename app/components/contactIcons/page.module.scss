@@ -40,42 +40,59 @@
 	}
 }
 
-.navContactIcons {
-	@include icons(row);
-	width: 250px;
-	top: 90%;
-	left: 15%;
-	opacity: 0;
-	margin: 0;
-	@include iconsTransition(40%);
-	transition-property: opacity, transform;
+// .navContactIcons {
+// 	@include icons(row);
+// 	width: 250px;
+// 	top: 90%;
+// 	left: 15%;
+// 	opacity: 0;
+// 	margin: 0;
+// 	@include iconsTransition(40%);
+// 	transition-property: opacity, transform;
 
-	>li>a>svg {
-		fill: white;
-		width: 30px;
-		height: 30px;
-	}
-}
-
-.contactMenuAppear {
-	opacity: 1;
-	@include iconsTransition(-40%);
-	transition-delay: .7s;
-}
+// 	>li>a>svg {
+// 		fill: white;
+// 		width: 30px;
+// 		height: 30px;
+// 	}
+// }
 
 @media only screen and (max-width: 660px) {
 	.contactIcons {
-		display: none;
+		@include icons(row);
+		width: 250px;
+		height: fit-content;
+		top: 85%;
+		left: 15%;
+		right: 0;
+		opacity: 0;
+		margin: 0;
+		@include iconsTransition(40%);
+		transition-property: opacity, transform;
+		padding: 20px;
+
+		>li {
+			&:last-of-type {
+				display: none;
+			}
+
+			>a>svg {
+				fill: white;
+				width: 30px;
+				height: 30px;
+			}
+		}
 	}
 
-	.navContactIcons {
-		padding: 20px;
-		top: 85%;
+	.contactMenuAppear {
+		opacity: 1;
+		@include iconsTransition(-40%);
+		transition-delay: .7s;
 	}
 }
 
 @media only screen and (max-width: 400px) {
-	.navContactIcons {
+	.contactIcons {
 		width: 58%;
 	}
 }

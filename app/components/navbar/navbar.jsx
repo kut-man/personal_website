@@ -1,7 +1,7 @@
 "use client";
 
 import styles from './page.module.scss'
-import ContactIcons from '../contact_icons/contact_icons';
+import ContactIcons from '../contactIcons/contactIcons';
 import { useState } from 'react';
 import Image from 'next/image';
 import Contact from '../contact/contact';
@@ -70,7 +70,7 @@ const Navbar = () => {
                     <li onClick={() => scrollTo("contact")}>Contact</li>
                 </ul>
 
-                <ContactIcons props={{ nav: true, toggled: toggled }} />
+                <ContactIcons toggled={toggled} />
 
             </div>
 

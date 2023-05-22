@@ -1,5 +1,5 @@
 import styles from './page.module.scss'
-import ContactIcons from './components/contact_icons/contact_icons';
+import ContactIcons from './components/contactIcons/contactIcons';
 import Projects from './components/projects/projects';
 import Button from './components/button/animatedButton/animatedButton';
 import Image from 'next/image';
@@ -50,7 +50,7 @@ export default function Home() {
             <Button text={"About Me"} />
           </div>
 
-          <ContactIcons props={{ nav: false }} />
+          <ContactIcons />
 
         </section>
 
