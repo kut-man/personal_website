@@ -1,4 +1,4 @@
-import CodePen from "../codePen/codePen";
+import CodePen from "./codePen/codePen";
 import styles from './page.module.scss'
 
 export default function Experiments() {

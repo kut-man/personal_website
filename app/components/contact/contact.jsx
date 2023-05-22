@@ -10,8 +10,8 @@ import emailjs from '@emailjs/browser';
 
 const Contact = ({ setContactOpen }) => {
 
-    const [animationClass, setAnimationClass] = useState([{}, {}, {}]);
-    const [email, setEmail] = useState({
+    const [animationClass, setAnimationClass] = useState();
+    const [formValues, setFormValues] = useState({
         name: "",
         email: "",
         text: "",
@@ -32,13 +32,13 @@ const Contact = ({ setContactOpen }) => {
 
     useEffect(() => {
         const emailRegex = /^\S+@\S+\.\S+$/;
-        if (emailRegex.test(email.email) && email.name !== "" && email.text !== "") {
-            setEmail((prev) => ({ ...prev, disabled: false }));
+        if (emailRegex.test(formValues.email) && formValues.name !== "" && formValues.text !== "") {
+            setFormValues((prev) => ({ ...prev, disabled: false }));
         }
-    }, [email])
+    }, [formValues])
 
     function disappear() {
-        setAnimationClass([{}, {}]);
+        setAnimationClass();
         setTimeout(() => {
             setContactOpen(false)
         }, 450);
@@ -48,7 +48,7 @@ const Contact = ({ setContactOpen }) => {
         e.preventDefault();
 
         form.current.reset();
-        setEmail({
+        setFormValues({
             name: "",
             email: "",
             text: "",
@@ -64,14 +64,14 @@ const Contact = ({ setContactOpen }) => {
             });
 
         setTimeout(() => {
-            setEmail((prev) => ({ ...prev, animation: false }));
+            setFormValues((prev) => ({ ...prev, animation: false }));
         }, 2500);
     };
 
     return createPortal(
-        <div className={`${styles.contact} ${animationClass[2]}`}>
+        <div className={`${styles.contact} ${animationClass?.[2]}`}>
             <div>
-                <form animation={`${email.animation}`} ref={form} onSubmit={sendEmail} className={animationClass[1]}>
+                <form animation={`${formValues.animation}`} ref={form} onSubmit={sendEmail} className={animationClass?.[1]}>
 
                     <h1>Contact</h1>
 
@@ -88,8 +88,8 @@ const Contact = ({ setContactOpen }) => {
 
                     <div className={styles.input}>
                         <input
-                            required type="text" name="user_name" value={email.name}
-                            onChange={(e) => setEmail((prev) => ({ ...prev, name: e.target.value }))}
+                            required type="text" name="user_name" value={formValues.name}
+                            onChange={(e) => setFormValues((prev) => ({ ...prev, name: e.target.value }))}
                         />
                     </div>
 
@@ -97,8 +97,8 @@ const Contact = ({ setContactOpen }) => {
 
                     <div className={styles.input}>
                         <input
-                            type="email" id="email" required name="user_email" value={email.email}
-                            onChange={(e) => setEmail((prev) => ({ ...prev, email: e.target.value }))}
+                            type="email" id="email" required name="user_email" value={formValues.email}
+                            onChange={(e) => setFormValues((prev) => ({ ...prev, email: e.target.value }))}
                         />
                     </div>
 
@@ -106,15 +106,15 @@ const Contact = ({ setContactOpen }) => {
 
                     <div className={styles.input}>
                         <textarea
-                            required name="message" cols="30" rows="6" value={email.text}
-                            onChange={(e) => setEmail((prev) => ({ ...prev, text: e.target.value }))}>
+                            required name="message" cols="30" rows="6" value={formValues.text}
+                            onChange={(e) => setFormValues((prev) => ({ ...prev, text: e.target.value }))}>
                         </textarea>
                     </div>
 
-                    <Button disabled={email.disabled} type="submit" text={"Send Message"} />
+                    <Button disabled={formValues.disabled} type="submit" text={"Send Message"} />
 
                 </form>
-                <div className={animationClass[0]}>
+                <div className={animationClass?.[0]}>
 
                     <h1>About</h1>
 

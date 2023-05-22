@@ -4,7 +4,7 @@ import { FaInstagram, FaTelegram, FaGithub, FaLinkedin, FaRegEnvelope } from "re
 export default function ContactIcons({ toggled }) {
 
     return (
-        <ul className={`${styles.contactIcons} ${toggled ? styles.contactMenuAppear : ''}`}>
+        <ul className={`${styles.contactIcons} ${toggled && styles.contactMenuAppear}`}>
             <li>
                 <a href="https://github.com/kut-man" target="_blank">
                     <FaGithub />
