@@ -5,7 +5,7 @@ import ContactIcons from '../../contactIcons/contactIcons';
 import { useState } from 'react';
 import Image from 'next/image';
 import Contact from '../../contact/contact';
-import icon from '../../../icon.png';
+import icon from '../../../src/icon.png';
 
 const Navbar = () => {
 
