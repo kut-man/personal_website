@@ -8,6 +8,7 @@ export const metadata = {
   title: 'Kutman Eshenkulov',
   description: 'Personal website developed by Kutman Eshenkulov',
   keywords: ['Kutman', 'KUTMAN', "Kutman Eshenkulov", "Кутман Эшенкулов"],
+  
   robots: {
     index: true,
     follow: true,
