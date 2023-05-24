@@ -1,10 +1,10 @@
 "use client";
 
 import styles from './page.module.scss'
-import ContactIcons from '../contactIcons/contactIcons';
+import ContactIcons from '../../contactIcons/contactIcons';
 import { useState } from 'react';
 import Image from 'next/image';
-import Contact from '../contact/contact';
+import Contact from '../../contact/contact';
 
 const Navbar = () => {
 

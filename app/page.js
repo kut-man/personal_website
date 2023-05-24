@@ -47,7 +47,9 @@ export default function Home() {
           <div className={styles.content}>
             <h1>Kutman Eshenkulov</h1>
             <p>Interactive Front-end Developer</p>
-            <Button text={"About Me"} />
+            <div className={styles.buttonContainer}>
+              <Button text={"About Me"} />
+            </div>
           </div>
 
           <ContactIcons />
