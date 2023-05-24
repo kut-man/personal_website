@@ -8,8 +8,21 @@
 	height: 90px;
 	width: inherit;
 	position: relative;
+	top: -90px;
 	background-color: transparent;
 	z-index: 1;
+	animation: slideDown .7s;
+	animation-timing-function: cubic-bezier(.694,.048,.335,1);
+	animation-fill-mode: forwards;
+
+	@keyframes slideDown {
+		0%{
+			transform: translateY(0);
+		}
+		100%{
+			transform: translateY(100%);
+		}
+	}
 
 	>.logo {
 		height: 80px;

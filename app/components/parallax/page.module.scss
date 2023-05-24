@@ -14,6 +14,22 @@
 		left: 0;
 		width: 100vw;
 		height: 100vh;
+
+		>*{
+			opacity: 0;
+			animation: appear .7s cubic-bezier(.694,.048,.335,1);
+			animation-delay: .7s;
+			animation-fill-mode: forwards;
+		}
+
+		@keyframes appear {
+			0%{
+				opacity: 0;
+			}
+			100%{
+				opacity: 1;
+			}
+		}
 	}
 
 	svg {

@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { useState, useEffect } from 'react';
 import LinkPage from '../button/linkPage/linkPage';
 
-const Projects = ({ id, projectName, projectDescription, projectImage }) => {
+const Projects = ({ id, projectName, projectDescription, projectImage, projectLink }) => {
 
     const [isInView, setIsInView] = useState(false);
     const [ref, inView] = useInView({
@@ -26,7 +26,7 @@ const Projects = ({ id, projectName, projectDescription, projectImage }) => {
                 <h5 className={styles.projectName}>{projectName}</h5>
                 <p>{projectDescription}</p>
 
-                <LinkPage text={"Case Study"} />
+                <LinkPage to={projectLink} text={"Case Study"} />
             </div>
         </article>
     )

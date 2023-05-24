@@ -27,109 +27,52 @@ $baskerville: var(--font-baskerville);
 			margin: 0 13% 0 13%;
 			padding-left: 3%;
 
-			>{
-				
+			>*{
+				position: relative;
+				overflow: hidden;
+				color: $font_white;
+
+				&::before{
+					content: "";
+					display: block;
+					position: absolute;
+					bottom: 0;
+					z-index: 1;
+					width: 100%;
+					height: 100px;
+					background-color: white;
+					animation: reveal;
+					animation-duration: .7s;
+					animation-timing-function: cubic-bezier(.694,.048,.335,1);
+					animation-fill-mode: forwards;
+				}
+
+				@keyframes reveal {
+					0%{
+						transform: translate(0);
+					}
+
+					100%{
+						transform: translate(105%);
+					}
+				}
 			}
 
 			>h1 {
 				font-size: 75px;
-				color: $font_white;
 				margin: 0;
-				position: relative;
-				overflow: hidden;
-
-				&::before{
-					content: "";
-					display: block;
-					position: absolute;
-					bottom: 0;
-					width: 100%;
-					height: 100px;
-					background-color: white;
-					animation: reveal;
-					animation-duration: 1s;
-					animation-timing-function: ease;
-					animation-delay: .5s;
-					animation-fill-mode: forwards;
-				}
-
-				@keyframes reveal {
-					0%{
-						transform: translate(0);
-					}
-
-					100%{
-						transform: translate(105%);
-					}
-				}
 			}
 
 			>p {
 				font-size: 18px;
-				color: $font_white;
 				font-family: $baskerville;
 				margin-bottom: 45px;
 				font-style: italic;
-				position: relative;
-				overflow: hidden;
 				width: fit-content;
-
-				&::before{
-					content: "";
-					display: block;
-					position: absolute;
-					bottom: 0;
-					width: 100%;
-					height: 100px;
-					background-color: white;
-					animation: reveal;
-					animation-duration: 1s;
-					animation-timing-function: ease;
-					animation-delay: .5s;
-					animation-fill-mode: forwards;
-				}
-
-				@keyframes reveal {
-					0%{
-						transform: translate(0);
-					}
-
-					100%{
-						transform: translate(105%);
-					}
-				}
 			}
 
 			.buttonContainer {
 				width: 30%;
-				position: relative;
-				overflow: hidden;
-
-				&::before{
-					content: "";
-					display: block;
-					position: absolute;
-					z-index: 1;
-					bottom: 0;
-					width: 100%;
-					height: 100px;
-					background-color: white;
-					animation: reveal;
-					animation-duration: 1s;
-					animation-timing-function: ease;
-					animation-delay: .5s;
-					animation-fill-mode: forwards;
-				}
-
-				@keyframes reveal {
-					0%{
-						transform: translate(0);
-					}
-
-					100%{
-						transform: translate(105%);
-					}
-				}
 			}
 		}
 

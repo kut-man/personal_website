@@ -1,11 +1,10 @@
 import styles from '../page.module.scss'
-import Link from 'next/link'
 
-export default function LinkPage({ text }) {
+export default function LinkPage({ text, to }) {
   return (
     <div className={styles.container}>
       <div className={styles.button}>
-        <Link href={"/ryder"} >{text}</Link>
+        <a target='_blank' href={to} >{text}</a>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 476.213 476.213">
         <path
