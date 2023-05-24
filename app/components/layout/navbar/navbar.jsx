@@ -5,6 +5,7 @@ import ContactIcons from '../../contactIcons/contactIcons';
 import { useState } from 'react';
 import Image from 'next/image';
 import Contact from '../../contact/contact';
+import icon from '../../../icon.png';
 
 const Navbar = () => {
 
@@ -40,7 +41,7 @@ const Navbar = () => {
 
             <Image
                 className={styles.logo}
-                src="/../icon.png"
+                src={icon}
                 alt="Logo"
                 width={80}
                 height={80}
