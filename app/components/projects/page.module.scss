@@ -14,7 +14,6 @@ $baskerville: var(--font-baskerville);
 	margin-bottom: 140px;
 
 	.projectNumber {
-		font-size: larger;
 		position: absolute;
 		font-size: 15vw;
 		opacity: 0;
@@ -28,7 +27,6 @@ $baskerville: var(--font-baskerville);
 		background-size: 100% 200%;
 		background-repeat: no-repeat;
 		background-position: 0 0%;
-
 		transform: translateY(0);
 		transition-timing-function: $custom_function;
 		transition-duration: .4s;

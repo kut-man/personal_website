@@ -1,9 +1,21 @@
+"use client"
+
 import CodePen from "./codePen/codePen";
 import styles from './page.module.scss'
+import { useInView } from "react-intersection-observer";
+import { useEffect, useState } from "react";
 
-export default function Experiments() {
+const Experiments = () => {
+
+  const [ref, inView] = useInView();
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    inView && setIsInView(true);
+  }, [inView])
+
   return (
-    <div className={styles.container}>
+    <div inView={`${isInView ? true : false}`} ref={ref} className={styles.container}>
         <CodePen/>
         <CodePen/>
         <CodePen/>
@@ -11,3 +23,5 @@ export default function Experiments() {
     </div>
   )
 }
+
+export default Experiments;
