@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const Experiments = () => {
 
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({threshold: .5});
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
@@ -16,10 +16,10 @@ const Experiments = () => {
 
   return (
     <div inView={`${isInView ? true : false}`} ref={ref} className={styles.container}>
-        <CodePen/>
-        <CodePen/>
-        <CodePen/>
-        <CodePen/>
+        <CodePen gif={"http://riccardozanutta.com/img/codepen-loader.gif"}/>
+        <CodePen gif={"http://riccardozanutta.com/img/search-context.gif"}/>
+        <CodePen gif={"https://github.com/kut-man/personal_website/assets/73386100/57dc7593-3e95-4363-a80f-b09b16d64eb8"}/>
+        <CodePen gif={"http://riccardozanutta.com/img/x-times.gif"}/>
     </div>
   )
 }

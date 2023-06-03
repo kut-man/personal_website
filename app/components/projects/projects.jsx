@@ -8,9 +8,7 @@ import LinkPage from '../button/linkPage/linkPage';
 const Projects = ({ id, projectName, projectDescription, projectImage, projectLink }) => {
 
     const [isInView, setIsInView] = useState(false);
-    const [ref, inView] = useInView({
-        threshold: 0,
-    });
+    const [ref, inView] = useInView();
 
     useEffect(() => {
         inView && setIsInView(true);

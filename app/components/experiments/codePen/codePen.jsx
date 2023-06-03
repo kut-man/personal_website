@@ -1,8 +1,8 @@
 import styles from './page.module.scss'
 
-export default function CodePen() {
+export default function CodePen({gif}) {
     return (
-        <a className={styles.link} href="http://codepen.io/rickzanutta/pen/yjaeB" target="_blank" rel="noopener">
+        <a className={styles.link} href="https://codepen.io/Kutman-Eshenkulov" target="_blank" rel="noopener">
             <div className={styles.container}>
                 <h1>01</h1>
                 <div className={styles.title}>
@@ -14,7 +14,7 @@ export default function CodePen() {
                     <div></div>
                 </div>
             </div>
-            <div className={styles.circle}></div>
+            <div style={{backgroundImage: `url(${gif})`}} className={styles.circle}></div>
         </a>
     )
 }
