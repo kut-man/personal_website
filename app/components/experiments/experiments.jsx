@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const Experiments = () => {
 
-  const [ref, inView] = useInView({threshold: .5});
+  const [ref, inView] = useInView({threshold: .4});
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
