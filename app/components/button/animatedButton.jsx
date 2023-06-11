@@ -1,7 +1,7 @@
 "use client"
 
-import Button from "../button/button";
-import Contact from "../../contact/contact";
+import Button from "./button";
+import Contact from "../contact/contact";
 import { useState } from "react";
 
 const AnimatedButton = ({ text }) => {

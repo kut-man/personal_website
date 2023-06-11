@@ -1,7 +1,7 @@
 import styles from './page.module.scss'
 import ContactIcons from './components/contactIcons/contactIcons';
 import Projects from './components/projects/projects';
-import Button from './components/button/animatedButton/animatedButton';
+import Button from './components/button/animatedButton';
 import Image from 'next/image';
 import ParallaxEffect from './components/parallax/ParallaxEffect';
 import Experiments from './components/experiments/experiments';
@@ -20,6 +20,7 @@ export default function Home() {
           src="https://user-images.githubusercontent.com/73386100/231491201-77f9d1d4-ead5-434f-9959-bb07b9bf0369.png"
           width={330}
           height={330}
+          priority={true}
         />
 
         <section className={styles.mainPage}>

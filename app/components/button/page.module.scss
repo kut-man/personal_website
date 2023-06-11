@@ -14,11 +14,7 @@
 		position: relative;
 		overflow: hidden;
 		border: none;
-
-		>a {
-			color: white;
-			text-decoration: none;
-		}
+		cursor: pointer;
 
 		&:disabled,
 		&:disabled~svg {

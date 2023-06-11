@@ -2,7 +2,7 @@
 
 import styles from "./page.module.scss";
 import { useState, useEffect, useRef } from "react";
-import Button from "../button/button/button";
+import Button from "../button/button";
 import { FaReact, FaCss3Alt } from "react-icons/fa";
 import { SiJavascript, SiNextdotjs } from "react-icons/si";
 import { createPortal } from "react-dom";

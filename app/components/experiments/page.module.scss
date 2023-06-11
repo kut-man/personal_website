@@ -26,12 +26,12 @@
 		background: linear-gradient(270deg, rgb(35, 90, 166), rgb(38, 64, 139));
 	}
 
-	&[inView="true"]::before {
+	&[inview="true"]::before {
 		height: 0;
 		transition-delay: .3s;
 	}
 
-	&[inView="true"]::after {
+	&[inview="true"]::after {
 		height: 0;
 	}
 }

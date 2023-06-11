@@ -3,7 +3,7 @@
 import styles from './page.module.scss'
 import { useInView } from 'react-intersection-observer';
 import { useState, useEffect } from 'react';
-import LinkPage from '../button/linkPage/linkPage';
+import Button from '../button/button';
 
 const Projects = ({ id, projectName, projectDescription, projectImage, projectLink }) => {
 
@@ -24,7 +24,7 @@ const Projects = ({ id, projectName, projectDescription, projectImage, projectLi
                 <h5 className={styles.projectName}>{projectName}</h5>
                 <p>{projectDescription}</p>
 
-                <LinkPage to={projectLink} text={"Case Study"} />
+                <Button onClick={() => window.open(projectLink) } text={"Case Study"} />
             </div>
         </article>
     )
