@@ -1,0 +1,128 @@
+@import '../../../variables.scss';
+$grayish: hsla(0, 0%, 95%, .97);
+
+.aboutMe {
+    width: 50%;
+    padding: 80px;
+    background-color: $grayish;
+    position: relative;
+    top: -100%;
+    transition-duration: .45s;
+    transition-timing-function: $custom_function;
+    transition-property: top, transform;
+    overflow: hidden;
+
+    >h1 {
+        font-size: 240px;
+        color: #4a4a4a;
+        opacity: .07;
+        position: absolute;
+        margin: 0;
+        top: 4%;
+    }
+
+    >p {
+        font-family: $baskerville;
+        font-style: normal;
+    }
+
+    >p:first-of-type {
+        font-size: 12px;
+    }
+
+    >p:last-of-type {
+        font-size: 14px;
+        line-height: 1.5;
+        height: fit-content;
+
+        >strong {
+            font-family: inherit;
+            color: $red;
+        }
+    }
+
+    >.icons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+
+        >span {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            >svg {
+                width: 55px;
+                height: 55px;
+                fill: $dark_blue;
+                transition-duration: .3s;
+                transition-timing-function: $custom_function
+            }
+        }
+
+        @mixin icon($content, $fill) {
+
+            &::after {
+                content: $content;
+                display: block;
+                position: relative;
+                top: 20px;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(0);
+                transition-duration: .3s;
+                transition-timing-function: $custom_function
+            }
+
+            &:hover>svg {
+                fill: $fill;
+            }
+
+            &:hover::after {
+                visibility: visible;
+                transform: translateY(-5px);
+                opacity: 1;
+            }
+        }
+
+        >.reactIcon {
+            @include icon("React.js", #61dafb);
+        }
+
+        >.jsIcon {
+            @include icon("Semicolons.", #ecd120);
+        }
+
+        >.cssIcon {
+            @include icon("is Fun.", $red);
+        }
+
+        >.nextjsIcon {
+            @include icon("SSR", #64CFCB);
+        }
+    }
+}
+
+.anim1 {
+    transform: translateY(100%);
+}
+
+@media only screen and (max-width: 850px) {
+    .aboutMe {
+        padding: 10%;
+        position: static;
+        width: 100%;
+        transform: translate(-100%);
+    }
+
+    .anim1 {
+        transform: translateY(0);
+        transition-delay: .45s;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .aboutMe {
+        height: 70%;
+    }
+}
