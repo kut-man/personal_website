@@ -28,8 +28,8 @@ const AboutMe = ({isClosed}) => {
                 I have gained experience in <strong>front-end development</strong> through
                 actively learning and practicing computer programming.
                 <br />
-                I enjoy brainstorming ways to improve <strong>user interfaces</strong>
-                and other design problems, so developing <strong>web applications</strong>
+                I enjoy brainstorming ways to improve <strong>user interfaces </strong>
+                and other design problems, so developing <strong>web applications </strong>
                 is a great way to unleash my <strong>creativity</strong>.
                 And speaking of creative outlets, you&apos;ll often find me
                 reading a good book or watching a movie with a bowl of
