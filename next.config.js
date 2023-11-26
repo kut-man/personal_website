@@ -3,9 +3,6 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  images: {
-    domains: ['user-images.githubusercontent.com'],
-  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,

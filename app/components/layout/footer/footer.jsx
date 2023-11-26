@@ -12,11 +12,10 @@ const Footer = () => {
 
     return (
         <footer className={styles.footer}>
-            <div>
+            <div onClick={handleClick}>
                 <Image
-                    onClick={handleClick}
                     className={styles.logo}
-                    src="https://user-images.githubusercontent.com/73386100/231491201-77f9d1d4-ead5-434f-9959-bb07b9bf0369.png"
+                    src="/myLogo.png"
                     alt="Logo"
                     width={80}
                     height={80}

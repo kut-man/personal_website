@@ -67,15 +67,16 @@ $baskerville: var(--font-baskerville);
 	align-items: center;
 	justify-content: center;
 
-	>h6 {
+	>span {
 		margin-top: 0;
 		margin-bottom: 25px;
 		color: #b19386;
 		font-size: .9em;
 		font-family: $baskerville;
+		font-weight: bold;
 	}
 
-	>h4 {
+	>h1 {
 		margin-top: 0;
 		color: #4a4a4a;
 		font-size: 2.7em;
@@ -84,7 +85,7 @@ $baskerville: var(--font-baskerville);
 
 @media only screen and (max-width: 900px) {
 	.container {
-		>h4 {
+		>h1 {
 			font-size: 1.8em;
 			margin-bottom: 80px;
 		}

@@ -17,7 +17,7 @@ export default function Home() {
         <Image
           className={styles.backgroundLogo}
           alt="Logo"
-          src="https://user-images.githubusercontent.com/73386100/231491201-77f9d1d4-ead5-434f-9959-bb07b9bf0369.png"
+          src="/myLogo.png"
           width={330}
           height={330}
           priority={true}
@@ -40,16 +40,16 @@ export default function Home() {
       </main>
 
       <div className={styles.container}>
-        <h6>CASE STUDIES</h6>
-        <h4>Latest Works</h4>
+        <span>CASE STUDIES</span>
+        <h1>Latest Works</h1>
 
         {projects.map(obj => <Projects key={obj.id} {...obj} />)}
 
       </div>
 
       <div className={styles.container}>
-        <h6>EXPERIMENTS & OPEN SOURCE</h6>
-        <h4>Web is fun.</h4>
+        <span>EXPERIMENTS & OPEN SOURCE</span>
+        <h1>Web is fun.</h1>
         <Experiments />
       </div>
 

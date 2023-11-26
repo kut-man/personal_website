@@ -21,7 +21,7 @@ const Projects = ({ id, projectName, projectDescription, projectImage, projectLi
             <div className={`${isInView ? styles.show : ''} ${styles.revealer}`}></div>
             <div className={styles.project}>
 
-                <h5 className={styles.projectName}>{projectName}</h5>
+                <h1 className={styles.projectName}>{projectName}</h1>
                 <p>{projectDescription}</p>
 
                 <Button onClick={() => window.open(projectLink) } text={"Case Study"} />
