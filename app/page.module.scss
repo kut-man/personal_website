@@ -66,6 +66,17 @@ $baskerville: var(--font-baskerville);
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+
+	.line {
+		background-color: #E8E8E9;
+		position: absolute;
+		width: 1px;
+		height: calc(100% + 222px);
+		top: -70px;
+		left: 50%;
+		z-index: -1;
+	}
 
 	>span {
 		margin-top: 0;
