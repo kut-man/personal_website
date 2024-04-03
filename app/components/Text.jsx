@@ -1,26 +1,20 @@
 "use client";
 
-import { useRef, useState, useMemo } from "react";
+import { useEffect } from "react";
+import baffle from "baffle";
 
 const Text = () => {
-  const animationText = "█▓▒▒░░░<>/";
-  const [textValue, setTextValue] = useState("Interactive Front-end Developer");
-  const numberOfRerenders = useRef(0);
-  numberOfRerenders.current++;
+  useEffect(() => {
+    const target = baffle(".obfuscated");
+    target.set({
+      characters: "█▓█ ▒░/▒░ █░▒▓/ █▒▒ ▓▒▓/█<░▒ ▓/░>",
+      speed: 100,
+    });
+    target.start();
+    target.reveal(1000, 100);
+  });
 
-    if (numberOfRerenders.current < 20) {
-      setTimeout(() => {
-        let randomText = "";
-        for (let i = 0; i < 30; i++) {
-          randomText +=
-            animationText[Math.floor(Math.random() * animationText.length)];
-        }
-        setTextValue(randomText);
-      }, 100);
-    }
-
-
-  return <p>{textValue}</p>;
+  return <p className="obfuscated">Interactive Front-end Developer</p>;
 };
 
 export default Text;
