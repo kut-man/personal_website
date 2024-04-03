@@ -6,7 +6,7 @@ import Image from 'next/image';
 import ParallaxEffect from './components/parallax/ParallaxEffect';
 import Experiments from './components/experiments/experiments';
 import { projects } from './src/projects';
-import Text from './components/Text';
+import DevBio from './components/devBio/DevBio';
 
 export default function Home() {
   return (
@@ -28,8 +28,7 @@ export default function Home() {
 
           <div className={styles.content}>
             <h1>Kutman Eshenkulov</h1>
-            <p>Interactive Front-end Developer</p>
-            <Text/>
+            <DevBio/>
             <div className={styles.buttonContainer}>
               <Button text={"About Me"} />
             </div>

@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import baffle from "baffle";
 
-const Text = () => {
+const DevBio = () => {
   useEffect(() => {
     const target = baffle(".obfuscated");
     target.set({
@@ -17,4 +17,4 @@ const Text = () => {
   return <p className="obfuscated">Interactive Front-end Developer</p>;
 };
 
-export default Text;
+export default DevBio;

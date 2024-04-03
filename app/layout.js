@@ -1,6 +1,6 @@
 import './globals.scss';
 import './variables.scss';
-import { League_Spartan, Libre_Baskerville } from '@next/font/google';
+import { League_Spartan, Libre_Baskerville } from "next/font/google";
 import Navbar from './components/layout/navbar/navbar';
 import Footer from './components/layout/footer/footer';
 
